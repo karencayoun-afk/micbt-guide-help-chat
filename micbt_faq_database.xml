@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <micbt_faq_database>
   <metadata>
-    <version>2.1</version>
+    <version>2.2</version>
     <last_updated>2026-05-17</last_updated>
     <source>MiCBT App Help Documentation (WordPress Export)</source>
     <total_faqs>150</total_faqs>
@@ -11,35 +11,35 @@
     <question>What is the MiCBT Guide app?</question>
     <answer>The MiCBT Guide is a mobile app that guides you step-by-step through the full Mindfulness-integrated Cognitive Behaviour Therapy (MiCBT) program, developed by Dr Bruno Cayoun. The app delivers a structured 4-stage, 10-week program combining body-based mindfulness meditation with evidence-based CBT techniques. The app includes: Guided audio meditations from Dr Bruno CayounVideo explanations for each stageSeven validated assessment tools to track your progressA practice diaryGoal tracking The app is available on iOS and Android.</answer>
     <category>Get Started</category>
-    <keywords>what, micbt, guide, app?</keywords>
+    <keywords>what, micbt, guide</keywords>
   </faq>
 
   <faq id="1">
     <question>How do I create an account?</question>
     <answer>Open the app and tap Create Account on the welcome screen.Enter your first name, last name, and email address.Choose a password and tap Sign Up. Alternatively, tap Continue with Google, Continue with Facebook, or Continue with Apple to sign up using one of those accounts. Once your account is created, you can log in on any device and your data will be saved to your account.</answer>
     <category>Get Started</category>
-    <keywords>create, account?</keywords>
+    <keywords>create, account</keywords>
   </faq>
 
   <faq id="2">
     <question>How do I log in to the app?</question>
     <answer>Open the app and tap Log in on the welcome screen.Enter your email address and password, then tap Log in. Or tap Continue with Google, Continue with Facebook, or Continue with Apple to use one of those accounts. If you have forgotten your password, tap Forgot Password on the login screen, enter your email address, and follow the reset link sent to your inbox. Check your spam folder if the email doesn&#x27;t arrive within a few minutes.</answer>
     <category>Get Started</category>
-    <keywords>app?</keywords>
+    <keywords></keywords>
   </faq>
 
   <faq id="3">
     <question>How do I reset my password?</question>
     <answer>On the login screen, tap Forgot Password.Enter the email address you registered with and tap Reset Password.Check your inbox for a reset email — if it doesn&#x27;t arrive within a few minutes, check your spam folder.Tap the link in the email, choose a new password, and log back in. Note: this option is only available if you registered with an email address and password. If you signed up with Google, Facebook, or Apple, use those services to manage your login.</answer>
     <category>Get Started</category>
-    <keywords>reset, password?</keywords>
+    <keywords>reset, password</keywords>
   </faq>
 
   <faq id="4">
     <question>How do I get started with the program?</question>
     <answer>Tap Home in the bottom navigation bar.Tap Stage 1 (the circled number 1).Tap Step 1 — Committing to Self-Care, then tap Start.Set your goals — describe what you would like to work on and rate how much each difficulty affects your life.Read through the stage guide.Begin your first meditation using the audio provided.After completing a session, log it in your Practice Diary. The program runs for 10 weeks across four stages. Work through each step in order — later stages build directly on earlier skills.</answer>
     <category>Get Started</category>
-    <keywords>started, with, program?</keywords>
+    <keywords>started, with, program</keywords>
   </faq>
 
   <faq id="5">
@@ -53,49 +53,49 @@
     <question>How does the program work? What is the overall structure?</question>
     <answer>The MiCBT Guide delivers a 10-week, 4-stage program: Stage 1 — Personal Stage (Weeks 1–4): Develops foundational mindfulness skills — breath awareness, body scanning, and emotional regulation through equanimity.Stage 2 — Interpersonal Awareness Stage (Weeks 5–6): Applies skills to overcome avoidance and build self-confidence using Bipolar Exposure.Stage 3 — Interpersonal Stage (Weeks 7–8): Focuses on improving relationships through mindful communication and the assertiveness technique of Experiential Ownership.Stage 4 — Compassion Stage (Weeks 9–10): Cultivates compassion for self and others through loving-kindness meditation and ethical living. Each stage includes guided meditations (twice daily), assessments, video guidance, readings, and a practice diary.</answer>
     <category>Get Started</category>
-    <keywords>does, program, work?, what, overall</keywords>
+    <keywords>does, program, work, what, overall</keywords>
   </faq>
 
   <faq id="7">
     <question>How do I navigate the app?</question>
     <answer>The app has five main sections in the bottom navigation bar: Home — your current stage and stepDiary — your practice logGoals — set and review your goalsAssessments — all seven tracking toolsMore — settings, timers, reminders, and other options From Home, tap your current stage number, then the step you are working on. Each step contains a guide, audio instructions, and links to relevant assessments.</answer>
     <category>Using the App</category>
-    <keywords>navigate, app?</keywords>
+    <keywords>navigate</keywords>
   </faq>
 
   <faq id="8">
     <question>How do I log my meditation practice?</question>
     <answer>Option 1 — from Home: Tap Home from the main menu.Select the relevant stage and step number you are currently on.Tap Log my practice and enter the details.Tap Submit to save. Option 2 — from Diary: Tap Diary in the bottom navigation bar.Tap Display Log.Tap the + icon.Enter your practice details and tap Submit.</answer>
     <category>Using the App</category>
-    <keywords>meditation, practice?</keywords>
+    <keywords>meditation, practice</keywords>
   </faq>
 
   <faq id="9">
     <question>How do I view my practice history?</question>
     <answer>Tap Diary in the bottom navigation bar.Tap Display Log (orange button). Your log shows all recorded sessions. Switch between Week, Month, and Year views using the tabs at the top. The colour-coded calendar gives you a quick visual of your consistency.</answer>
     <category>Using the App</category>
-    <keywords>view, practice, history?</keywords>
+    <keywords>view, practice, history</keywords>
   </faq>
 
   <faq id="10">
     <question>How do I set a meditation reminder?</question>
     <answer>Tap More and select My Reminders.Tap the + icon to add a new reminder.Choose the time of day.Select the day(s) of the week.Tap Add Reminder to save. You can set multiple reminders — for example, one for a morning session and one for an evening session. To edit a reminder, select it, make your changes, and tap Modify Reminder. To delete, swipe left and tap the trash icon.</answer>
     <category>Using the App</category>
-    <keywords>meditation, reminder?</keywords>
+    <keywords>meditation, reminder</keywords>
   </faq>
 
   <faq id="11">
     <question>How do I create a meditation timer?</question>
     <answer>Tap More &gt; My Timers.Tap the + icon.Enter a name for your timer.Use the slider to set the duration.Tap Save. To edit a timer, swipe right and tap the pen icon. To delete, swipe left and tap the trash icon.</answer>
     <category>Using the App</category>
-    <keywords>create, meditation, timer?</keywords>
+    <keywords>create, meditation, timer</keywords>
   </faq>
 
   <faq id="12">
     <question>Can I look ahead to see what&#x27;s in upcoming stages?</question>
     <answer>Yes. Tap More, then toggle the switch next to Unlock All Stages. This gives you access to all steps and stages in the app. This is useful for previewing content, but we recommend continuing to work through your current stage in sequence for your actual practice — the program is designed to build skills progressively.</answer>
     <category>Using the App</category>
-    <keywords>look, ahead, what&#x27;s, upcoming, stages?</keywords>
+    <keywords>look, ahead, whats, upcoming, stages</keywords>
   </faq>
 
   <faq id="13">
@@ -109,35 +109,35 @@
     <question>How do I rewind or fast-forward the meditation audio?</question>
     <answer>Tap the fast-forward or rewind button on the audio player. Each tap moves the time by 5 seconds. Note: the slider bar displays your position in the audio but does not support dragging to skip — use the tap buttons instead.</answer>
     <category>Using the App</category>
-    <keywords>rewind, fast-forward, meditation, audio?</keywords>
+    <keywords>rewind, fast-forward, meditation, audio</keywords>
   </faq>
 
   <faq id="15">
     <question>What is MiCBT?</question>
     <answer>MiCBT (Mindfulness-integrated Cognitive Behaviour Therapy) was developed by Dr Bruno Cayoun. It combines two evidence-based approaches: mindfulness meditation and cognitive behaviour therapy (CBT). Traditional CBT helps you identify and change unhelpful thoughts and behaviours. Mindfulness meditation develops your ability to observe thoughts and body sensations without automatically reacting to them. MiCBT integrates these by using body-based mindfulness — particularly body scanning — to address the physical dimension of emotional experience. The program has been used with thousands of people across many countries, ages, and cultures, including those with anxiety, depression, PTSD, chronic pain, and everyday stress.</answer>
     <category>Understanding MiCBT</category>
-    <keywords>what, micbt?</keywords>
+    <keywords>what, micbt</keywords>
   </faq>
 
   <faq id="16">
     <question>Who developed MiCBT and who delivers the guided meditations?</question>
     <answer>Dr Bruno Cayoun is the developer of MiCBT and the meditation instructor in the app. He is a clinical psychologist and researcher who developed MiCBT over more than two decades of clinical practice and research. The meditations are delivered in his voice — he has a French accent, which some find charming! The current book underpinning the program is Mindfulness-integrated CBT for Well-Being and Personal Growth (Second Edition, 2026), co-authored by Dr Cayoun and Dr Andrea Grabovac.</answer>
     <category>Understanding MiCBT</category>
-    <keywords>developed, micbt, delivers, guided, meditations?</keywords>
+    <keywords>developed, micbt, delivers, guided, meditations</keywords>
   </faq>
 
   <faq id="17">
     <question>What is equanimity and why does it matter?</question>
     <answer>Equanimity is the ability to observe your experience — particularly body sensations — without reacting to it. Not suppressing it, not amplifying it. Just noticing, with stable, open awareness. In everyday life, we automatically react to what we feel. Pleasant sensations draw us in — we want more. Unpleasant ones push us away — we want them gone. These automatic reactions (craving and aversion) drive much of our distress, avoidance, and unhelpful behaviour. MiCBT trains equanimity through body scanning: you practise noticing sensations — whatever they are — without reacting. Over time, this changes how you relate to your experience across all areas of life. Research by Dr Alice Shires, Dr Cayoun, and colleagues shows equanimity is the core mechanism of benefit in MiCBT.</answer>
     <category>Understanding MiCBT</category>
-    <keywords>what, equanimity, does, matter?</keywords>
+    <keywords>what, equanimity, does, matter</keywords>
   </faq>
 
   <faq id="18">
     <question>What is the Co-Emergence Model of Reinforcement (CMR)?</question>
     <answer>The Co-Emergence Model of Reinforcement (CMR) is the theoretical framework developed by Dr Cayoun to explain how thoughts and body sensations interact to create and maintain habits and emotional patterns. The key idea: whenever a thought arises, a corresponding body sensation arises with it — and vice versa. This is co-emergence. When we react to the body sensation (by trying to hold on to pleasant ones or push away unpleasant ones), we reinforce the associated thought pattern. This is how emotional habits get strengthened over time. MiCBT uses body scanning to interrupt this cycle: by observing sensations with equanimity instead of reacting to them, we stop reinforcing the unhelpful thought-sensation loop, and over time the patterns weaken.</answer>
     <category>Understanding MiCBT</category>
-    <keywords>what, co-emergence, model, reinforcement, (cmr)?</keywords>
+    <keywords>what, co-emergence, model, reinforcement</keywords>
   </faq>
 
   <faq id="19">
@@ -151,7 +151,7 @@
     <question>Why does MiCBT work in stages?</question>
     <answer>The four stages build on each other deliberately: Stage 1 (Personal): Develops sustained attention and equanimity toward your own internal experience.Stage 2 (Interpersonal Awareness): Applies those skills outward — to situations you have been avoiding and to building self-confidence.Stage 3 (Interpersonal): Extends mindfulness into relationships — how you relate to and communicate with others.Stage 4 (Compassion): Cultivates generosity toward self and others, and establishes ethical living as a foundation for lasting wellbeing. Each stage assumes the skills of the previous one. Practising Stage 2 exposure work without the equanimity built in Stage 1, for example, simply means bringing more reactivity to feared situations rather than less.</answer>
     <category>Understanding MiCBT</category>
-    <keywords>does, micbt, work, stages?</keywords>
+    <keywords>does, micbt, work, stages</keywords>
   </faq>
 
   <faq id="21">
@@ -165,7 +165,7 @@
     <question>Who can benefit from MiCBT?</question>
     <answer>MiCBT can benefit anyone seeking to improve their mental and emotional wellbeing, whether or not they have a diagnosed condition. The program has demonstrated benefits for people across countries and cultures, and for ages from about seven upward. It is particularly helpful for: Anxiety and stressDepressionPTSD and traumaChronic painRelationship difficultiesLow self-confidenceAnyone seeking greater clarity, calm, and emotional resilience People using it alongside therapy often find the two approaches complement each other well. For those with severe trauma or a current mental health crisis, working with a trained MiCBT facilitator alongside the app is recommended.</answer>
     <category>Understanding MiCBT</category>
-    <keywords>benefit, from, micbt?</keywords>
+    <keywords>benefit, from, micbt</keywords>
   </faq>
 
   <faq id="23">
@@ -179,98 +179,98 @@
     <question>What do I practise in Stage 1.1 (Week 1)?</question>
     <answer>Practice: Mindfulness of breath — 20 minutes, twice daily. Stage 1.1 establishes the foundations: a regular practice schedule, a clear commitment to yourself, and your first experiences of formal mindfulness meditation. The core practice is breath awareness: sit comfortably, close your eyes, and rest your attention on the natural sensations of breathing — the touch of air at the nostrils, or the rise and fall of the chest or abdomen. When the mind wanders, notice that it has wandered and gently return attention to the breath, without judgment. You also begin Progressive Muscle Relaxation (PMR) this stage: systematically tensing and releasing muscle groups to develop body awareness and the contrast between tension and relaxation. Set your goals at the start of this stage so you have a clear sense of what you are working toward.</answer>
     <category>Stage Guides</category>
-    <keywords>what, practise, stage, (week</keywords>
+    <keywords>what, practise, stage, week</keywords>
   </faq>
 
   <faq id="25">
     <question>What do I practise in Stage 1.2 (Week 2)?</question>
     <answer>Practice: Mindfulness of breath — 30 minutes, twice daily. Stage 1.2 extends breath awareness to 30 minutes and deepens attention regulation. With more time in practice, you will notice more of what the mind does — the stories it tells, the places it wanders. The key skill being developed is recognising when attention has moved away from the breath and returning it — again and again, without frustration. Each return is the practice. This week also introduces mindfulness of thoughts: noticing thoughts as mental events rather than facts, and not getting entangled in them. Keep your Practice Diary consistently from this stage.</answer>
     <category>Stage Guides</category>
-    <keywords>what, practise, stage, (week</keywords>
+    <keywords>what, practise, stage, week</keywords>
   </faq>
 
   <faq id="26">
     <question>What do I practise in Stage 1.3 (Week 3)?</question>
     <answer>Practice: Body scanning — 30 minutes, twice daily. Stage 1.3 introduces the body scan — the central practice of MiCBT. Instead of resting attention on the breath, you move it systematically through the body, part by part, noticing whatever sensations are present: tingling, pressure, temperature, vibration, pain, numbness, or nothing at all. The instruction is to observe with equanimity — not to try to change or fix sensations, but simply to notice them. This is where the Co-Emergence Model becomes tangible: you begin to see how emotions arise as body sensations, and practise not reacting to them. It is normal for some areas to feel blank (no sensation) — interoceptive awareness develops gradually with consistent practice.</answer>
     <category>Stage Guides</category>
-    <keywords>what, practise, stage, (week</keywords>
+    <keywords>what, practise, stage, week</keywords>
   </faq>
 
   <faq id="27">
     <question>What do I practise in Stage 1.4 (Week 4)?</question>
     <answer>Practice: Body scanning + mindful activities. Stage 1.4 begins the transfer of mindfulness skills into daily life. Alongside your formal body scanning sessions, you bring mindful awareness into everyday activities — eating, walking, washing dishes, conversations. This is not about doing things slowly or reverently. It is about noticing what is actually happening in each moment rather than moving through life on autopilot. Immobility practice is also introduced: remaining still during body scanning even when there is an urge to move, scratch, or adjust. This develops the capacity to tolerate discomfort without reacting — a skill that transfers directly to difficult emotions. Review your goals this stage — several weeks in, they may need updating.</answer>
     <category>Stage Guides</category>
-    <keywords>what, practise, stage, (week</keywords>
+    <keywords>what, practise, stage, week</keywords>
   </faq>
 
   <faq id="28">
     <question>What do I practise in Stage 2.1 (Week 5)?</question>
     <answer>Practice: Bilateral (symmetrical) body scanning + SUDS hierarchy work. Stage 2.1 introduces bilateral scanning — attention moves simultaneously across both sides of the body (left and right together). You also begin structured exposure work using the SUDS hierarchy: identifying five situations you typically avoid and beginning to face them in order of increasing difficulty. The body scanning develops the equanimity needed to face avoided situations without being overwhelmed.</answer>
     <category>Stage Guides</category>
-    <keywords>what, practise, stage, (week</keywords>
+    <keywords>what, practise, stage, week</keywords>
   </faq>
 
   <faq id="29">
     <question>What do I practise in Stage 2.2 (Week 6)?</question>
     <answer>Practice: Bilateral scanning + Bipolar Exposure. Stage 2.2 focuses on self-confidence using Bipolar Exposure: a two-step imagination technique where you first vividly imagine a worst-case scenario in a feared situation (while observing body sensations with equanimity) and then shift to a best-case scenario. By developing equanimity toward both extremes, you reduce the emotional charge of feared outcomes and increase resilience. Sweeping en masse is introduced in the formal meditation: attention moves through the body in a broad, flowing wave rather than part by part.</answer>
     <category>Stage Guides</category>
-    <keywords>what, practise, stage, (week</keywords>
+    <keywords>what, practise, stage, week</keywords>
   </faq>
 
   <faq id="30">
     <question>What do I practise in Stage 3.1 (Week 7)?</question>
     <answer>Practice: Bilateral scanning + interpersonal awareness. Stage 3.1 extends mindfulness into relationships. The focus is on interpersonal awareness — noticing how you respond in social situations, what arises in the body when you are with others, and how habitual patterns play out in interactions. Experiential Ownership (a seven-statement assertiveness framework) is introduced, helping you communicate needs and boundaries clearly and respectfully while remaining mindful of body sensations.</answer>
     <category>Stage Guides</category>
-    <keywords>what, practise, stage, (week</keywords>
+    <keywords>what, practise, stage, week</keywords>
   </faq>
 
   <faq id="31">
     <question>What do I practise in Stage 3.2 (Week 8)?</question>
     <answer>Practice: Bilateral scanning + mindful speech. Stage 3.2 focuses on mindful communication — how you speak, listen, and engage with others. Mindful speech practice involves noticing body sensations before and during communication: what arises when you want to say something difficult, when you feel unheard, or when a conversation goes well. Transversal scanning is introduced in the formal meditation: attention moves through the body in a front-to-back direction, developing even finer interoceptive awareness.</answer>
     <category>Stage Guides</category>
-    <keywords>what, practise, stage, (week</keywords>
+    <keywords>what, practise, stage, week</keywords>
   </faq>
 
   <faq id="32">
     <question>What do I practise in Stage 4.1 (Week 9)?</question>
     <answer>Practice: Loving-kindness (metta) meditation + bilateral scanning + ECD. Stage 4.1 introduces loving-kindness meditation — deliberately cultivating goodwill toward yourself and others. After three stages of inward work, this stage turns attention outward. The practice begins with yourself (the hardest person for many), then extends to loved ones, neutral people, difficult people, and ultimately all beings. Loving-kindness can feel forced at first — that reaction is itself worth noticing and observing with equanimity. The ECD (Ethical Challenges Diary) is also introduced this stage.</answer>
     <category>Stage Guides</category>
-    <keywords>what, practise, stage, (week</keywords>
+    <keywords>what, practise, stage, week</keywords>
   </faq>
 
   <faq id="33">
     <question>What do I practise in Stage 4.2 (Week 10)?</question>
     <answer>Practice: Full integration — sweeping in depth + relapse prevention. Stage 4.2 is the culmination of the program. All practices come together: breath awareness, body scanning, bilateral scanning, loving-kindness, the assessments, and the ECD. Sweeping in depth is introduced — the final and most refined scanning technique, where attention penetrates simultaneously through all layers of the body. This can produce strong sensations of bliss or unexpected emotions — both are normal and should be observed with equanimity. The focus of Stage 4.2 is sustainability: reviewing your goals, comparing your final assessment scores to your Stage 1.1 baselines, and establishing a practice that continues beyond the program.</answer>
     <category>Stage Guides</category>
-    <keywords>what, practise, stage, (week, 10)?</keywords>
+    <keywords>what, practise, stage, week</keywords>
   </faq>
 
   <faq id="34">
     <question>I&#x27;m struggling to make time for practice. What if I don&#x27;t have time?</question>
     <answer>Starting small is better than not starting at all. Even one daily session is more beneficial than none, though research shows two daily sessions produce significantly better results. The key is consistency, not duration. Most people find that once they experience the genuine benefits of practice, they naturally make time for it. Try setting a specific time each day — perhaps right after waking or before bed — and treat it like an appointment with yourself. After a couple of weeks of consistent practice, it typically becomes a natural habit.</answer>
     <category>Meditation Practice</category>
-    <keywords>struggling, make, time, practice., what</keywords>
+    <keywords>struggling, make, time, practice, what</keywords>
   </faq>
 
   <faq id="35">
     <question>Why do I need to practise twice daily? Can I just do it once?</question>
     <answer>Once daily is better than not practising at all. However, research shows that twice-daily practice produces significantly better results. The schedule is deliberate: the morning session refreshes the skills developed the evening before, and the evening session consolidates what happened during the day. If twice daily feels genuinely impossible right now, prioritise once daily and work toward adding the second session when circumstances allow.</answer>
     <category>Meditation Practice</category>
-    <keywords>need, practise, twice, daily?, just</keywords>
+    <keywords>need, practise, twice, daily, just</keywords>
   </faq>
 
   <faq id="36">
     <question>I keep falling asleep during meditation. What should I do?</question>
     <answer>Sleepiness during meditation (known as torpor) is one of the classic challenges of practice, especially in the early weeks or during evening sessions. Several things help: Sit upright with your spine self-supporting — not leaning against a wall or chair back.Keep your eyes slightly open, directed downward at a 45-degree angle rather than fully closed.Choose a slightly cooler environment.Avoid practising immediately after a heavy meal or when sleep-deprived.If evening sleepiness is a consistent problem, try moving your evening session earlier in the evening. Drowsiness often signals that your nervous system is genuinely relaxing — not always bad — but if it consistently prevents engagement with the practice, the adjustments above should help.</answer>
     <category>Meditation Practice</category>
-    <keywords>keep, falling, asleep, during, meditation.</keywords>
+    <keywords>keep, falling, asleep, during, meditation</keywords>
   </faq>
 
   <faq id="37">
     <question>Can I lie down during meditation?</question>
     <answer>For maintenance practice once the program is complete, yes. However, during the initial 10-week program, practising in an upright seated position is strongly recommended for two reasons: Lying down — especially when tired — makes falling asleep much more likely, which prevents skill development.The upright posture trains your nervous system to associate that position with focused, alert attention. If sitting fully upright is difficult due to back or other physical issues, sitting in a chair with back support is a good alternative.</answer>
     <category>Meditation Practice</category>
-    <keywords>down, during, meditation?</keywords>
+    <keywords>down, during, meditation</keywords>
   </faq>
 
   <faq id="38">
@@ -284,7 +284,7 @@
     <question>I have intrusive thoughts during meditation. Does this mean my mind is too busy?</question>
     <answer>No. Intrusive thoughts are universal — the goal of mindfulness is not to stop thinking but to change your relationship with thoughts. Notice them without engaging, like clouds passing through the sky. Over time, as you practise equanimity, you react less to thoughts and they naturally have less power over you. Intrusive thoughts during meditation often simply reflect what is stored in your memory — they are not problems to be solved, they are objects of observation.</answer>
     <category>Meditation Practice</category>
-    <keywords>have, intrusive, thoughts, during, meditation.</keywords>
+    <keywords>have, intrusive, thoughts, during, meditation</keywords>
   </faq>
 
   <faq id="40">
@@ -305,7 +305,7 @@
     <question>I experience physical pain during meditation. Should I stop?</question>
     <answer>Physical discomfort or pain during meditation is common and rarely dangerous. Mindfulness practice doesn&#x27;t cause pain — it reveals what is already there (just as washing dirty clothes doesn&#x27;t create dirt; it brings out what was already present). If the pain is clearly posture-related, adjust your position.If the pain is manageable, observe it with equanimity — research suggests that focusing on an area of discomfort with equanimity can significantly reduce the intensity of unpleasantness within 30 seconds.If the pain is severe or you are concerned about a medical issue, consult your doctor.</answer>
     <category>Meditation Practice</category>
-    <keywords>experience, physical, pain, during, meditation.</keywords>
+    <keywords>experience, physical, pain, during, meditation</keywords>
   </faq>
 
   <faq id="43">
@@ -326,49 +326,49 @@
     <question>I feel nothing during body scanning. Is something wrong?</question>
     <answer>No — feeling very little in early body scanning is completely normal. Interoceptive sensitivity is a skill that develops through consistent practice, not an innate ability. If you are not feeling much: Scan slowly and give each area a moment of attention before moving on.Try not to visualise or imagine the body part — the instruction is to feel, not see.Check you are not tensing other muscles while trying to feel.Use the IAI regularly to track your awareness across the body over weeks — you will almost certainly notice improvement. Some people develop rich sensitivity within days; for others it takes several weeks. Both are fine.</answer>
     <category>Meditation Practice</category>
-    <keywords>feel, nothing, during, body, scanning.</keywords>
+    <keywords>feel, nothing, during, body, scanning</keywords>
   </faq>
 
   <faq id="46">
     <question>I feel agitated or restless during meditation. Is this normal?</question>
     <answer>Yes — agitation and restlessness are common, especially at the beginning of practice. Rather than a problem, this may be valuable information: agitation often points to stored tension or emotional energy that is now becoming perceptible through the practice. Observe the quality and location of the restlessness with equanimity. Don&#x27;t try to suppress it or force calmness — simply notice it. Over time, as equanimity develops, agitation during practice typically settles.</answer>
     <category>Meditation Practice</category>
-    <keywords>feel, agitated, restless, during, meditation.</keywords>
+    <keywords>feel, agitated, restless, during, meditation</keywords>
   </faq>
 
   <faq id="47">
     <question>During meditation, my eyes move toward the area I&#x27;m scanning. Is that a problem?</question>
     <answer>This is a common experience when starting body scanning. Many people instinctively use their visual sense to &#x27;support&#x27; the movement of attention. However, this creates unnecessary tension in the eye muscles and can cause headaches or tiredness. The practice is to move attention internally, without visual support. Try letting your gaze remain soft and still — eyes closed, or gently downcast — while moving your felt sense of attention through the body. With practice, the habit of using the eyes diminishes.</answer>
     <category>Meditation Practice</category>
-    <keywords>during, meditation,, eyes, move, toward</keywords>
+    <keywords>during, meditation, eyes, move, toward</keywords>
   </faq>
 
   <faq id="48">
     <question>I practise PMR but I dislike the feeling of tightening my muscles. Do I have to do it?</question>
     <answer>PMR uses the contrast between tension and relaxation to help you recognise what relaxation actually feels like — this awareness is foundational for the later body scanning practices. If the tensing is unpleasant, you can reduce the intensity — tense to about 50% of your maximum rather than full tension. This still creates enough contrast to develop the skill. If you have a physical condition that makes tensing painful (such as back injury or inflammatory conditions), simply omit the tense phase for those areas and focus on the releasing phase only.</answer>
     <category>Meditation Practice</category>
-    <keywords>practise, dislike, feeling, tightening, muscles.</keywords>
+    <keywords>practise, dislike, feeling, tightening, muscles</keywords>
   </faq>
 
   <faq id="49">
     <question>I feel anxious during PMR. Am I doing something wrong?</question>
     <answer>No. It is common to feel unsettled during the first few PMR sessions. PMR itself does not create anxiety — rather, the increased body awareness can bring already-present tension or anxiety to conscious attention. The anxiety you feel is likely what has been there all along, now becoming noticeable through the practice. Continue practising calmly with the sensations rather than trying to push them away. This is equanimity in action. If the anxiety is severe or distressing, pause and speak with a healthcare provider.</answer>
     <category>Meditation Practice</category>
-    <keywords>feel, anxious, during, pmr., doing</keywords>
+    <keywords>feel, anxious, during, doing, something</keywords>
   </faq>
 
   <faq id="50">
     <question>I have back or health issues. How do I adapt the PMR practice?</question>
     <answer>Be gentle with areas that need special care. When instructions suggest arching or tensing your back, adapt the movement or skip that area entirely and focus on the releasing phase only. Similarly, if you have joint pain or other physical conditions, modify any movement that causes sharp pain. The general principle: if an area is contraindicated, focus your attention on that area during the release phase only, noticing any sensations present without adding tension. Your safety always comes first.</answer>
     <category>Meditation Practice</category>
-    <keywords>have, back, health, issues., adapt</keywords>
+    <keywords>have, back, health, issues, adapt</keywords>
   </faq>
 
   <faq id="51">
     <question>I experienced an out-of-body experience during meditation. Is that okay?</question>
     <answer>Unusual experiences — feeling like you are floating, observing yourself from above, or an intense sense of dissolution — are not uncommon for meditators who reach certain levels of skill. The instruction is to observe these experiences with equanimity rather than becoming attached to or frightened by them. If you find yourself enjoying or pursuing the experience, notice the craving that arises; if frightened, notice the aversion. These responses are themselves opportunities to practise equanimity. Such experiences, while interesting, are not the goal of meditation. The goal is the continued development of equanimity.</answer>
     <category>Meditation Practice</category>
-    <keywords>experienced, out-of-body, experience, during, meditation.</keywords>
+    <keywords>experienced, out-of-body, experience, during, meditation</keywords>
   </faq>
 
   <faq id="52">
@@ -389,7 +389,7 @@
     <question>Why do I scan the body in a specific order (top to bottom)?</question>
     <answer>There are three reasons for the consistent top-to-bottom order: Completeness: Scanning in the same order ensures you don&#x27;t skip any areas, especially smaller or less obvious ones.Sustained attention: Moving attention in a predictable, systematic direction trains the kind of sustained, methodical attention that transfers to how you engage with challenges in daily life.Research integrity: Scanning in the standard order maintains the integrity of the practice as taught and researched.</answer>
     <category>Body Scanning</category>
-    <keywords>scan, body, specific, order, (top</keywords>
+    <keywords>scan, body, specific, order, bottom</keywords>
   </faq>
 
   <faq id="55">
@@ -403,7 +403,7 @@
     <question>I can&#x27;t feel sensations in certain parts of my body. What should I do?</question>
     <answer>This is entirely normal, especially when starting body scanning. When you reach a blank area: Spend a brief moment of attention there, then move on — don&#x27;t dwell.Make sure you are not trying to visualise the body part — the instruction is to feel, not see.Avoid assuming nothing is there — very subtle sensations (a faint warmth, a slight tingling) may be present and only become perceptible with patience.Track your progress with the IAI tool in Assessments — you will see improvement over weeks.</answer>
     <category>Body Scanning</category>
-    <keywords>can&#x27;t, feel, sensations, certain, parts</keywords>
+    <keywords>cant, feel, sensations, certain, parts</keywords>
   </faq>
 
   <faq id="57">
@@ -417,42 +417,42 @@
     <question>I can&#x27;t feel some body parts symmetrically. What should I do?</question>
     <answer>This is very common — don&#x27;t expect to feel both sides perfectly symmetrically at first. There will often be a &#x27;lead-lag&#x27; between sides, or one side may feel richer in sensation than the other. This is normal and typically reflects how your nervous system has learned to represent different parts of the body. Continue scanning both sides together, even if the experience is not symmetrical. Over days and weeks of practice, the bilateral sensitivity tends to even out.</answer>
     <category>Body Scanning</category>
-    <keywords>can&#x27;t, feel, some, body, parts</keywords>
+    <keywords>cant, feel, some, body, parts</keywords>
   </faq>
 
   <faq id="59">
     <question>How deep should I feel when sweeping? Just the surface, or deeper inside the body?</question>
     <answer>At the sweeping stage, don&#x27;t worry about how deep you are feeling. It is perfectly fine to only feel sensations on the surface of the skin. If you naturally begin to notice sensations slightly deeper — a warmth or pressure inside a limb — allow that, but don&#x27;t force it. Depth of awareness develops naturally as the practice matures. Trying to force deeper sensation creates unnecessary effort and tension, which is counterproductive. Simply allow your attention to rest wherever sensations are present.</answer>
     <category>Body Scanning</category>
-    <keywords>deep, should, feel, when, sweeping?</keywords>
+    <keywords>deep, should, feel, when, sweeping</keywords>
   </faq>
 
   <faq id="60">
     <question>During sweeping, I experience tingling, energy flowing, or dissolution of body parts. Is this real?</question>
     <answer>Yes — these are real perceptual experiences, not imagination. As your interoceptive awareness deepens, you become aware of increasingly subtle sensations throughout the body. The tingling or flowing sensation is commonly reported at the sweeping stage. These experiences, while fascinating, should be observed with equanimity rather than attachment — they are phenomena to be noticed, not goals to be chased. If you find yourself trying to recreate them, notice the craving that arises and observe that with equanimity too.</answer>
     <category>Body Scanning</category>
-    <keywords>during, sweeping,, experience, tingling,, energy</keywords>
+    <keywords>during, sweeping, experience, tingling, energy</keywords>
   </faq>
 
   <faq id="61">
     <question>When sweeping en masse, what do I do when sweeping doesn&#x27;t happen in some areas?</question>
     <answer>When you notice that sweeping seems to bypass certain areas, return to part-by-part scanning for those specific areas until sensations become more apparent, then resume sweeping. You do not need to scan the whole body part by part — only the areas where sweeping isn&#x27;t occurring. This combined approach — alternating sweeping and targeted part-by-part scanning — ensures you don&#x27;t leave entire regions unattended.</answer>
     <category>Body Scanning</category>
-    <keywords>when, sweeping, masse,, what, when</keywords>
+    <keywords>when, sweeping, masse, what, when</keywords>
   </faq>
 
   <faq id="62">
     <question>During sweeping en masse, do I need to return to full part-by-part scanning?</question>
     <answer>No — only for the areas where sweeping isn&#x27;t happening. When you go back to part-by-part scanning after two or three sweepings, focus only on the specific areas where you did not feel sensations as readily during the sweep. Once those areas show up more clearly, return to sweeping. You do not need to restart from the top of the head and scan every area.</answer>
     <category>Body Scanning</category>
-    <keywords>during, sweeping, masse,, need, return</keywords>
+    <keywords>during, sweeping, masse, need, return</keywords>
   </faq>
 
   <faq id="63">
     <question>What is transversal scanning and why is it introduced?</question>
     <answer>Transversal scanning (introduced in Stage 3.2 / Week 8) is a technique where attention moves through the body in a front-to-back direction (or back-to-front), rather than top-to-bottom or side-to-side. Words in the audio instructions like &#x27;piercingly&#x27; or &#x27;going through the body&#x27; describe the quality of attention required — they do not describe a physical process. What is actually happening is that you are activating neural pathways in the somatosensory and insular cortices, which represent sensations from different parts of the body. Transversal scanning develops a qualitatively different, finer, and more penetrating interoceptive awareness that builds on what sweeping has developed.</answer>
     <category>Body Scanning</category>
-    <keywords>what, transversal, scanning, introduced?</keywords>
+    <keywords>what, transversal, scanning, introduced</keywords>
   </faq>
 
   <faq id="64">
@@ -473,14 +473,14 @@
     <question>What is sweeping in depth and what is it like?</question>
     <answer>Sweeping in depth is the final and most refined scanning technique, introduced in Stage 4.2 (Week 10). Rather than moving through the body in a particular direction, attention penetrates simultaneously through all layers — skin, muscle, bone, organs — throughout the entire body. This can produce: An intense sense of spaciousness or blissApparent dissolution of the body into sensationUnexpected emotions — sadness, grief, unexpected warmth All of these are normal. Observe everything with equanimity. This technique completes the journey from gross awareness of obvious sensations to the subtlest levels of body experience.</answer>
     <category>Body Scanning</category>
-    <keywords>what, sweeping, depth, what, like?</keywords>
+    <keywords>what, sweeping, depth, what, like</keywords>
   </faq>
 
   <faq id="67">
     <question>What is Bipolar Exposure and how does it work?</question>
     <answer>Bipolar Exposure is a two-step imagination technique used in Stage 2.2 to build self-confidence and reduce the emotional charge of feared situations. Step 1 — Worst case: Vividly imagine a feared situation going as badly as possible, while observing the body sensations that arise with equanimity — without trying to suppress the distress. Hold this for several minutes. Step 2 — Best case: Shift to imagining the same situation going as well as possible. Observe the body sensations equanimously — notice the pleasant sensations without clinging to them. By practising equanimity at both extremes, you reduce the overall emotional reactivity you have toward the situation. This makes it easier to face the situation in real life. Bipolar Exposure works best when used for a few days before facing the real situation.</answer>
     <category>Bipolar Exposure &amp;amp; Avoidance</category>
-    <keywords>what, bipolar, exposure, does, work?</keywords>
+    <keywords>what, bipolar, exposure, does, work</keywords>
   </faq>
 
   <faq id="68">
@@ -494,35 +494,35 @@
     <question>Why shouldn&#x27;t I enjoy the pleasant sensations in the best-case scenario of Bipolar Exposure?</question>
     <answer>Enjoying pleasant situations as they arise in daily life is important for wellbeing — MiCBT does not discourage that. However, during Bipolar Exposure practice, the goal is to develop equanimity toward both extremes. If you allow yourself to become attached to the pleasant sensations of the best-case scenario during practice, you are rehearsing craving rather than equanimity. The aim is to reduce the emotional charge at both poles — not to replace one type of reactivity (anxiety) with another (craving). In real life, enjoyment is natural and encouraged; in the Bipolar Exposure practice itself, equanimity is the discipline.</answer>
     <category>Bipolar Exposure &amp;amp; Avoidance</category>
-    <keywords>shouldn&#x27;t, enjoy, pleasant, sensations, best-case</keywords>
+    <keywords>shouldnt, enjoy, pleasant, sensations, best-case</keywords>
   </faq>
 
   <faq id="70">
     <question>I can&#x27;t think of situations I avoid. Can Bipolar Exposure still help?</question>
     <answer>Sometimes we don&#x27;t recognise our avoidance because we have become so practised at it that we frame it differently — as &#x27;I just don&#x27;t enjoy those things&#x27; or &#x27;I have no reason to go there.&#x27; Look for situations where your choice is driven not by genuine preference but by discomfort, anxiety, or anticipated distress. Also consider interpersonal avoidance: do you avoid certain conversations, confrontations, or people? Do you avoid expressing your real opinions or needs? If avoidance is genuinely not a feature of your difficulties, focus on the aspects of Stage 2 that address your actual patterns — the SUDS hierarchy can also include situations that cause distress even if you do not strictly avoid them.</answer>
     <category>Bipolar Exposure &amp;amp; Avoidance</category>
-    <keywords>can&#x27;t, think, situations, avoid., bipolar</keywords>
+    <keywords>cant, think, situations, avoid, bipolar</keywords>
   </faq>
 
   <faq id="71">
     <question>Can I use Bipolar Exposure for addictions, habits, or urges?</question>
     <answer>Yes. Bipolar Exposure can be adapted for any situation where craving or avoidance drives behaviour — including smoking, alcohol, food urges, or other habits. The key is to identify the specific triggers (contexts, sensations, or situations that produce the urge) and include them in the worst-case scenario. Imagine the trigger vividly, observe the urge in your body with equanimity rather than acting on it, then shift to the best case: imagine resisting successfully and how you feel. This gradually reduces the emotional charge of the trigger. Start with less intense triggers before working up to the strongest ones.</answer>
     <category>Bipolar Exposure &amp;amp; Avoidance</category>
-    <keywords>bipolar, exposure, addictions,, habits,, urges?</keywords>
+    <keywords>bipolar, exposure, addictions, habits, urges</keywords>
   </faq>
 
   <faq id="72">
     <question>What is Experiential Ownership and how does it work?</question>
     <answer>Experiential Ownership is a seven-statement assertiveness framework taught in Stage 3.1 (Week 7). It helps you communicate needs, boundaries, and concerns clearly and respectfully, while remaining mindful of your own body sensations. The seven statements guide you through: Acknowledging what you observeAcknowledging your possible error in judgmentExpressing how you feelStating what you needMaking a specific request of the other personStating what you are willing to doStating what the consequences will be if the situation does not change The framework is designed to reduce blame and defensiveness while maintaining clarity about your needs. With practice, the language becomes more natural and less formulaic.</answer>
     <category>Assertiveness &amp;amp; Relationships</category>
-    <keywords>what, experiential, ownership, does, work?</keywords>
+    <keywords>what, experiential, ownership, does, work</keywords>
   </faq>
 
   <faq id="73">
     <question>My partner becomes defensive when I try to be assertive. Am I doing something wrong?</question>
     <answer>Defensiveness from others is common when assertive communication is new — particularly if past interactions have been aggressive, passive, or unclear. It does not necessarily mean you are doing something wrong. A few things to check: Are you using a calm, even tone and watching your body language?Is the timing right — not during an argument or when either of you is stressed?Are the seven statements coming across as genuine ownership of your experience rather than veiled blame? It often takes time for the other person to adjust to a new style of communication. Practise the framework in lower-stakes situations first to build familiarity.</answer>
     <category>Assertiveness &amp;amp; Relationships</category>
-    <keywords>partner, becomes, defensive, when, assertive.</keywords>
+    <keywords>partner, becomes, defensive, when, assertive</keywords>
   </faq>
 
   <faq id="74">
@@ -536,7 +536,7 @@
     <question>Can I use the assertiveness framework with my children?</question>
     <answer>Yes — the framework can be adapted for parenting. You will need to adjust the language to suit your child&#x27;s age and understanding, but the principles of clear, respectful, non-blaming communication apply equally well in parent-child relationships. Your practice of equanimity in interactions with your children — staying calm while setting clear boundaries — is itself a powerful form of teaching.</answer>
     <category>Assertiveness &amp;amp; Relationships</category>
-    <keywords>assertiveness, framework, with, children?</keywords>
+    <keywords>assertiveness, framework, with, children</keywords>
   </faq>
 
   <faq id="76">
@@ -550,7 +550,7 @@
     <question>I understand I should live more ethically, but the five ethical challenges sound moralistic. Does MiCBT tell me how to live?</question>
     <answer>Not at all. MiCBT does not make moral judgments or impose specific behaviours. The five ethical guidelines are framed not as moral rules but as practices that reduce harm — to yourself and others — and support the development of equanimity and wellbeing. There is nothing inherently wrong with flirting, sexual expression, or enjoying a drink. The question each challenge invites is: in what ways might this action cause suffering — for myself, or for others? The ECD tool in the app helps you track your own experience of applying effort in this direction — the insight comes from your own observation, not from being told what to do.</answer>
     <category>Compassion &amp;amp; Ethics</category>
-    <keywords>understand, should, live, more, ethically,</keywords>
+    <keywords>understand, should, live, more, ethically</keywords>
   </faq>
 
   <faq id="78">
@@ -578,28 +578,28 @@
     <question>How do I access the assessments?</question>
     <answer>Option 1 — from your current stage: Tap Home and select your current stage and step.Scroll to the bottom of the page and tap Assessments.Tap the assessment you would like to complete. Option 2 — directly: Tap Assessments in the bottom navigation bar.Select the relevant tool from the list.</answer>
     <category>My Assessments</category>
-    <keywords>access, assessments?</keywords>
+    <keywords>access, assessments</keywords>
   </faq>
 
   <faq id="82">
     <question>How do I delete an assessment entry?</question>
     <answer>Tap Assessments in the bottom navigation bar.Select the relevant assessment.Locate the entry you want to delete. (For some assessments, tap View Progress to see all entries.)Swipe left on the entry and tap the trash icon.</answer>
     <category>My Assessments</category>
-    <keywords>delete, assessment, entry?</keywords>
+    <keywords>delete, assessment, entry</keywords>
   </faq>
 
   <faq id="83">
     <question>How do I use the DASS-21?</question>
     <answer>Tap Assessments and select DASS-21.Read each statement and select how much it applied to you over the past week.Answer honestly — there are no right or wrong answers.Tap Submit. Your scores are tracked over time. To view all three graphs (depression, anxiety, stress), tap the orange arrow above the graph.</answer>
     <category>DASS-21</category>
-    <keywords>dass-21?</keywords>
+    <keywords>dass-21</keywords>
   </faq>
 
   <faq id="84">
     <question>What is the ES-16 (Equanimity Scale)?</question>
     <answer>The ES-16 measures equanimity — your ability to accept your experience and not react automatically to it. It has two subscales: Experiential Acceptance — allowing your experience to be present without fighting or suppressing it.Non-Reactivity — not being driven to act on the experience automatically. These are related but distinct. The total ES-16 score is the most accurate measure of equanimity as a combined quality, and is the primary metric to track across the program.</answer>
     <category>ES-16</category>
-    <keywords>what, es-16, (equanimity, scale)?</keywords>
+    <keywords>what, es-16, equanimity, scale</keywords>
   </faq>
 
   <faq id="85">
@@ -613,35 +613,35 @@
     <question>What does the MSES-R measure?</question>
     <answer>The MSES-R (Mindfulness-based Self-Efficacy Scale — Revised) measures your confidence in using mindfulness skills across six life domains: Emotion Regulation — managing intense emotions without being overwhelmed.Equanimity — observing experiences without reactivity.Social Skills — engaging effectively and mindfully in social situations.Distress Tolerance — tolerating difficult experiences without avoidance.Taking Responsibility — recognising and owning the impact of your actions.Interpersonal Effectiveness — communicating in ways that reflect your values. The total score across all six subscales is the most direct measure of overall mindfulness-based self-efficacy.</answer>
     <category>MSES-R</category>
-    <keywords>what, does, mses-r, measure?</keywords>
+    <keywords>what, does, mses-r, measure</keywords>
   </faq>
 
   <faq id="87">
     <question>What is the IAI (Interoceptive Awareness Indicator)?</question>
     <answer>Interoceptive awareness is the ability to feel sensations within the body — just as vision is the ability to see. The IAI is a body map tool where you colour in all areas of the body where you can feel sensations during body scanning. The percentage of the body you colour is calculated and tracked over time, giving you a direct measure of how your interoceptive awareness is developing across the program.</answer>
     <category>IAI</category>
-    <keywords>what, (interoceptive, awareness, indicator)?</keywords>
+    <keywords>what, interoceptive, awareness, indicator</keywords>
   </faq>
 
   <faq id="88">
     <question>What is the MISS (Mindfulness-based Interoceptive Signature Scale)?</question>
     <answer>The MISS measures two aspects of body sensations during distressing experiences: Specificity — the particular qualities of sensations, described through four elements: Mass (Earth), Temperature (Fire), Motion (Air), and Fluidity (Water).Intensity — how strong the sensations are. You record sensations both before applying equanimity and after 30 seconds of equanimous observation. The change between the two is your key measure of progress.</answer>
     <category>MISS</category>
-    <keywords>what, miss, (mindfulness-based, interoceptive, signature</keywords>
+    <keywords>what, miss, mindfulness-based, interoceptive, signature</keywords>
   </faq>
 
   <faq id="89">
     <question>The MISS slider won&#x27;t move / I can&#x27;t save the MISS.</question>
     <answer>If the slider won&#x27;t move: Try changing the angle of your finger or using a different finger.Make sure you are moving the dot along the horizontal line, not just tapping it. If the MISS won&#x27;t save: Make sure all four blue dots on all sliding scales have been moved from their default position.Once the Fluidity dot is moved and the line is drawn, values cannot be changed — tap the back arrow to re-enter if needed.</answer>
     <category>MISS</category>
-    <keywords>miss, slider, won&#x27;t, move, can&#x27;t</keywords>
+    <keywords>miss, slider, wont, move, cant</keywords>
   </faq>
 
   <faq id="90">
     <question>What is the SUDS?</question>
     <answer>The SUDS (Subjective Units of Distress Scale) measures the level of distress you expect to experience in situations you have been avoiding. You rate five situations on a scale from 0 (no distress) to 100 (maximum distress). Track your progress by re-rating each situation as you work through the Bipolar Exposure technique. As equanimity develops and avoidance decreases, scores should decline over time.</answer>
     <category>SUDS</category>
-    <keywords>what, suds?</keywords>
+    <keywords>what, suds</keywords>
   </faq>
 
   <faq id="91">
@@ -655,112 +655,112 @@
     <question>What is the ECD (Ethical Conduct Diary)?</question>
     <answer>The ECD tracks your effort to apply the five ethical challenges in daily life: Refraining from harm to living beingsRefraining from taking what is not givenRefraining from sexual misconductRefraining from false speechRefraining from intoxicants For each entry, you record the situation, how long you managed to apply effort, and reflect on the experience. The ECD is not a tool of self-judgment — it is a tool of awareness.</answer>
     <category>ECD</category>
-    <keywords>what, (ethical, conduct, diary)?</keywords>
+    <keywords>what, ethical, conduct, diary</keywords>
   </faq>
 
   <faq id="93">
     <question>What is a &#x27;situation of potential harm&#x27; in the ECD?</question>
     <answer>A situation of potential harm is any scenario where your actions could harm yourself or someone else. Examples include: Deceiving othersTaking something that isn&#x27;t yoursUsing harsh or divisive languageSexually exploiting someoneConsuming intoxicantsAny other behaviour that causes suffering to yourself or others The ECD is not about self-judgment — it is about developing awareness of your patterns and gradually applying more conscious effort.</answer>
     <category>ECD</category>
-    <keywords>what, &#x27;situation, potential, harm&#x27;, ecd?</keywords>
+    <keywords>what, situation, potential, harm</keywords>
   </faq>
 
   <faq id="94">
     <question>How do I add goals?</question>
     <answer>Tap Goals in the bottom navigation bar, or navigate to Stage 1 &gt; Step 1 and tap Start.Describe the problem or difficulty you would like to address.Rate how much it affects your life.Tap Save. Try to set 3–5 goals that reflect your main reasons for starting the program. Goals can be specific (e.g., reduce anxiety about social situations) or broader (e.g., feel more settled and in control).</answer>
     <category>My Goals</category>
-    <keywords>goals?</keywords>
+    <keywords>goals</keywords>
   </faq>
 
   <faq id="95">
     <question>How do I edit, update, or mark a goal as complete?</question>
     <answer>To edit or update a goal: Tap Goals in the bottom navigation bar.Tap the pen icon next to the goal you would like to update.Tick any progress indicators you have achieved.Tap Update to save. To mark a goal as complete: Tap the pen icon next to the goal.Tap Complete and confirm by tapping Goal Achieved? The goal will be moved to your completed list. It is normal for goals to evolve as you progress — revisit and update them at each stage. To delete a goal: Swipe left on the goal and tap the trash icon. Note: deleting is permanent and cannot be undone. If you have achieved a goal, mark it as complete rather than deleting it — that preserves your progress record.</answer>
     <category>My Goals</category>
-    <keywords>edit,, update,, mark, goal, complete?</keywords>
+    <keywords>edit, update, mark, goal, complete</keywords>
   </faq>
 
   <faq id="96">
     <question>The audio isn&#x27;t playing or keeps stopping.</question>
     <answer>Work through these steps in order: Check your volume — make sure your device volume is turned up and not set to silent.Check Do Not Disturb — if enabled, it may be silencing the app.Check your internet connection — the audio requires a connection to stream. Connect to Wi-Fi or mobile data.Close and reopen the app completely, then try again.Check for app updates in the App Store or Google Play.Restart your device. If the problem continues, contact support@mindfulness.net.au.</answer>
     <category>Troubleshooting</category>
-    <keywords>audio, isn&#x27;t, playing, keeps, stopping.</keywords>
+    <keywords>audio, isnt, playing, keeps, stopping</keywords>
   </faq>
 
   <faq id="97">
     <question>The app keeps crashing or won&#x27;t load.</question>
     <answer>Try these steps in order: Close and reopen the app completely (force-close).Check for updates in the App Store or Google Play.Restart your device.Uninstall and reinstall the app. Your account data is stored on the server and will not be lost — just log back in after reinstalling. If the problem continues, contact support@mindfulness.net.au with your device type and operating system version.</answer>
     <category>Troubleshooting</category>
-    <keywords>keeps, crashing, won&#x27;t, load.</keywords>
+    <keywords>keeps, crashing, wont, load</keywords>
   </faq>
 
   <faq id="98">
     <question>My data isn&#x27;t saving.</question>
     <answer>If your practice logs, assessment results, or goals are not saving: Check your internet connection — the app requires an active connection to save data.Check you are logged in — tap More to confirm your account details.Make sure you tap Submit or Save at the end of each entry — data is not auto-saved.Close and reopen the app and check whether the data now appears. If the problem persists, contact support@mindfulness.net.au.</answer>
     <category>Troubleshooting</category>
-    <keywords>data, isn&#x27;t, saving.</keywords>
+    <keywords>data, isnt, saving</keywords>
   </faq>
 
   <faq id="99">
     <question>I want to stop — the program doesn&#x27;t seem to be working.</question>
     <answer>This feeling is very common, and it almost always passes. The question worth sitting with is: what is it that wants to stop? Sometimes a phase occurs where things feel harder before they feel easier — particularly around Stages 1 and 2, when the novelty has worn off and the benefits are not yet obvious. Difficulty and discomfort during practice are often signs that something real is happening, not that you are failing. If something specific is making the program feel unsafe or actively harmful, please contact support or a mental health professional. Otherwise, try returning to your Stage 1.1 baseline assessment scores and comparing them to where you are now — the data often tells a different story than how the practice feels in a hard moment.</answer>
     <category>Troubleshooting</category>
-    <keywords>want, stop, program, doesn&#x27;t, seem</keywords>
+    <keywords>want, stop, program, doesnt, seem</keywords>
   </faq>
 
   <faq id="100">
     <question>I missed some sessions / I&#x27;m behind in the program. What should I do?</question>
     <answer>Missing some sessions is normal — life happens. A few guidelines: If you have missed a few days, simply pick up where you left off.If you have missed a week or more, spend a few days reviewing your current stage before moving forward.Do not restart from the beginning unless you feel completely unfamiliar with the practice. The skills you have developed do not disappear with a short break — they may feel rusty initially but return quickly. Consistency matters more than perfection: 13 out of 14 sessions is still excellent progress.</answer>
     <category>Troubleshooting</category>
-    <keywords>missed, some, sessions, behind, program.</keywords>
+    <keywords>missed, some, sessions, behind, program</keywords>
   </faq>
 
   <faq id="101">
     <question>I stopped practising for weeks or months. Have I lost all my progress?</question>
     <answer>No. The skills developed through MiCBT do not simply disappear. They may feel less accessible after a long break, but they return more quickly than they were originally learned — like physical fitness after a break. Simply return to practice, starting with your current stage. If things feel very unfamiliar, step back one stage temporarily. Don&#x27;t judge yourself for the break — simply begin again.</answer>
     <category>Troubleshooting</category>
-    <keywords>stopped, practising, weeks, months., have</keywords>
+    <keywords>stopped, practising, weeks, months, have</keywords>
   </faq>
 
   <faq id="102">
     <question>How do I change my password?</question>
     <answer>Tap More in the bottom navigation bar.Tap Settings.Tap Change Password.Enter your current password, then your new password, and confirm it.Tap Save. This option is only available if you registered with an email address and password. If you signed up with Google, Facebook, or Apple, manage your password through those services.</answer>
     <category>Account &amp;amp; Privacy</category>
-    <keywords>change, password?</keywords>
+    <keywords>change, password</keywords>
   </faq>
 
   <faq id="103">
     <question>How do I change my email address?</question>
     <answer>Changing your email address is not currently possible within the app. The only option is to delete your existing account and create a new one — but this will permanently remove all your data including your practice diary, assessment results, and goals. If you need to update your email address, contact support@mindfulness.net.au for advice before taking any action.</answer>
     <category>Account &amp;amp; Privacy</category>
-    <keywords>change, email, address?</keywords>
+    <keywords>change, email, address</keywords>
   </faq>
 
   <faq id="104">
     <question>How do I delete my account or all my data?</question>
     <answer>To remove data from your device: iPhone: Settings → General → iPhone Storage → MiCBT Guide → Delete App.Android: Settings → Apps → MiCBT Guide → Storage → Clear Data. Important: these steps remove data stored locally on your device. Data stored on the server (your account, diary, assessments, goals) may still be retained. To request full account deletion, contact support@mindfulness.net.au.</answer>
     <category>Account &amp;amp; Privacy</category>
-    <keywords>delete, account, data?</keywords>
+    <keywords>delete, account, data</keywords>
   </faq>
 
   <faq id="105">
     <question>What data does the app collect?</question>
     <answer>When you create an account, the MiCBT Guide collects only your: First nameLast nameEmail address Your practice data — including diary entries, assessment results, and goals — is stored securely and handled in accordance with Australian privacy law. Your personal information is not disclosed to third parties for marketing or commercial purposes.</answer>
     <category>Account &amp;amp; Privacy</category>
-    <keywords>what, data, does, collect?</keywords>
+    <keywords>what, data, does, collect</keywords>
   </faq>
 
   <faq id="106">
     <question>How do I share my records with my therapist?</question>
     <answer>The current version of the MiCBT Guide does not have a built-in feature for directly sharing records with a therapist. In the meantime, you can share your progress by: Taking screenshots of your assessment graphs, diary, or goals.Sending them via email or your preferred platform. If you have a specific request for data export, contact support@mindfulness.net.au — the team may be able to assist.</answer>
     <category>Account &amp;amp; Privacy</category>
-    <keywords>share, records, with, therapist?</keywords>
+    <keywords>share, records, with, therapist</keywords>
   </faq>
 
   <faq id="107">
     <question>My subscription isn&#x27;t showing on my new device.</question>
     <answer>Your subscription is linked to your account, not your device, so it is still valid. Make sure you are logged in to the same account on your new device.If the subscription still does not appear, tap Restore Purchases in the app.If that does not work, contact support@mindfulness.net.au with your account email.</answer>
     <category>Account &amp;amp; Privacy</category>
-    <keywords>subscription, isn&#x27;t, showing, device.</keywords>
+    <keywords>subscription, isnt, showing, device</keywords>
   </faq>
 
   <faq id="108">
@@ -781,14 +781,14 @@
     <question>I&#x27;m in therapy. Can I combine MiCBT with my therapist&#x27;s approach?</question>
     <answer>Yes — MiCBT is generally complementary to therapy and many therapists actively recommend it. Inform your therapist that you are using the program so they are aware. If you are working on specific trauma or complex mental health conditions, your therapist can help you calibrate the pace of the program to your therapeutic work. MiCBT does not replace professional mental health care — particularly for severe or complex presentations — but it provides valuable skills and self-monitoring tools that support and extend the benefits of therapy.</answer>
     <category>Doubts &amp;amp; Difficult Situations</category>
-    <keywords>therapy., combine, micbt, with, therapist&#x27;s</keywords>
+    <keywords>therapy, combine, micbt, with, therapists</keywords>
   </faq>
 
   <faq id="111">
     <question>I practise other meditation traditions (Zen, Vipassana, Transcendental Meditation). Is MiCBT compatible?</question>
     <answer>MiCBT is compatible with other meditation traditions and does not require any religious or spiritual affiliation. The body scanning technique is closely related to Vipassana (insight meditation) as taught in the Theravada tradition — if you already have a Vipassana practice, you will find much that is familiar. The key difference is MiCBT&#x27;s explicit integration with CBT techniques (exposure, assertiveness, Bipolar Exposure) and the use of validated assessment tools. Many people with existing meditation practices find that MiCBT deepens and contextualises their practice within a structured therapeutic framework.</answer>
     <category>Doubts &amp;amp; Difficult Situations</category>
-    <keywords>practise, other, meditation, traditions, (zen,</keywords>
+    <keywords>practise, other, meditation, traditions, vipassana</keywords>
   </faq>
 
   <faq id="112">
@@ -802,42 +802,42 @@
     <question>I feel like I am a failure at meditation.</question>
     <answer>Feeling like a failure at meditation is almost universal at some point in practice — and it is itself a valuable object of observation. Notice: where do you feel this in your body? What is the quality of the sensation associated with &#x27;failure&#x27;? Can you observe this without reacting to it? The feeling of failure is a thought — a self-evaluative story — and like all thoughts, it arises, exists for a moment, and passes. You cannot fail at meditation by practising. You can only practise well or less well, and both contribute to development. The very fact that you are noticing your experience critically means awareness is alive and working.</answer>
     <category>Doubts &amp;amp; Difficult Situations</category>
-    <keywords>feel, like, failure, meditation.</keywords>
+    <keywords>feel, like, failure, meditation</keywords>
   </faq>
 
   <faq id="114">
     <question>Can I use the MiCBT app in my research project?</question>
     <answer>Before using any MiCBT Institute resources or referencing MiCBT in a project, written approval from the MiCBT Institute is required. Please email admin@mindfulness.net.au with details of your project.</answer>
     <category>FAQs</category>
-    <keywords>micbt, research, project?</keywords>
+    <keywords>micbt, research, project</keywords>
   </faq>
 
   <faq id="115">
     <question>I have an idea for improving the app.</question>
     <answer>We love receiving feedback! Please send your idea to support@mindfulness.net.au. Your feedback helps us understand what is working well and what could be improved, and supports the ongoing development of the program.</answer>
     <category>FAQs</category>
-    <keywords>have, idea, improving, app.</keywords>
+    <keywords>have, idea, improving</keywords>
   </faq>
 
   <faq id="116">
     <question>How do I contact support?</question>
     <answer>For technical issues, account questions, or other enquiries: email support@mindfulness.net.au. Include a description of the issue and your device type (iPhone/Android) and operating system version if reporting a technical problem. For questions about the MiCBT Institute, training, or research: email admin@mindfulness.net.au.</answer>
     <category>FAQs</category>
-    <keywords>contact, support?</keywords>
+    <keywords>contact, support</keywords>
   </faq>
 
   <faq id="117">
     <question>I can only see the depression graph in the DASS-21. How do I view the anxiety and stress graphs?</question>
     <answer>Tap the orange arrow above the graph. Each tap moves you to the next subscale graph. The DASS-21 tracks all three scales separately — Depression, Anxiety, and Stress — each with its own trend graph.</answer>
     <category>DASS-21</category>
-    <keywords>only, depression, graph, dass-21., view</keywords>
+    <keywords>only, depression, graph, dass-21, view</keywords>
   </faq>
 
   <faq id="118">
     <question>How do I use the ES-16?</question>
     <answer>Tap Assessments and select ES-16.Read each statement and select a response indicating how much it applied to you over the past week.Answer with your first instinct — don&#x27;t spend too long on any item.Tap Submit. There are no right or wrong answers. Complete it honestly — it is a tool for your own tracking and insight.</answer>
     <category>ES-16</category>
-    <keywords>es-16?</keywords>
+    <keywords>es-16</keywords>
   </faq>
 
   <faq id="119">
@@ -851,7 +851,7 @@
     <question>How do I use the MSES-R?</question>
     <answer>Tap Assessments and select MSES-R.Read each statement and select a response indicating how much you agree with it today.Answer based on how confident you feel right now — not how you think you should feel.Tap Submit. There are no right or wrong answers. Do not spend too much time on any statement.</answer>
     <category>MSES-R</category>
-    <keywords>mses-r?</keywords>
+    <keywords>mses-r</keywords>
   </faq>
 
   <faq id="121">
@@ -872,7 +872,7 @@
     <question>What are &#x27;Community Norms&#x27; in the MSES-R?</question>
     <answer>Community Norms are the scores of the general population used as a benchmark to compare your own MSES-R results. They indicate how people without severe mental health conditions typically score on each subscale. The norms were derived from data collected from over 5,000 people internationally — primarily from Australia, Canada, New Zealand, the USA, and the UK. Seeing your score relative to these norms gives a practical sense of how your confidence in applying mindfulness compares to a broad, healthy population.</answer>
     <category>MSES-R</category>
-    <keywords>what, &#x27;community, norms&#x27;, mses-r?</keywords>
+    <keywords>what, community, norms, mses-r</keywords>
   </faq>
 
   <faq id="124">
@@ -886,42 +886,42 @@
     <question>How do I use the SWLS?</question>
     <answer>Tap Assessments and select SWLS.Read each statement and select a response indicating how much you agree with it today.Avoid comparing your life to others — base your answers on your own internal experience.Tap Submit. There are no right or wrong answers. Answer honestly from your genuine felt sense rather than how you think you should feel.</answer>
     <category>SWLS</category>
-    <keywords>swls?</keywords>
+    <keywords>swls</keywords>
   </faq>
 
   <faq id="126">
     <question>How is my SWLS life satisfaction score calculated?</question>
     <answer>Your SWLS score is determined by comparing your answers to a large sample of people from diverse backgrounds. The scale produces a total score from 5 to 35, ranging from Extremely Dissatisfied to Extremely Satisfied relative to population norms. The app tracks your score over time so you can see how your sense of life satisfaction changes as you progress through the program.</answer>
     <category>SWLS</category>
-    <keywords>swls, life, satisfaction, score, calculated?</keywords>
+    <keywords>swls, life, satisfaction, score, calculated</keywords>
   </faq>
 
   <faq id="127">
     <question>My SWLS result doesn&#x27;t seem accurate. Why?</question>
     <answer>The SWLS is very sensitive to how you answer. For an accurate result: Answer each question honestly, without comparing your life to others — either those better off or worse off than you.Base your answers on your own genuine experience of your life as it is, not how you think it should be.Answer for how you genuinely feel today, not how you felt in the past or hope to feel in the future. Even small shifts in framing can significantly change your score, so consistency in how you approach the questions matters for meaningful trend tracking.</answer>
     <category>SWLS</category>
-    <keywords>swls, result, doesn&#x27;t, seem, accurate.</keywords>
+    <keywords>swls, result, doesnt, seem, accurate</keywords>
   </faq>
 
   <faq id="128">
     <question>How do I use the IAI?</question>
     <answer>After completing a body scanning session, tap Assessments and select IAI.Colour in all areas of the body shape where you felt any sensations during your practice — even very subtle sensations count.To make colouring faster, increase the brush size by sliding the brush tool (left side of the screen) to the right.When finished, tap Save. Be as accurate as possible. The app calculates the percentage of the body coloured and tracks this over time.</answer>
     <category>IAI</category>
-    <keywords>iai?</keywords>
+    <keywords></keywords>
   </faq>
 
   <faq id="129">
     <question>Can I undo a stroke in the IAI body map?</question>
     <answer>The current version of the app does not have an undo function for individual strokes. However, you can clear all colouring and start again by tapping Clear. Tip: adjust the brush size before you begin — larger brushes cover more area with each stroke, making colouring faster and reducing the need for corrections.</answer>
     <category>IAI</category>
-    <keywords>undo, stroke, body, map?</keywords>
+    <keywords>undo, stroke, body</keywords>
   </faq>
 
   <faq id="130">
     <question>Colouring the IAI body shape takes too long. Can I make the brush bigger?</question>
     <answer>Yes. Use the brush tool on the left-hand side of the body shape and slide the dot toward the right to increase the brush size. A larger brush covers more area per stroke, making colouring significantly faster. Tap Clear if you want to start over with a new brush size.</answer>
     <category>IAI</category>
-    <keywords>colouring, body, shape, takes, long.</keywords>
+    <keywords>colouring, body, shape, takes, long</keywords>
   </faq>
 
   <faq id="131">
@@ -935,84 +935,84 @@
     <question>How do I use the MISS?</question>
     <answer>After or during an intense experience, tap Assessments and select MISS.Using the four sliding scales (Mass, Temperature, Motion, Fluidity), rate the qualities of the body sensations you felt.Record your pre-equanimity rating — how the sensation was at its most intense.Apply equanimity to those sensations for about 30 seconds.Record your post-equanimity rating.Make sure all four blue dots have been moved before tapping Save. The MISS will not save if any scale remains at its default position.</answer>
     <category>MISS</category>
-    <keywords>miss?</keywords>
+    <keywords>miss</keywords>
   </faq>
 
   <faq id="133">
     <question>I can&#x27;t see the Specificity indicators in the MISS. What are they?</question>
     <answer>The Specificity indicators appear when you tap or move the dot on a horizontal sliding scale — they do not display as static labels. The indicators for each scale are: Mass: Loosest / Neutral / DensestTemperature (Temp): Coldest / Neutral / HottestMotion: Still / Neutral / Most MovementFluidity: Lightest / Neutral / Heaviest Try tapping the scale line itself to make the dot and its indicator appear.</answer>
     <category>MISS</category>
-    <keywords>can&#x27;t, specificity, indicators, miss., what</keywords>
+    <keywords>cant, specificity, indicators, miss, what</keywords>
   </faq>
 
   <faq id="134">
     <question>How do I adjust the MISS dot positions after I&#x27;ve drawn the line?</question>
     <answer>Once the Fluidity dot is moved and the connecting line between all four dots is drawn, the individual values cannot be changed. To re-enter your values, tap the back arrow to return to the previous screen and re-enter all four ratings from scratch.</answer>
     <category>MISS</category>
-    <keywords>adjust, miss, positions, after, i&#x27;ve</keywords>
+    <keywords>adjust, miss, positions, after, drawn</keywords>
   </faq>
 
   <faq id="135">
     <question>What do the MISS figures and graphs mean?</question>
     <answer>The MISS graph shows your pre- and post-equanimity ratings for each of the four sensation qualities (Mass, Temperature, Motion, Fluidity) across sessions. The most important result is the overall reduction in Intensity between your pre- and post-equanimity scores — a larger reduction means you are successfully using mindfulness to regulate the intensity of distressing body sensations. Don&#x27;t feel overwhelmed by all the numbers — this overall Intensity change is your key metric.</answer>
     <category>MISS</category>
-    <keywords>what, miss, figures, graphs, mean?</keywords>
+    <keywords>what, miss, figures, graphs, mean</keywords>
   </faq>
 
   <faq id="136">
     <question>How do I record my avoidance progress using the SUDS?</question>
     <answer>Tap Assessments from the main menu and select SUDS.Select the specific situation you want to review from your list.Rate your current expected level of distress for that situation using the slider (0–100).Tap Save. Repeat for each situation as often as you like — the more frequently you re-rate, the clearer your progress trend. The graph automatically tracks your average distress across all five situations over time.</answer>
     <category>SUDS</category>
-    <keywords>record, avoidance, progress, using, suds?</keywords>
+    <keywords>record, avoidance, progress, using, suds</keywords>
   </faq>
 
   <faq id="137">
     <question>What does the SUDS graph show?</question>
     <answer>The SUDS graph displays your average distress score across all five situations each time you review your progress. As you face these situations and your equanimity grows, the average should decrease over time. For example, if three situations are rated 60%, 65%, and 80%, the initial average shown on the graph would be approximately 68%. Each situation also has its own individual trend, which you can view by selecting it from the list.</answer>
     <category>SUDS</category>
-    <keywords>what, does, suds, graph, show?</keywords>
+    <keywords>what, does, suds, graph, show</keywords>
   </faq>
 
   <faq id="138">
     <question>I&#x27;m not sure how to answer &#x27;How long did you apply effort for?&#x27; in the ECD.</question>
     <answer>This question asks how long you managed to resist or reduce engagement in a potentially harmful behaviour — not how long the situation lasted. Sometimes resistance is brief — a few minutes before giving in to an urge.Sometimes it lasts much longer — hours of effort before eventually acting.Sometimes you resist completely. There is no &#x27;right&#x27; duration. The goal of the ECD is awareness and gradual progress. Even a few minutes of conscious effort represents genuine practice. Over time, you may notice that your effort duration increases as equanimity strengthens.</answer>
     <category>ECD</category>
-    <keywords>sure, answer, &#x27;how, long, apply</keywords>
+    <keywords>sure, answer, long, apply, effort</keywords>
   </faq>
 
   <faq id="139">
     <question>Why do I need to track my ethics in the ECD?</question>
     <answer>Living more ethically reduces harm to yourself and others, and is a practical way of grounding compassion in daily life. However, despite good intentions, old habits and emotional reactions can make it genuinely difficult to act in alignment with your values. Without a tracking tool, it is easy to underestimate how often you encounter ethical challenges and overestimate how well you respond. The ECD makes these patterns visible so you can see your actual progress — not just your intentions.</answer>
     <category>ECD</category>
-    <keywords>need, track, ethics, ecd?</keywords>
+    <keywords>need, track, ethics</keywords>
   </faq>
 
   <faq id="140">
     <question>When should I complete each assessment?</question>
     <answer>Each stage guide lists the suggested assessments for that stage. As a general guide: DASS-21 — at the start of the program and at major milestones (Stages 1.1, 1.4, 2.2, 4.2).ES-16 — regularly from Stage 1.3 onward.MSES-R — from Stage 1.4 onward.SWLS — at the start and end of the program, and at Stage 1.4.IAI — after every body scanning session (or at least weekly) from Stage 1.3 onward.MISS — after any intense emotional experience from Stage 1.3 onward.SUDS — set up your five situations at Stage 2.1, then re-rate regularly throughout Stage 2.ECD — daily from Stage 4.1 onward.</answer>
     <category>DASS-21</category>
-    <keywords>when, should, complete, each, assessment?</keywords>
+    <keywords>when, should, complete, each, assessment</keywords>
   </faq>
 
   <faq id="141">
     <question>Does the app cost money? Is there a free trial?</question>
     <answer>The MiCBT Guide app offers a free trial period so you can explore the program before committing. After the trial, a subscription is required to continue access to the full program. For current pricing, subscription options, and trial details, check the App Store (iPhone) or Google Play Store (Android) listing for the MiCBT Guide, or visit mindfulness.net.au. If you have a question about your subscription, billing, or a charge, contact support@mindfulness.net.au.</answer>
     <category>Get Started</category>
-    <keywords>does, cost, money?, there, free</keywords>
+    <keywords>does, cost, money, there, free</keywords>
   </faq>
 
   <faq id="142">
     <question>I was charged but can&#x27;t access the app / my subscription isn&#x27;t working.</question>
     <answer>Make sure you are logged in to the correct account — the one used to purchase the subscription. Tap More &gt; Settings to check.Try tapping Restore Purchases in the app.If the subscription is still not showing, contact support@mindfulness.net.au with your account email and a description of the issue. Include the order number or receipt from the App Store or Google Play if you have it.</answer>
     <category>Account &amp;amp; Privacy</category>
-    <keywords>charged, can&#x27;t, access, subscription, isn&#x27;t</keywords>
+    <keywords>charged, cant, access, subscription, isnt</keywords>
   </faq>
 
   <faq id="143">
     <question>What is loving-kindness (metta) meditation and how do I practise it?</question>
     <answer>Loving-kindness meditation (metta in Pali) is the deliberate cultivation of goodwill — a sincere wish for wellbeing — toward yourself and others. In Stage 4.1, the practice begins with yourself: silently repeating phrases such as &#x27;May I be peaceful. May I be free from suffering. May I be happy.&#x27; While repeating these phrases, bring attention to the body sensations that arise — warmth, openness, or perhaps resistance. Then extend the same wishes outward: A loved oneA neutral personA difficult personAll beings Loving-kindness is not about generating a particular emotion on demand. It is about setting a sincere intention and observing what arises with equanimity. If it feels forced or hollow, notice that reaction — it is valuable information about where resistance or self-judgment may be stored in the body.</answer>
     <category>Meditation Practice</category>
-    <keywords>what, loving-kindness, (metta), meditation, practise</keywords>
+    <keywords>what, loving-kindness, metta, meditation, practise</keywords>
   </faq>
 
   <faq id="144">
@@ -1026,21 +1026,21 @@
     <question>I&#x27;ve been having unusual or vivid dreams since starting the program. Is this related to my practice?</question>
     <answer>Yes, very likely. The Co-Emergence Model helps explain it: as your sensitivity to body sensations increases through body scanning, the dream state — where sensations and emotions are processed — can become richer or more charged. Some people report more vivid, emotionally intense, or symbolic dreams during the early weeks of the program, particularly around Weeks 3–5 when body scanning is introduced and deepening. This is generally a sign that the practice is working — stored emotional content is being processed. If the dreams are disturbing or significantly affecting your sleep quality, mention this to a healthcare provider.</answer>
     <category>Meditation Practice</category>
-    <keywords>i&#x27;ve, been, having, unusual, vivid</keywords>
+    <keywords>been, having, unusual, vivid, dreams</keywords>
   </faq>
 
   <faq id="146">
     <question>What do my DASS-21 scores mean? How do I interpret them?</question>
     <answer>The DASS-21 produces separate scores for Depression, Anxiety, and Stress, each ranging from 0 to 42. Approximate severity ranges: Normal: Depression 0–9 | Anxiety 0–7 | Stress 0–14Mild: Depression 10–13 | Anxiety 8–9 | Stress 15–18Moderate: Depression 14–20 | Anxiety 10–14 | Stress 19–25Severe: Depression 21–27 | Anxiety 15–19 | Stress 26–33Extremely Severe: Depression 28+ | Anxiety 20+ | Stress 34+ The most important use of the DASS-21 is tracking your own trend over time — a declining score across multiple measurements is the meaningful signal. If your scores are consistently in the moderate-to-severe range, please also seek support from a healthcare professional alongside using the app.</answer>
     <category>DASS-21</category>
-    <keywords>what, dass-21, scores, mean?, interpret</keywords>
+    <keywords>what, dass-21, scores, mean, interpret</keywords>
   </faq>
 
   <faq id="147">
     <question>Is the DASS-21 a clinical diagnosis?</question>
     <answer>No. The DASS-21 is a self-report screening tool, not a clinical diagnosis. It measures how you have been feeling over the past week and tracks changes over time. It cannot diagnose a mental health condition. If your scores are consistently in the moderate-to-severe range, or if you are concerned about your mental health, please consult a qualified healthcare professional.</answer>
     <category>DASS-21</category>
-    <keywords>dass-21, clinical, diagnosis?</keywords>
+    <keywords>dass-21, clinical, diagnosis</keywords>
   </faq>
 
   <faq id="148">
@@ -1054,7 +1054,7 @@
     <question>My equanimity score (ES-16) went down. Does this mean I&#x27;m getting worse?</question>
     <answer>Not necessarily. A lower ES-16 score at one point can reflect several things: Increased self-awareness: As your practice deepens, you become more honest and precise in noticing how you actually react — which can temporarily lower your reported equanimity.A challenging period: Significant life stressors can reduce equanimity temporarily without undoing your overall progress.Natural fluctuation: Scores vary from week to week and a single data point is not meaningful on its own. What matters is the trend over the whole program. Compare your current score to your Stage 1.1 baseline — that is the meaningful comparison.</answer>
     <category>ES-16</category>
-    <keywords>equanimity, score, (es-16), went, down.</keywords>
+    <keywords>equanimity, score, es-16, went, down</keywords>
   </faq>
 
 </micbt_faq_database>
