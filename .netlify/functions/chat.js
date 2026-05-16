@@ -110,7 +110,15 @@ async function checkRateLimit(userId, maxQuestionsPerDay = 6) {
   const count = (global.questionCounts[key] || 0) + 1;
   global.questionCounts[key] = count;
   
-  return count <= maxQuestionsPerDay;
+  const allowed = count <= maxQuestionsPerDay;
+  const remaining = Math.max(0, maxQuestionsPerDay - count);
+  
+  return {
+    allowed,
+    used: count - 1,
+    remaining,
+    limit: maxQuestionsPerDay
+  };
 }
 
 // Main handler
@@ -137,13 +145,16 @@ exports.handler = async function(event) {
 
   // Check rate limit
   const userId = getUserIdentifier(event);
-  const withinLimit = await checkRateLimit(userId, 6); // 6 questions per day
+  const rateLimitInfo = await checkRateLimit(userId, 6);
   
-  if (!withinLimit) {
+  if (!rateLimitInfo.allowed) {
     return {
       statusCode: 429,
       body: JSON.stringify({ 
-        error: "Daily question limit reached. Please try again tomorrow." 
+        error: "Daily question limit reached. Please try again tomorrow.",
+        questionsUsed: rateLimitInfo.used,
+        questionsRemaining: 0,
+        dailyLimit: rateLimitInfo.limit
       })
     };
   }
@@ -196,10 +207,23 @@ Use the Q&As above to inform your answer, but respond naturally to the user's sp
 
     const data = await response.json();
     
+    // Add rate limit info to response
+    const responseBody = {
+      ...data,
+      questionsUsed: rateLimitInfo.used,
+      questionsRemaining: rateLimitInfo.remaining,
+      dailyLimit: rateLimitInfo.limit
+    };
+    
+    // Add warning if running low on questions
+    if (rateLimitInfo.remaining <= 2 && rateLimitInfo.remaining > 0) {
+      responseBody.warning = `You have ${rateLimitInfo.remaining} question${rateLimitInfo.remaining === 1 ? '' : 's'} remaining today.`;
+    }
+    
     return {
       statusCode: 200,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+      body: JSON.stringify(responseBody)
     };
   } catch (error) {
     return {
