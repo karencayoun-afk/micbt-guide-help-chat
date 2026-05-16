@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+const fs = require('fs');
+const path = require('path');
 
 // Load and parse FAQ database
 function loadFAQDatabase() {
@@ -85,8 +85,36 @@ function formatFAQContext(relevantFAQs) {
   }\n\n`;
 }
 
+// Get user identifier from request
+function getUserIdentifier(event) {
+  // Use IP address as identifier
+  return event.headers['client-ip'] || 
+         event.headers['x-forwarded-for']?.split(',')[0] || 
+         'anonymous';
+}
+
+// Check rate limit (questions per day)
+async function checkRateLimit(userId, maxQuestionsPerDay = 50) {
+  // Use Netlify's data store (KV) if available, otherwise use in-memory (resets on redeploy)
+  // For now, we'll use a simple in-memory store
+  
+  const today = new Date().toISOString().split('T')[0];
+  const key = `${userId}:${today}`;
+  
+  // Note: In production, you'd use a persistent database
+  // This is a simplified version that resets on function restart
+  if (!global.questionCounts) {
+    global.questionCounts = {};
+  }
+  
+  const count = (global.questionCounts[key] || 0) + 1;
+  global.questionCounts[key] = count;
+  
+  return count <= maxQuestionsPerDay;
+}
+
 // Main handler
-export async function handler(event) {
+exports.handler = async function(event) {
   const API_KEY = process.env.CLAUDE_API_KEY;
 
   if (!API_KEY) {
@@ -105,6 +133,19 @@ export async function handler(event) {
     body = JSON.parse(event.body);
   } catch {
     return { statusCode: 400, body: JSON.stringify({ error: 'Invalid JSON' }) };
+  }
+
+  // Check rate limit
+  const userId = getUserIdentifier(event);
+  const withinLimit = await checkRateLimit(userId, 6); // 6 questions per day
+  
+  if (!withinLimit) {
+    return {
+      statusCode: 429,
+      body: JSON.stringify({ 
+        error: "Daily question limit reached. Please try again tomorrow." 
+      })
+    };
   }
 
   const { messages, systemPrompt, stage = 1 } = body;
