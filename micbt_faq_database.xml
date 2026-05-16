@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<micbt_faq_database>
+  <metadata>
+    <version>2.0</version>
+    <last_updated>2026-05-09</last_updated>
+    <source>MiCBT Book Index (Weeks 8-10) Enhanced with Full-Program Coverage</source>
+    <author>Based on Cayoun & Grabovac Second Edition</author>
+  </metadata>
+
+  <!-- STAGE 1: PERSONAL STAGE -->
+  <stage id="stage1" name="Personal Stage">
+    <week id="week1" number="1" title="Foundation & Self-Care">
+      <category name="Getting Started">
+        <faq id="1_1_1">
+          <question>I find it hard to start a meditation practice. What if I don't have time?</question>
+          <answer>Start small. Even 5 minutes of Progressive Muscle Relaxation (PMR) daily builds momentum. The key is consistency, not duration. Many find that once they experience the benefits, they naturally make time. Set a specific time—perhaps right after waking or before bed—and treat it like an appointment with yourself. After two weeks of consistent practice, it becomes a habit.</answer>
+          <difficulty>beginner</difficulty>
+          <keywords>time, motivation, starting, consistency</keywords>
+        </faq>
+        <faq id="1_1_2">
+          <question>I notice physical sensations during meditation that feel scary. Should I stop?</question>
+          <answer>No. Physical sensations during meditation are normal and often represent the body releasing tension or old patterns. The fear typically arises from the newness of noticing them, not from danger. Stay present with the sensation using equanimity—observe it without judgment or resistance. If severe distress occurs, pause and consult a healthcare provider, but mild discomfort is part of the learning process.</answer>
+          <difficulty>beginner</difficulty>
+          <keywords>fear, sensations, discomfort, safety</keywords>
+        </faq>
+        <faq id="1_1_3">
+          <question>How do I know if my meditation practice is accurate?</question>
+          <answer>Check three elements: (1) Frequency—are you practicing daily? (2) Duration—are you meeting the recommended time? (3) Accuracy—are you following the instructions correctly (e.g., scanning systematically, staying present rather than ruminating)? If in doubt, revisit the audio instructions or work with a trained MiCBT facilitator.</answer>
+          <difficulty>beginner</difficulty>
+          <keywords>technique, quality, accuracy, instructions</keywords>
+        </faq>
+        <faq id="1_1_4">
+          <question>I keep falling asleep during practice. Is this bad?</question>
+          <answer>Drowsiness is common, especially early on. It often means your nervous system is genuinely relaxing. However, if it prevents skill development, try: practicing at a different time of day, sitting upright without back support, or choosing a scanning technique that requires more effort (e.g., transversal over sweeping). Avoid practicing immediately after meals or when sleep-deprived.</answer>
+          <difficulty>beginner</difficulty>
+          <keywords>drowsiness, sleep, concentration, timing</keywords>
+        </faq>
+        <faq id="1_1_5">
+          <question>Can I practice lying down?</question>
+          <answer>For maintenance, yes. However, during the initial 10-week program, practicing upright (seated) prevents drowsiness and trains your brain to associate the posture with focused attention. Once you've established your skills, lying down is fine for maintenance practice.</answer>
+          <difficulty>beginner</difficulty>
+          <keywords>posture, lying down, position</keywords>
+        </faq>
+      </category>
+    </week>
+
+    <week id="week2" number="2" title="Right Effort & Thoughts">
+      <category name="Working with Thoughts">
+        <faq id="1_2_1">
+          <question>I have intrusive thoughts during meditation. Does this mean my mind is too "busy"?</question>
+          <answer>No. Intrusive thoughts are universal—the goal of mindfulness isn't to stop thinking but to change your relationship with thoughts. Notice them without engaging, like clouds passing through the sky. Over time, as you practice equanimity, you'll react less to them, and they naturally have less power over you.</answer>
+          <difficulty>beginner</difficulty>
+          <keywords>thoughts, mind, busy, intrusive</keywords>
+        </faq>
+        <faq id="1_2_2">
+          <question>Should I try to make my mind blank during meditation?</question>
+          <answer>No. A blank mind is neither the goal nor realistic. The goal is to develop equanimity toward thoughts and sensations—noticing them without identification or reaction. If you expect blankness and judge yourself for "failing," you're creating suffering. Accept the mind as it is.</answer>
+          <difficulty>beginner</difficulty>
+          <keywords>mind blank, expectations, judgment</keywords>
+        </faq>
+        <faq id="1_2_3">
+          <question>How do I tell the difference between productive rumination and "just thinking"?</question>
+          <answer>Productive thinking is grounded, purposeful, and time-limited. Rumination is repetitive, emotionally charged, and self-perpetuating. During meditation, the goal is to disengage from both by returning attention to body sensations. In daily life, notice if thinking is solving a problem or recycling the same worry—if it's the latter, redirect to the present moment or a physical sensation.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>rumination, thinking, worry, thoughts</keywords>
+        </faq>
+      </category>
+    </week>
+
+    <week id="week3" number="3" title="Attention Regulation">
+      <category name="Deepening Focus">
+        <faq id="1_3_1">
+          <question>Part-by-part scanning feels tedious and mechanical. How do I stay engaged?</question>
+          <answer>This is a sign of habituation, not failure. Vary your approach: scan faster in some sessions, slower in others; change the direction (head-to-toe vs. toe-to-head); practice in different environments. Also, reconnect with why you're practicing—keeping intention at the forefront prevents the practice from becoming rote.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>habituation, tedium, engagement, monotony</keywords>
+        </faq>
+        <faq id="1_3_2">
+          <question>I can't feel sensations in certain body parts. Should I worry?</question>
+          <answer>No. Inability to feel sensations initially is common in areas where you've been numb (physically or emotionally). Continue scanning that area gently for 2-3 sessions. If it remains blank, move on—the lack of feeling is itself information. Feeling often develops gradually with continued practice. If numbness is concerning (e.g., after injury), consult a doctor.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>numbness, blank areas, feeling, sensation</keywords>
+        </faq>
+      </category>
+    </week>
+
+    <week id="week4" number="4" title="Stillness & Immobility">
+      <category name="Body Awareness & Emotional Release">
+        <faq id="1_4_1">
+          <question>Is it normal to feel emotional during body scanning?</question>
+          <answer>Yes. The body holds emotional memories. As you activate awareness in different areas, emotions may surface. This is actually a sign your practice is working—you're becoming conscious of what was unconscious. Stay equanimous with the emotion; it will pass. This is part of the "cleanup" process the book describes.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>emotions, tears, release, memories</keywords>
+        </faq>
+        <faq id="1_4_2">
+          <question>During Week 4, I'm struggling with immobility. How do I manage the urge to move?</question>
+          <answer>The discomfort you feel is data about your habitual reactivity. Sit with it briefly (start with 2-3 minutes of stillness, not the full time). Notice the sensations of the urge—tightness, restlessness, heat. Observe them with equanimity. Gradually, your tolerance builds. By week's end, stillness becomes easier as your nervous system recalibrates.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>restlessness, stillness, discomfort, immobility</keywords>
+        </faq>
+      </category>
+    </week>
+  </stage>
+
+  <!-- STAGE 2: EXPOSURE & CONFIDENCE -->
+  <stage id="stage2" name="Exposure & Confidence">
+    <week id="week5" number="5" title="Sweeping & Body Mastery">
+      <category name="Advanced Scanning Techniques">
+        <faq id="2_5_1">
+          <question>What's the difference between sweeping "en masse" and "transversal" scanning? Which should I do?</question>
+          <answer>Sweeping en masse is a flowing, continuous attention through the body (like a wave). Transversal is systematic, part-by-part coverage. During Week 5, sweeping is introduced as a progression—it often feels more pleasant initially. The book recommends alternating or choosing whichever feels natural. Both build equanimity; they're just different pathways.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>sweeping, transversal, techniques, scanning</keywords>
+        </faq>
+        <faq id="2_5_2">
+          <question>During sweeping, I feel tingling or "energy moving." Is this real?</question>
+          <answer>The tingling sensations are real—they're subtle nerve activations your brain is now noticing. "Energy moving" is a metaphor many use for this heightened interoceptive awareness. It's not mystical; it's neuroscience. As you strengthen attention, you perceive finer and finer sensations. This is progress.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>tingling, energy, sensations, real</keywords>
+        </faq>
+      </category>
+    </week>
+
+    <week id="week6" number="6" title="Bliss & Non-Attachment">
+      <category name="Working with Pleasant States">
+        <faq id="2_6_1">
+          <question>I experienced a blissful state during meditation and now I'm chasing it. Is that wrong?</question>
+          <answer>The book calls this "attachment to pleasant experiences." The blissful state isn't the goal—equanimity is. Chasing it creates craving, which perpetuates suffering. Instead, when bliss arises, observe it equanimously. Notice the pleasant sensations without grasping. When it passes (and it will), stay equanimous. This is practicing non-attachment, which paradoxically deepens well-being more than chasing pleasure.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>bliss, attachment, craving, pleasure</keywords>
+        </faq>
+        <faq id="2_6_2">
+          <question>Is experiencing dissolution (where sensations seem to disappear) dangerous?</question>
+          <answer>No. Dissolution is a sign of deep equanimity and concentration. The sensation of "disappearance" is actually extremely refined sensation that your earlier awareness couldn't perceive. It's safe and often liberating. If it's accompanied by fear, stay present and remember: it's a mental state, impermanent like all states, and you're safe.</answer>
+          <difficulty>advanced</difficulty>
+          <keywords>dissolution, disappearance, fear, advanced states</keywords>
+        </faq>
+        <faq id="2_6_3">
+          <question>After blissful sessions, I feel flat the next day. Why?</question>
+          <answer>This is the "high-and-low" cycle. When you crave pleasant states, you set yourself up for disappointment when you don't have them. The antidote is equanimity toward all states—neither chasing highs nor avoiding lows. Over time, your baseline mood becomes steadier and more grounded, independent of meditation "quality."</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>flatness, highs and lows, mood, baseline</keywords>
+        </faq>
+      </category>
+    </week>
+
+    <week id="week7" number="7" title="Confidence & Avoidance">
+      <category name="Bipolar Exposure & Facing Fear">
+        <faq id="2_7_1">
+          <question>I'm avoiding a feared situation (social event, phone call, etc.). How does the Bipolar Exposure technique help?</question>
+          <answer>Bipolar Exposure teaches your nervous system that the feared sensation (anxiety, shame, embarrassment) is survivable and impermanent. You practice generating the unwanted sensation on purpose in a safe context (meditation), then apply equanimity to it. When you actually face the real situation, you've already "practiced" remaining calm with the sensation. It's exposure therapy grounded in mindfulness.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>exposure, bipolar exposure, fear, avoidance</keywords>
+        </faq>
+        <faq id="2_7_2">
+          <question>Bipolar Exposure feels intense. Should I do it anyway?</question>
+          <answer>Yes, but titrate the intensity. Start with a milder version of the feared scenario (e.g., imagining a small social mistake instead of a large one). Generate the sensation for 30 seconds, then return to neutral. Build tolerance gradually. The intensity you feel is evidence the technique is working; equanimity with intensity is the skill being built.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>intensity, fear, exposure, building tolerance</keywords>
+        </faq>
+        <faq id="2_7_3">
+          <question>After Bipolar Exposure, I notice I'm less anxious in the real situation. How does this work neurologically?</question>
+          <answer>You're building what neuroscientists call "extinction learning." By repeatedly experiencing the sensation without the catastrophe you feared (in meditation, nothing bad happens), your brain updates its threat assessment. The amygdala (fear center) learns the sensation is safe. This is why repeated, mindful exposure is so effective.</answer>
+          <difficulty>advanced</difficulty>
+          <keywords>extinction learning, amygdala, neuroscience, threat</keywords>
+        </faq>
+        <faq id="2_7_4">
+          <question>I have a phobia (flying, heights, etc.). Can Bipolar Exposure help?</question>
+          <answer>Yes, as part of a broader approach. Bipolar Exposure teaches equanimity with the fear sensation. Combined with graded real-world exposure (starting small, building up), it's powerful. However, severe phobias may benefit from professional support (therapist trained in exposure). MiCBT is an excellent complement to professional care.</answer>
+          <difficulty>advanced</difficulty>
+          <keywords>phobia, professional support, graded exposure</keywords>
+        </faq>
+      </category>
+    </week>
+  </stage>
+
+  <!-- STAGE 3: INTERPERSONAL STAGE -->
+  <stage id="stage3" name="Interpersonal Stage">
+    <week id="week8" number="8" title="Assertive Communication">
+      <category name="Seven Statements Framework">
+        <faq id="3_8_1">
+          <question>The seven assertive statements feel artificial. Will they ever sound natural?</question>
+          <answer>Yes. Initially, any new communication style feels awkward because you're using non-habitual neural pathways. With practice (ideally 2-3 real conversations per week), the statements become integrated. You'll eventually modify them to fit your voice while retaining the structure. Most users report naturalness by week 3-4 of practice.</answer>
+          <difficulty>beginner</difficulty>
+          <keywords>assertiveness, naturalness, communication, practice</keywords>
+        </faq>
+        <faq id="3_8_2">
+          <question>I stated my needs assertively and got rejected. Does this mean the technique failed?</question>
+          <answer>No. Assertiveness is about expressing yourself clearly and respectfully—not controlling outcomes. Others may still say no. That's their choice, and equanimity helps you accept it without shame or resentment. You've succeeded in the communication; the outcome is outside your control. This distinction is crucial.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>rejection, outcomes, control, equanimity</keywords>
+        </faq>
+        <faq id="3_8_3">
+          <question>My partner becomes defensive when I use the seven statements. What am I doing wrong?</question>
+          <answer>Often, nothing. Some people are triggered by any boundary-setting. A few suggestions: (1) Practice the statements in lower-stakes situations first. (2) Ask if there's a better time to talk. (3) Use more self-compassion language ("I notice I feel..." vs. "You always..."). (4) If defensiveness is consistent, couples therapy might help. The technique works best with collaborative partners.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>defensiveness, partner, boundaries, couples</keywords>
+        </faq>
+        <faq id="3_8_4">
+          <question>Is "state your possible error in judgment" just apologizing preemptively?</question>
+          <answer>No. It's intellectual humility—acknowledging that your perception is limited and your judgment could be wrong. This isn't weakness; it's wisdom. It lowers the other person's defensiveness because you're not claiming absolute rightness. It opens space for genuine dialogue rather than a debate won/lost.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>judgment, humility, error, openness</keywords>
+        </faq>
+        <faq id="3_8_5">
+          <question>What if I can't reach a win-win? Is the relationship doomed?</question>
+          <answer>Not necessarily. Some situations don't have neat solutions. In such cases, the goal shifts from problem-solving to maintaining respect and equanimity. You can agree to disagree, set a boundary, or accept the limitation. Many strong relationships coexist with unresolved differences. Equanimity is more important than resolution.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>win-win, unresolved, disagreement, equanimity</keywords>
+        </faq>
+        <faq id="3_8_6">
+          <question>I'm afraid my partner will become violent if I assert myself. Should I still use these techniques?</question>
+          <answer>No. If there's risk of abuse, your safety is paramount. These techniques assume a relatively safe relationship dynamic. In unsafe situations, prioritize safety first—reach out to a domestic violence resource, therapist, or trusted person. Assertion within safety is the principle; your physical/emotional safety is non-negotiable.</answer>
+          <difficulty>advanced</difficulty>
+          <keywords>violence, abuse, safety, domestic violence</keywords>
+        </faq>
+      </category>
+
+      <category name="Transversal Scanning Deep Dive">
+        <faq id="3_8_7">
+          <question>The audio describes sensations as "piercing" through my head. This imagery terrifies me. Should I stop?</question>
+          <answer>The word "piercing" is traditional meditation language describing the quality of attention, not a physical process. You're not actually putting a needle through your head—you're activating neural maps. If the imagery is distressing, replace it mentally: imagine attention flowing like water, spreading like light, or opening like a blooming flower. Your metaphor should serve your practice.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>piercing, imagery, fear, metaphor</keywords>
+        </faq>
+        <faq id="3_8_8">
+          <question>Transversal scanning feels harder than sweeping. Do I have to do it?</question>
+          <answer>Transversal (part-by-part) develops precision and helps you feel deeper internal sensations. Sweeping develops flow. Both are valuable. The book recommends transversal during Weeks 8-9 because it targets deeply rooted sensations (often linked to schemas). If it's very difficult, alternate: one session transversal, one session sweeping. Difficulty often signals growth edges.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>transversal, difficulty, precision, depth</keywords>
+        </faq>
+        <faq id="3_8_9">
+          <question>I can only feel 10% of my body's interior. Should I keep trying or is this my limit?</question>
+          <answer>The book says ~20% is the threshold to move forward, but 10% is still progress. Continue with transversal for another week or two. If stuck at 10%, consider: Are you practicing in a noisy environment? Are you tense before starting? A brief body scan or PMR beforehand can help. Also, sensations often develop gradually as your nervous system trusts the process.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>body awareness, interior sensations, development</keywords>
+        </faq>
+      </category>
+    </week>
+  </stage>
+
+  <!-- STAGE 4: COMPASSION STAGE -->
+  <stage id="stage4" name="Compassion Stage">
+    <week id="week9" number="9" title="Compassion & Ethics">
+      <category name="Loving-Kindness Practice">
+        <faq id="4_9_1">
+          <question>I feel nothing during loving-kindness meditation. Am I doing it wrong?</question>
+          <answer>Not necessarily. Loving-kindness requires genuine intention grounded in body sensation. Some people struggle initially because of past hurt, perfectionism, or schemas around unworthiness. The book recommends: (1) Start with gratitude toward someone who helped you, (2) Feel that warmth as body sensation, (3) Pair it with "May I be well." If nothing arises, that's okay—keep the intention genuine. Feeling often develops with time.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>loving-kindness, metta, feeling, sensation</keywords>
+        </faq>
+        <faq id="4_9_2">
+          <question>Self-compassion feels selfish to me. How is it ethical?</question>
+          <answer>This is a common block, especially for those taught that self-care is selfish. The book clarifies: self-compassion isn't self-indulgence. When you treat yourself kindly, you: (1) reduce self-blame and rumination, (2) have more energy for others, (3) model healthy self-regard for children, (4) recover faster from setbacks. Paradoxically, self-compassion makes you more available to others, not less.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>self-compassion, selfishness, self-care, ethics</keywords>
+        </faq>
+        <faq id="4_9_3">
+          <question>I was abused/traumatized and forgiving feels dangerous. Do I have to?</question>
+          <answer>No. Forgiveness is not required for healing or ethics. The book distinguishes "toxic shame" (self-directed blame) from "healthy shame" (understanding you caused harm). For abuse survivors, the focus should be: (1) Self-compassion for survival, (2) Compassion for others' suffering (without condoning harm), (3) Healthy boundaries. Forgiveness may come later, or never—that's okay.</answer>
+          <difficulty>advanced</difficulty>
+          <keywords>forgiveness, trauma, abuse, boundaries</keywords>
+        </faq>
+      </category>
+
+      <category name="Five Ethical Practices">
+        <faq id="4_9_4">
+          <question>How do I practice the five ethical challenges without being judgmental of myself?</question>
+          <answer>The book emphasizes these aren't rules but invitations to awareness. The spirit is "Do your best with compassion," not perfectionism. If you speak harshly, notice it equanimously and recommit. If you slip into harmful speech, observe the sensations that preceded it (fear, resentment, craving for validation) and practice equanimity toward those. Progress, not perfection.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>ethics, self-judgment, perfectionism, compassion</keywords>
+        </faq>
+        <faq id="4_9_5">
+          <question>The "refraining from intoxicants" challenge feels impossible. I drink daily. What now?</question>
+          <answer>Start with awareness, not abstinence. Notice: When do you drink? What sensations precede it? Craving? Aversion to stress? Habit? For a week, observe without judgment. Then experiment: Can you go one day without? Two? Many people find that after establishing equanimity skills, the craving naturally diminishes. If you have addiction concerns, consider professional support alongside MiCBT.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>intoxicants, addiction, craving, awareness</keywords>
+        </faq>
+        <faq id="4_9_6">
+          <question>If I practice ethical conduct purely for wellbeing (not morality), am I being authentic?</question>
+          <answer>Yes. The book's approach is pragmatic: ethical conduct reduces suffering (for you and others). This is more sustainable than moral "shoulds." When you see the genuine link between kind action and your own peace, ethics becomes self-evident, not imposed. This is authentic.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>ethics, morality, authenticity, pragmatism</keywords>
+        </faq>
+        <faq id="4_9_7">
+          <question>What about gray areas? (e.g., the white lie to protect someone's feelings)</question>
+          <answer>The book acknowledges ethics involves discernment, not rigid rules. Consider: Does the lie serve genuine kindness or avoid my discomfort? Will it ultimately build or undermine trust? What are the long-term effects? Mindfulness helps you feel the answer through your body's response. If you feel peace and alignment, likely ethical. If you feel tension/inauthenticity, reconsider.</answer>
+          <difficulty>advanced</difficulty>
+          <keywords>gray areas, discernment, truth, lies</keywords>
+        </faq>
+        <faq id="4_9_8">
+          <question>I'm struggling with the "appropriate sexual action" challenge. What qualifies?</question>
+          <answer>The book's principle is: Actions that reduce suffering and respect boundaries (yours and others'). Ask yourself: Am I acting from desire/connection or from craving/avoidance? Is this authentic and consensual for both? Will it build trust or undermine it? Mindfulness helps you distinguish impulse from intention. There's no one-size-fits-all rule; discernment is key.</answer>
+          <difficulty>advanced</difficulty>
+          <keywords>sexuality, appropriate action, boundaries, consent</keywords>
+        </faq>
+      </category>
+
+      <category name="Sweeping in Depth & Advanced Practice">
+        <faq id="4_9_9">
+          <question>When I sweep "in depth," sensations seem to disappear in some areas. Is something wrong?</question>
+          <answer>Likely no. You're transitioning from feeling surface sensations to deeper, subtler ones. Some areas may feel "blank" because you're not yet perceiving the refined sensations there. Continue practice—feeling often develops gradually. If you reach a plateau, alternate: one cycle of sweeping in depth, one cycle of transversal. The combination helps.</answer>
+          <difficulty>advanced</difficulty>
+          <keywords>sweeping in depth, subtle sensations, blank areas</keywords>
+        </faq>
+        <faq id="4_9_10">
+          <question>I'm experiencing strong emotions during sweeping in depth (sadness, anger, grief). Should I stop?</question>
+          <answer>No. This is the "purification" process the book describes—old emotional patterns surfacing to be released. Stay equanimous with the emotion; it will pass. These are memories and conditioned patterns becoming conscious. Your equanimity is "metabolizing" them. This is healing, though it may feel intense. If overwhelmed, slow the pace or return to breath awareness temporarily.</answer>
+          <difficulty>advanced</difficulty>
+          <keywords>emotional release, purification, healing, intensity</keywords>
+        </faq>
+      </category>
+    </week>
+
+    <week id="week10" number="10" title="Maintenance & Personal Growth">
+      <category name="Sustaining Practice">
+        <faq id="4_10_1">
+          <question>I've finished the 10-week program. Do I really need to meditate forever?</question>
+          <answer>"Forever" might feel daunting, so reframe: Do you want to stay fit? Exercise ongoing. Do you want mental fitness? Meditation ongoing. The book uses this analogy. Many practitioners find daily practice non-negotiable for sustained well-being, while others maintain with 3-4x weekly. The key: consistency matters more than duration. Even restarting after a break is fine.</answer>
+          <difficulty>beginner</difficulty>
+          <keywords>maintenance, forever, consistency, motivation</keywords>
+        </faq>
+        <faq id="4_10_2">
+          <question>I stopped practicing for 3 months. Have I lost all my progress?</question>
+          <answer>No. Skills learned remain in your nervous system. You may feel rustier initially, but re-learning is faster than initial learning (neuroplasticity). Simply restart with the audio and within 1-2 weeks, you'll regain your level. The book encourages this: meditation is always available as a refuge, and you can return anytime.</answer>
+          <difficulty>beginner</difficulty>
+          <keywords>restart, progress, skills, return</keywords>
+        </faq>
+        <faq id="4_10_3">
+          <question>My meditation feels mechanical now. I'm not benefiting like I did initially.</question>
+          <answer>This is habituation—a normal plateau. The solution: (1) Vary technique (alternate sweeping and transversal), (2) Change environment, (3) Reconnect with intention before each session ("Why am I practicing today?"), (4) Join a meditation group for renewed motivation, (5) Consider a retreat to deepen practice. Most importantly: notice that boredom is itself impermanence and non-self in action—meditate on that!</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>habituation, boredom, plateau, renewal</keywords>
+        </faq>
+        <faq id="4_10_4">
+          <question>How do I prevent relapse into old patterns (anxiety, depression) after the program?</question>
+          <answer>The book emphasizes: daily practice + the ten maturing factors. If you notice early signs (increased irritability, sleep changes, withdrawal), increase practice frequency (back to twice daily temporarily). The ten factors (generosity, virtue, renunciation, wisdom, effort, patience, truthfulness, determination, kindness, equanimity) are preventative—actively practice them. Build a support community (meditation group, therapist, friends).</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>relapse prevention, factors, community, early signs</keywords>
+        </faq>
+        <faq id="4_10_5">
+          <question>I'm approaching retirement/major life change. How can MiCBT help?</question>
+          <answer>MiCBT directly addresses impermanence and adaptation. Instead of resisting change, you'll practice equanimity with it. You'll have skills for: (1) Letting go (renunciation factor), (2) Finding meaning beyond work (wisdom), (3) Managing fear sensations, (4) Building new relationships (kindness). Major transitions are actually opportunities for deepened practice.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>retirement, life changes, transition, impermanence</keywords>
+        </faq>
+      </category>
+
+      <category name="Response Shift & Measurement">
+        <faq id="4_10_6">
+          <question>I re-took the Equanimity Scale and my score went DOWN. Does this mean I'm getting worse?</question>
+          <answer>Likely the opposite. The book calls this "response shift"—your standards for what counts as equanimity have increased. Nine weeks ago, you weren't even aware of subtle reactivity; now you notice it. This increased awareness IS progress, not regression. Compare: How long does reactivity last now vs. nine weeks ago? That duration is the true measure.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>equanimity scale, response shift, measurement, progress</keywords>
+        </faq>
+        <faq id="4_10_7">
+          <question>How do I measure progress beyond the Equanimity Scale?</question>
+          <answer>The book lists: (1) Duration of reactivity decreases, (2) Gratitude arises naturally, (3) Desire to share practice with others, (4) Behavioral goals achieved, (5) Relationships improve, (6) Sleep/appetite normalize, (7) You laugh easier. These are experiential markers. Track 1-2 that matter to you over time. Most people feel progress before seeing it on a questionnaire.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>progress markers, measurement, experiential, behavioral</keywords>
+        </faq>
+      </category>
+
+      <category name="Ten Maturing Factors">
+        <faq id="4_10_8">
+          <question>What's the difference between the ten factors and the ethical precepts?</question>
+          <answer>Precepts are about not doing (don't harm, steal, lie, etc.). The ten factors are about cultivating positive qualities (generosity, wisdom, patience, etc.). Both are important. Precepts prevent harm; factors build well-being. MiCBT integrates both. You need the foundation (precepts) before the superstructure (factors) can stand.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>paramis, factors, precepts, ethics</keywords>
+        </faq>
+        <faq id="4_10_9">
+          <question>How do I practice generosity daily if I'm financially struggling?</question>
+          <answer>Generosity extends beyond money. Give time (listening fully to a friend), attention (present during conversations), service (small acts of help), knowledge (sharing what you know). The book emphasizes: generosity of spirit matters more than monetary amount. Even smiling genuinely is a form of generosity. When you have resources, share. When you don't, your generous intention still counts and builds the mental habit.</answer>
+          <difficulty>beginner</difficulty>
+          <keywords>generosity, giving, spirit, resources</keywords>
+        </faq>
+        <faq id="4_10_10">
+          <question>The "renunciation" factor sounds like deprivation. How is it different?</question>
+          <answer>Renunciation isn't deprivation; it's freedom from compulsion. You're not denying pleasure; you're releasing attachment to it. You can enjoy a meal without craving the next one. Enjoy company without desperate neediness. This paradoxically increases pleasure because you're not constantly anticipating loss. The book frames it beautifully: contentment is sufficiency, not asceticism.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>renunciation, detachment, freedom, contentment</keywords>
+        </faq>
+        <faq id="4_10_11">
+          <question>How do I know if my ambition is "wholesome" or "unwholesome"?</question>
+          <answer>Check your gut. Unwholesome ambition creates tension, competitiveness, and ego-inflation ("I'm better than others"). Wholesome ambition creates alignment, contribution, and genuine satisfaction. The book's example: raising free-range hens for profit is wholesome if motivated by care for animals and community; unwholesome if motivated by ego or greed. Meditate on your motivation—your body will tell you.</answer>
+          <difficulty>intermediate</difficulty>
+          <keywords>ambition, wholesome, motivation, intention</keywords>
+        </faq>
+        <faq id="4_10_12">
+          <question>Which of the ten factors is most important to start with?</question>
+          <answer>They're interdependent, but patience and effort are foundational. Patience lets you tolerate the discomfort of practice. Effort keeps you showing up. Once established, the others develop naturally. The book doesn't prescribe an order—they reinforce each other. Focus on whichever calls to you, and trust the system.</answer>
+          <difficulty>beginner</difficulty>
+          <keywords>factors, patience, effort, foundational</keywords>
+        </faq>
+      </category>
+    </week>
+  </stage>
+
+  <!-- CROSS-CUTTING: Special Populations & Challenges -->
+  <section id="special_populations" name="Special Populations & Challenges">
+    
+    <subsection id="trauma">
+      <title>For Trauma Survivors</title>
+      <faq id="sp_trauma_1">
+        <question>I have PTSD and meditation sometimes triggers flashbacks. How do I practice safely?</question>
+        <answer>Work with a trauma-informed therapist alongside meditation. Start with grounding techniques (5-4-3-2-1 sensory awareness) before formal meditation. Practice in a safe space. Avoid the "blank slate" of meditation initially; instead, bring gentle awareness to present-moment sensations (feet on ground, sound of breath). The book's progression is designed for general populations; trauma requires modification.</answer>
+        <difficulty>advanced</difficulty>
+        <keywords>PTSD, flashbacks, trauma, safety, grounding</keywords>
+      </faq>
+      <faq id="sp_trauma_2">
+        <question>Is Bipolar Exposure safe for someone with PTSD?</question>
+        <answer>Potentially, but with guidance. The technique intentionally triggers sensations; in trauma, this can re-traumatize if not carefully paced. Work with a EMDR, CPT, or trauma-informed CBT therapist who can incorporate Bipolar Exposure safely. Never do this alone. The principle (equanimity with difficult sensations) is sound; the application requires expertise.</answer>
+        <difficulty>advanced</difficulty>
+        <keywords>bipolar exposure, PTSD, trauma-informed, professional</keywords>
+      </faq>
+    </subsection>
+
+    <subsection id="addiction">
+      <title>For Those with Addiction</title>
+      <faq id="sp_addiction_1">
+        <question>I'm in recovery and struggling with the "refraining from intoxicants" challenge.</question>
+        <answer>You've already made the hardest commitment—sobriety. The five practices support this: (1) Notice the sensations that precede cravings (restlessness, loneliness, shame), (2) Practice equanimity with them in meditation, (3) Build community and meaning through the other factors, (4) Use mindfulness as your primary coping tool. The book's approach is ideal for addiction recovery because it addresses the underlying discomfort that fuels use.</answer>
+        <difficulty>intermediate</difficulty>
+        <keywords>addiction, recovery, craving, support</keywords>
+      </faq>
+      <faq id="sp_addiction_2">
+        <question>Meditation makes me uncomfortable, triggering urges. What do I do?</question>
+        <answer>Start with grounding (feet, hands, breath awareness) rather than deep body scanning. Shorter sessions (5-10 min) initially. Partner meditation practice with 12-step or other recovery support. Urges are impermanent sensations—meditating with them (gently) teaches your nervous system they'll pass without acting on them. This is the core skill for sustained recovery.</answer>
+        <difficulty>intermediate</difficulty>
+        <keywords>urges, discomfort, grounding, recovery</keywords>
+      </faq>
+    </subsection>
+
+    <subsection id="parents">
+      <title>For Parents & Caregivers</title>
+      <faq id="sp_parents_1">
+        <question>Can I practice with my kids around? (They're always interrupting)</question>
+        <answer>Realistically, yes, but expect fragmentation. Shorter, consistent sessions (10-15 min) are better than fighting for uninterrupted time. Alternatively: practice during their screen time or after bedtime. Some parents find dual practice works (kids do PMR or simple breathing while you meditate—they learn, you practice). It's not ideal, but it's honest and sustainable.</answer>
+        <difficulty>beginner</difficulty>
+        <keywords>children, family, time, interruptions</keywords>
+      </faq>
+      <faq id="sp_parents_2">
+        <question>How can I teach my kids the values from MiCBT?</question>
+        <answer>Model it. Kids absorb your equanimity, kindness, and patience far more from your behavior than your words. As they grow, introduce concepts age-appropriately: mindfulness of breath (age 5+), simple loving-kindness for animals (age 6+), ethical discussions (age 8+). The book's framework is universal—your authentic practice is the lesson.</answer>
+        <difficulty>beginner</difficulty>
+        <keywords>teaching children, modeling, values, development</keywords>
+      </faq>
+    </subsection>
+
+    <subsection id="couples">
+      <title>For Couples & Relationships</title>
+      <faq id="sp_couples_1">
+        <question>My partner and I both do MiCBT. Can we practice together?</question>
+        <answer>Yes. Meditating in the same room (even separately) is grounding. Joint loving-kindness toward each other (part of Week 9) can deepen intimacy. However, resist the urge to monitor each other's practice ("Are you doing it right?"). Trust each person's journey. Post-practice, sharing insights (not critiques) can strengthen connection.</answer>
+        <difficulty>beginner</difficulty>
+        <keywords>couples, together, relationship, intimacy</keywords>
+      </faq>
+      <faq id="sp_couples_2">
+        <question>The assertiveness week made things tense with my partner. Will it resolve?</question>
+        <answer>Often yes, but with time and mutual willingness. Your partner may feel threatened by changes in the dynamic. Reassure them: you're not attacking them; you're becoming clearer about your needs. Invite them to understand the framework (the book itself helps). If the tension persists, couples therapy can bridge the gap. Usually, once partners see the positive outcomes (better communication, deeper intimacy), resistance softens.</answer>
+        <difficulty>intermediate</difficulty>
+        <keywords>assertiveness, tension, communication, couples therapy</keywords>
+      </faq>
+    </subsection>
+
+    <subsection id="aging">
+      <title>For Aging & End-of-Life</title>
+      <faq id="sp_aging_1">
+        <question>I'm elderly and approaching the end of life. How can MiCBT help?</question>
+        <answer>The entire arc of MiCBT—particularly Stages 3-4—is about accepting impermanence and cultivating equanimity with it. Loving-kindness helps release resentments. The ten factors (especially wisdom and renunciation) support graceful aging and dying. Many elders find meditation deepens their spiritual practice, whatever their tradition. The book's final weeks align beautifully with life's final chapter.</answer>
+        <difficulty>intermediate</difficulty>
+        <keywords>aging, end-of-life, impermanence, wisdom</keywords>
+      </faq>
+      <faq id="sp_aging_2">
+        <question>My aging parent is struggling with health decline. How do I support them?</question>
+        <answer>Introduce the concepts gently (if they're open). Equanimity with unavoidable change. Loving-kindness for their suffering. Ethical living as legacy-building. Their body is changing; acceptance reduces the secondary suffering (rage, denial) layered on top of the primary. Compassion from you is invaluable. If they practice, you're practicing together—a profound gift.</answer>
+        <difficulty>intermediate</difficulty>
+        <keywords>elder care, health decline, acceptance, compassion</keywords>
+      </faq>
+    </subsection>
+  </section>
+
+  <!-- TECHNICAL & PRACTICAL -->
+  <section id="technical" name="Technical & Practical">
+    
+    <subsection id="app_usage">
+      <title>Using the MiCBT Guide App</title>
+      <faq id="tech_app_1">
+        <question>I lost my progress in the app. How do I recover it?</question>
+        <answer>The app logs practice sessions locally. Ensure you're tapping "Log My Practice" after each session. If you've uninstalled, you may have lost data (depending on the app's backup features). Reinstall and restart from where you remember. Your skills remain in your nervous system; it's just the tracking that's lost. Going forward, enable cloud backup if available.</answer>
+        <difficulty>beginner</difficulty>
+        <keywords>app, data, progress, backup</keywords>
+      </faq>
+      <faq id="tech_app_2">
+        <question>Can I skip ahead in the program? Can I do that?</question>
+        <answer>Technically, yes (if the app allows). However, the progression is intentional—each week builds on prior skills. Skipping is like trying to run before walking. If you're finding a week tedious, extend it rather than skip. If you're flying through (rare), consult a facilitator before advancing. The structure serves a purpose.</answer>
+        <difficulty>beginner</difficulty>
+        <keywords>progression, pacing, structure</keywords>
+      </faq>
+    </subsection>
+
+    <subsection id="adaptation">
+      <title>Adapting to Life Circumstances</title>
+      <faq id="tech_adapt_1">
+        <question>I travel frequently for work. How do I maintain practice?</question>
+        <answer>The portability of meditation is a strength. Pack headphones, use the app, and practice in your hotel room or quiet space. Brief sessions (20-30 min) are fine during travel. Traveling actually offers fresh environments that prevent habituation. Many practitioners find travel weeks energizing for practice because of the novelty and reduced routine pressures.</answer>
+        <difficulty>beginner</difficulty>
+        <keywords>travel, consistency, environment</keywords>
+      </faq>
+      <faq id="tech_adapt_2">
+        <question>Seasonal Affective Disorder (SAD) affects my motivation. How do I stay consistent?</question>
+        <answer>SAD is real and affects motivation. During low seasons: (1) Commit to brief practice (10 min), (2) Practice at the same time (routine stabilizes mood), (3) Pair meditation with light therapy, (4) Use the ten factors—kindness and gentleness toward yourself when energy is low, (5) Consider medication if symptoms are severe. Equanimity is especially important: "This low mood is impermanent; I'll move through it."</answer>
+        <difficulty>intermediate</difficulty>
+        <keywords>SAD, seasonal, motivation, gentleness</keywords>
+      </faq>
+      <faq id="tech_adapt_3">
+        <question>I'm experiencing a bout of depression and meditation feels impossible. What do I do?</question>
+        <answer>During acute depression, drop the formal practice requirements. Instead: (1) Practice mindfulness of breath only (5-10 min), (2) Use loving-kindness toward yourself, (3) Gentle body awareness if you can manage it, (4) Reach out for professional support (therapist, doctor). Depression is often a signal to increase practice, but forcing a full 45-min session when depressed may backfire. Gentleness is key.</answer>
+        <difficulty>intermediate</difficulty>
+        <keywords>depression, professional help, gentleness, breath</keywords>
+      </faq>
+    </subsection>
+
+    <subsection id="integration">
+      <title>Integration with Other Modalities</title>
+      <faq id="tech_integration_1">
+        <question>I'm in therapy. Can I combine MiCBT with my therapist's approach?</question>
+        <answer>Absolutely. In fact, MiCBT + therapy often produces faster results than either alone. Share this framework with your therapist. MiCBT addresses the sensational and equanimous foundations; talk therapy addresses narrative and relational patterns. They're complementary. If your therapist is trained in MiCBT, even better.</answer>
+        <difficulty>beginner</difficulty>
+        <keywords>therapy, integration, complementary</keywords>
+      </faq>
+      <faq id="tech_integration_2">
+        <question>I practice other meditation traditions (Zen, Transcendental Meditation, etc.). Is MiCBT compatible?</question>
+        <answer>Broadly yes. All contemplative traditions share core principles (presence, equanimity, compassion). MiCBT is unique in its body-centered, systematic approach and integration with psychology. You can practice MiCBT as your primary framework while maintaining respect for other traditions. Some practitioners find integrating styles deepens both. However, if you're in a tradition with specific practices required, check with your teacher before combining.</answer>
+        <difficulty>intermediate</difficulty>
+        <keywords>traditions, compatibility, integration</keywords>
+      </faq>
+      <faq id="tech_integration_3">
+        <question>I'm using medication for anxiety/depression. Should I stop now that I'm meditating?</question>
+        <answer>No. Meditation and medication serve different functions. Medication can restore baseline neurochemistry; meditation builds resilience and skills. Many practitioners find meditation + medication ideal. Work with your prescriber—they'll monitor whether medication dose is still appropriate as your practice deepens. Never stop medication without medical guidance.</answer>
+        <difficulty>intermediate</difficulty>
+        <keywords>medication, therapy, neurochemistry, prescriber</keywords>
+      </faq>
+    </subsection>
+  </section>
+
+  <!-- OBSTACLES & MENTAL BLOCKS -->
+  <section id="obstacles" name="Obstacles & Mental Blocks">
+    
+    <faq id="obs_1">
+      <question>I intellectually understand the concepts, but I don't feel them. Why?</question>
+      <answer>Intellectual understanding is conceptual; experiential understanding is embodied. You must feel equanimity in your nervous system through repetition. This takes time (weeks to months, not days). Continue practicing even if you don't feel shifts yet. One day, you'll notice: "Wow, I used to react for an hour; that lasted 10 minutes." That's when the intellectual becomes experiential.</answer>
+      <difficulty>intermediate</difficulty>
+      <keywords>intellectual, experiential, embodied, understanding</keywords>
+    </faq>
+
+    <faq id="obs_2">
+      <question>I'm afraid deeper practice will change me in ways I don't want.</question>
+      <answer>Change is inevitable and, the book suggests, fundamentally good. However, your fear is valid—identity shifts can feel destabilizing. Some questions: What change frightens you specifically? Is this fear protective (good instinct) or reactive (old conditioning)? Often, the "change" is simply becoming more authentically you, which others appreciate. Trust the process; you're guided by equanimity, not recklessness.</answer>
+      <difficulty>intermediate</difficulty>
+      <keywords>change, fear, identity, authenticity</keywords>
+    </faq>
+
+    <faq id="obs_3">
+      <question>I feel like a failure because I can't meditate "well."</question>
+      <answer>The book reframes "good meditation" as showing up consistently and maintaining equanimity with whatever arises. A "bad" meditation where you're distracted but keep returning to the practice is actually good meditation. There's no perfect meditation—only honest effort. Your self-judgment is data for the practice: notice it equanimously.</answer>
+      <difficulty>beginner</difficulty>
+      <keywords>failure, judgment, effort, consistency</keywords>
+    </faq>
+
+    <faq id="obs_4">
+      <question>I'm worried I'll become too passive or detached from meditation practice.</question>
+      <answer>Valid concern historically raised in philosophical circles. However, MiCBT includes ethical action and the ten factors, which are active and engaged. Equanimity isn't passivity; it's clarity that allows appropriate action. The book's emphasis on ethics, assertiveness, and compassion counters this drift. Genuine MiCBT produces people who are both calm and engaged.</answer>
+      <difficulty>intermediate</difficulty>
+      <keywords>passivity, detachment, action, engagement</keywords>
+    </faq>
+  </section>
+
+</micbt_faq_database>
