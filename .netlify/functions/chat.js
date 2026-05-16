@@ -94,7 +94,7 @@ function getUserIdentifier(event) {
 }
 
 // Check rate limit (questions per day)
-async function checkRateLimit(userId, maxQuestionsPerDay = 50) {
+async function checkRateLimit(userId, maxQuestionsPerDay = 6) {
   // Use Netlify's data store (KV) if available, otherwise use in-memory (resets on redeploy)
   // For now, we'll use a simple in-memory store
   
