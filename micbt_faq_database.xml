@@ -27,7 +27,7 @@
           <question>What is the Commitment to Self-Care Agreement and why do I need to sign it?</question>
           <answer>The Self-Care Agreement is a formal commitment to practice for 30 minutes twice daily throughout the program. It matters because MiCBT skills are built through repetition—understanding the concepts intellectually is not enough. The agreement signals to yourself that you're treating this as a genuine investment, not a casual experiment. Research supporting MiCBT's outcomes is based on participants who maintained this practice frequency. The app tracks your sessions to help you honour the commitment.</answer>
           <difficulty>beginner</difficulty>
-          <keywords>self-care agreement, commitment, practice frequency, twice daily</keywords>
+          <keywords>self-care agreement, commitment, practice frequency, twice daily, homework, stage 1.1, week 1, what to do, tasks, checklist</keywords>
           <stage>1</stage><step>1.1</step>
         </faq>
 
@@ -155,7 +155,7 @@
           <question>I have intrusive thoughts during meditation. Does this mean my mind is too "busy"?</question>
           <answer>No — intrusive thoughts are universal, and the goal of mindfulness is not to stop them. It's to change your relationship with them. Rather than engaging, following, or trying to suppress thoughts, you notice them and gently return attention to body sensations. Over time, as equanimity develops, thoughts have less power to capture your attention. The moment you realise you've been pulled into a thought is actually the practice working — that moment of recognition is mindfulness in action.</answer>
           <difficulty>beginner</difficulty>
-          <keywords>thoughts, intrusive, busy mind, attention</keywords>
+          <keywords>thoughts, intrusive, busy mind, attention, homework, stage 1.2, week 2, what to do, tasks, checklist, attention, breath</keywords>
           <stage>1</stage><step>1.2</step>
         </faq>
 
@@ -287,7 +287,7 @@
           <question>Is it normal to feel emotional during body scanning — sadness, grief, or even tears?</question>
           <answer>Yes, and it's actually a sign the practice is working. The body holds emotional memories — patterns of tension and sensation associated with past experiences. As you bring conscious, equanimous awareness to different body areas, stored emotions can surface. This is sometimes called the "purification" process. The instruction is the same: observe the emotion as a collection of body sensations without identifying with it. It will pass. These releases are part of the healing process, not a problem to be fixed.</answer>
           <difficulty>intermediate</difficulty>
-          <keywords>emotions, sadness, tears, grief, release, healing</keywords>
+          <keywords>emotions, sadness, tears, grief, release, healing, homework, stage 1.3, week 3, what to do, tasks, checklist, emotions, body scan</keywords>
           <stage>1</stage><step>1.3</step>
         </faq>
 
@@ -391,7 +391,7 @@
           <question>What is the MISS and how do I use it?</question>
           <answer>The MISS (Mindfulness-based Interoceptive Signature Scale) is a tracking form introduced in Step 1.4. It's used in daily life — not during meditation — to record your emotional experiences as they happen. Whenever you notice a significant emotional reaction (distress, anger, sadness, frustration), you log: the situation, the emotion, its intensity (0–10), the associated body sensations, and how long the reaction lasted. This builds your "interoceptive signature" — your personal map of which sensations correspond to which emotions. Over time, you'll be able to catch reactions earlier, at the physical level, before they escalate.</answer>
           <difficulty>beginner</difficulty>
-          <keywords>MISS, interoceptive signature, tracking, daily life, emotions</keywords>
+          <keywords>MISS, interoceptive signature, tracking, daily life, emotions, homework, stage 1.4, week 4, what to do, tasks, checklist, daily life, MISS</keywords>
           <stage>1</stage><step>1.4</step>
         </faq>
 
@@ -514,7 +514,7 @@
           <question>What's the difference between sweeping "en masse" and "transversal" (part-by-part) scanning?</question>
           <answer>Part-by-part (transversal) scanning moves attention sequentially through discrete body areas. Sweeping en masse is a continuous, flowing movement of attention through the whole body — more like a wave than a series of steps. Sweeping is introduced at this stage because it develops a different quality of attention: broader, more fluid. Both techniques develop equanimity; they work through slightly different mechanisms. Part-by-part builds precision and addresses deeply held sensations; sweeping builds flow and the sense of body unity. Both are used throughout the later steps.</answer>
           <difficulty>intermediate</difficulty>
-          <keywords>sweeping, en masse, transversal, part by part, technique, difference</keywords>
+          <keywords>sweeping, en masse, transversal, part by part, technique, difference, homework, stage 2.1, week 5, what to do, tasks, checklist, avoidance, exposure, SUDS</keywords>
           <stage>2</stage><step>2.1</step>
         </faq>
 
@@ -670,7 +670,7 @@
           <question>I experienced a blissful state during meditation and now I'm chasing it. Is that a problem?</question>
           <answer>Yes — the book calls this "attachment to pleasant experiences." Blissful states are not the goal; equanimity is. Chasing bliss creates craving, which perpetuates suffering. When bliss arises, observe it equanimously — the pleasant sensations without grasping. When it passes (and it will), stay equanimous with what follows. This practice of non-attachment to pleasant states paradoxically deepens wellbeing more than pursuing pleasure, because it removes the cycle of craving and disappointment.</answer>
           <difficulty>intermediate</difficulty>
-          <keywords>bliss, attachment, craving, pleasant, non-attachment</keywords>
+          <keywords>bliss, attachment, craving, pleasant, non-attachment, homework, stage 2.2, week 6, what to do, tasks, checklist, confidence, bipolar exposure</keywords>
           <stage>2</stage><step>2.2</step>
         </faq>
 
@@ -729,7 +729,7 @@
           <question>What does "relational mindfulness" mean and how is it different from personal practice?</question>
           <answer>Relational mindfulness applies the same equanimity skills you've developed internally to interpersonal interactions. In personal practice (Stages 1–2) you learned not to react to your own thoughts and sensations. In relational mindfulness (Stage 3) you learn not to react to others' thoughts, emotions, and behaviours. This means noticing the body sensations that arise when someone triggers you, observing them equanimously, and responding thoughtfully rather than reacting habitually. The same co-emergence model applies: their behaviour triggers a sensation in you, and that sensation co-emerges with interpretations about them that are shaped by your schemas and past experiences — not just by the objective situation.</answer>
           <difficulty>intermediate</difficulty>
-          <keywords>relational mindfulness, interpersonal, relationships, co-emergence, others</keywords>
+          <keywords>relational mindfulness, interpersonal, relationships, co-emergence, others, homework, stage 3.1, week 7, what to do, tasks, checklist, relational, interpersonal</keywords>
           <stage>3</stage><step>3.1</step>
         </faq>
 
@@ -785,7 +785,7 @@
           <question>The seven assertive statements feel artificial. Will they ever sound natural?</question>
           <answer>Yes. Initially any new communication pattern feels awkward because you're using non-habitual neural pathways. With practice across 2–3 real conversations per week, the framework becomes integrated. You'll gradually personalise the language while retaining the structure, and it will begin to feel like your own voice. Most people report naturalness after 3–4 weeks of genuine practice — not just understanding the steps, but using them with real people in real situations.</answer>
           <difficulty>beginner</difficulty>
-          <keywords>assertiveness, natural, artificial, practice, communication</keywords>
+          <keywords>assertiveness, natural, artificial, practice, communication, homework, stage 3.2, week 8, what to do, tasks, checklist, communication, assertive</keywords>
           <stage>3</stage><step>3.2</step>
         </faq>
 
@@ -892,7 +892,7 @@
           <question>What is the structure of loving-kindness meditation and how does it work?</question>
           <answer>Loving-kindness meditation (also called Metta) in MiCBT is divided into three parts of approximately 3 minutes each: (1) Self-compassion — focusing on the centre of your chest, feeling any sensations there, and pairing them with kind intentions for your own wellbeing; (2) Compassion for loved ones — continuing to feel chest sensations while visualising one or two people you love and extending those sensations outward toward them; (3) Compassion for all beings — extending outward without limits to include all beings, including difficult people and strangers. The body sensation in the chest is the anchor throughout — this is what makes MiCBT's version embodied rather than purely conceptual.</answer>
           <difficulty>beginner</difficulty>
-          <keywords>loving-kindness, metta, structure, three parts, self-compassion, all beings</keywords>
+          <keywords>loving-kindness, metta, structure, three parts, self-compassion, all beings, homework, stage 4.1, week 9, what to do, tasks, checklist, compassion, loving-kindness, ethics</keywords>
           <stage>4</stage><step>4.1</step>
         </faq>
 
@@ -1012,7 +1012,7 @@
           <question>I've finished the program. Do I really need to meditate indefinitely?</question>
           <answer>"Indefinitely" can feel daunting, so reframe: do you want to maintain physical fitness? Exercise ongoing. Do you want to maintain mental fitness? Meditation ongoing. Many practitioners find once-daily practice sufficient for maintenance after completing the full program. Others maintain with 4–5 sessions per week. What matters most is consistency over time rather than any single session. Even restarting after a break is always possible — and gets easier each time because the neural patterns are established.</answer>
           <difficulty>beginner</difficulty>
-          <keywords>maintenance, ongoing, forever, consistency, post-program</keywords>
+          <keywords>maintenance, ongoing, forever, consistency, post-program, homework, stage 4.2, week 10, what to do, tasks, checklist, maintenance, ten factors</keywords>
           <stage>4</stage><step>4.2</step>
         </faq>
 
