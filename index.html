@@ -1,624 +1,460 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Lumi — MiCBT Practice Companion</title>
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
-html, body, #root { height:100%; }
-body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:#F6F2EC; }
-@keyframes dot {
-  0%,100% { opacity:.25; transform:scale(.75); }
-  50% { opacity:1; transform:scale(1); }
-}
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(8px); }
-  to { opacity:1; transform:translateY(0); }
-}
-.fade-up { animation:fadeUp .3s ease both; }
-textarea:focus { outline:none; }
-button { cursor:pointer; }
-::-webkit-scrollbar { width:3px; }
-::-webkit-scrollbar-thumb { background:#d1d1d6; border-radius:2px; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MiCBT Guide - Help Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:        #3E5B6C;
+      --teal-dark:   #2C4254;
+      --orange:      #F38846;
+      --pale:        #F5F0E8;
+      --border:      #DDD5C8;
+      --text-dark:   #2C3E4A;
+      --text-mid:    #5A7A8A;
+      --text-light:  #8AACBC;
+      --r-card:      14px;
+      --shadow-card: 0 1px 4px rgba(0,0,0,0.07), 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    html, body {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1a2e3c;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-dark);
+    }
+
+    #app {
+      width: 100%;
+      max-width: 500px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: white;
+    }
+
+    .header {
+      background: var(--teal);
+      color: white;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .header-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .header-text h1 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .header-text p {
+      font-size: 12px;
+      opacity: 0.8;
+      margin: 2px 0 0 0;
+    }
+
+    .chat-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .message {
+      display: flex;
+      gap: 8px;
+      animation: slideIn 0.3s ease;
+    }
+
+    .message.user {
+      flex-direction: row-reverse;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .message-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+
+    .message-bubble {
+      max-width: 80%;
+      padding: 12px 15px;
+      border-radius: 14px;
+      line-height: 1.5;
+      word-wrap: break-word;
+    }
+
+    .message.assistant .message-bubble {
+      background: #f5f5f5;
+      border: 1px solid var(--border);
+      color: var(--text-dark);
+    }
+
+    .message.user .message-bubble {
+      background: var(--orange);
+      color: white;
+      border-radius: 14px 3px 14px 14px;
+    }
+
+    .typing-indicator {
+      display: flex;
+      gap: 4px;
+      padding: 12px 15px;
+    }
+
+    .typing-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ccc;
+      animation: typing 1.4s infinite;
+    }
+
+    .typing-dot:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .typing-dot:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes typing {
+      0%, 60%, 100% {
+        opacity: 0.3;
+      }
+      30% {
+        opacity: 1;
+      }
+    }
+
+    .input-area {
+      background: white;
+      border-top: 1px solid var(--border);
+      padding: 12px;
+      flex-shrink: 0;
+    }
+
+    .input-wrapper {
+      display: flex;
+      gap: 8px;
+      align-items: flex-end;
+    }
+
+    textarea {
+      flex: 1;
+      border: 1.5px solid #ddd;
+      border-radius: 10px;
+      padding: 10px 13px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      color: var(--text-dark);
+      resize: none;
+      max-height: 100px;
+      line-height: 1.5;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--orange);
+    }
+
+    .send-btn {
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 10px;
+      background: var(--orange);
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: opacity 0.2s;
+    }
+
+    .send-btn:hover:not(:disabled) {
+      opacity: 0.9;
+    }
+
+    .send-btn:disabled {
+      background: #ddd;
+      cursor: not-allowed;
+    }
+
+    .stage-selector {
+      padding: 12px;
+      background: #f9f9f9;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      flex-shrink: 0;
+    }
+
+    .stage-btn {
+      padding: 6px 12px;
+      border: 1.5px solid #ddd;
+      background: white;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .stage-btn.active {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: white;
+    }
+
+    .error-message {
+      padding: 12px;
+      background: #ffe8e8;
+      border: 1px solid #ffb3b3;
+      border-radius: 8px;
+      color: #d32f2f;
+      font-size: 13px;
+      margin: 8px;
+    }
+
+    .welcome-note {
+      padding: 10px 14px;
+      background: #e8eef5;
+      border-left: 4px solid var(--teal);
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.6;
+      margin: 8px;
+    }
+  </style>
 </head>
 <body>
-<div id="root"></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
-<div id="kb" style="display:none">=== GETTING STARTED (9 entries) ===
-1. Q: What is the MiCBT Guide app?
-   A: The MiCBT Guide is a mobile app that delivers the complete Mindfulness-integrated Cognitive Behaviour Therapy (MiCBT) program, developed by Dr Bruno Cayoun. MiCBT is a clinically researched approach that integrates body-based mindfulness meditation with evidence-based CBT techniques. The app delivers a structured 4-stage, 10-step program designed to reduce stress, anxiety, and depression while building lasting emotional resilience. Each stage includes guided audio meditations by Dr Cayoun, readings, assessments, and practice tracking tools. The program typically takes 10 weeks but you can move at your own pace.
 
-2. Q: How do I create an account?
-   A: Open the app and tap Create Account on the welcome screen. Enter your first name, last name, and email address, then choose a password and tap Sign Up. You can also sign up using Google, Facebook, or Apple by tapping the relevant option. Once registered, you will receive a confirmation email — check your spam folder if it doesn't arrive within a few minutes. You only need one account; if you change devices, log back in with the same credentials and your data will be restored.
-
-3. Q: How do I log in to the app?
-   A: Open the app and tap Log in. Enter your email address and password, then tap Log in. If you signed up with Google, Facebook, or Apple, tap the matching button — do not enter a password manually, as those accounts are managed through the third-party platform. If you have forgotten your password, tap Forgot Password on the login screen, enter your email, and follow the reset link sent to your inbox (check spam if it doesn't arrive). Note: if you used a social login (Google, Facebook, Apple) you cannot reset a password through the app — manage that through the relevant platform instead.
-
-4. Q: How do I reset my password?
-   A: On the login screen, tap Forgot Password. Enter the email address you registered with and tap Reset Password. Check your inbox for the reset email — if it doesn't arrive within a few minutes, check your spam or junk folder. Open the email and tap the reset link, then choose a new password and tap Submit. Log back in with your new password. Important: this only works if you originally registered with an email address and password. If you signed up with Google, Facebook, or Apple, you must reset your password through that platform — the app's forgot password option will not work for social logins.
-
-5. Q: How do I get started with the program?
-   A: Tap Home in the bottom navigation bar. Tap Stage 1 (the circled number 1 on the home screen). Tap Step 1 — Committing to Self-Care, then tap Start. You will be guided to set your Goals first — describe what you want to work on and rate how much each difficulty affects your life. Then read through the stage guide and watch Dr Cayoun's introduction video. Begin the meditations in order using the guided audio. After each session, tap Mark as Complete on the Timer Settings screen, then log your practice: Home → current stage → Log my practice → enter details → Submit. Set reminders via More → My Reminders so you don't forget your twice-daily sessions.
-
-6. Q: Should I unlock all stages or work through them in order?
-   A: Work through them in order. MiCBT is a progressive program — each stage builds on skills and insights developed in the previous one. The early stages (1.1–1.4) develop the foundational body awareness and equanimity that later stages depend on. Jumping ahead before those skills are established tends to reduce the effectiveness of the exposure, interpersonal, and compassion work that follows. You can unlock all stages via More → toggle Unlock All Stages if you want to preview content, but for your actual practice keep the sequential structure.
-
-7. Q: How does the program work? What is the overall structure?
-   A: MiCBT is structured in 4 stages across 10 steps. Stage 1 — Personal Stage (Steps 1.1–1.4): develop foundational mindfulness skills starting with Progressive Muscle Relaxation, then mindfulness of breath, body scanning, and applying equanimity in daily life. Stage 2 — Exposure Stage (Steps 2.1–2.2): use mindfulness skills to overcome avoidance and build self-confidence through structured exposure work. Stage 3 — Interpersonal Stage (Steps 3.1–3.2): extend equanimity and mindful awareness into relationships and communication. Stage 4 — Compassion Stage (Steps 4.1–4.2): cultivate loving-kindness toward self and others, practise ethical guidelines, and consolidate long-term wellbeing. Each step has guided audio meditations, readings, assessments, and practice logging.
-
-8. Q: Does the app cost money? Is there a free trial?
-   A: The MiCBT Guide app offers a free trial so you can explore the program before committing. After the trial period, a subscription is required to continue access to the full program. For current pricing, subscription options, and the length of the free trial, check the App Store (iPhone) or Google Play Store (Android) — pricing may vary by region and is updated there. Your subscription is linked to your account, not your device, so it carries across if you change phones.
-
-9. Q: Is there a book that goes with the app?
-   A: Yes. The app is the companion to Mindfulness-integrated CBT for Well-Being and Personal Growth (Second Edition, 2026) by Dr Bruno Cayoun and Dr Andrea Grabovac, published by Wiley. The book covers the same 10-step program in depth — with detailed explanations of the theory, extended case studies, all assessment forms, and additional clinical context. The app is fully standalone and you do not need the book to complete the program. However, if you want deeper reading on the underlying model and mechanisms, the book is an excellent complement. It is available through major booksellers.
-
-
-=== USING THE APP (8 entries) ===
-1. Q: How do I navigate the app?
-   A: The app has five tabs in the bottom navigation bar: Home (house icon) — your current stage and step, where you access meditations, readings, and logging; Diary (document icon) — your full practice history and log; Goals (target icon) — add, review, and update your personal goals; Assessments (graph icon) — complete and view all assessments (DASS-21, ES-16, MSES-R, SWLS, IAI, MISS, SUDS, ECD); More (three dots) — settings, timers, reminders, account details, and the option to unlock all stages. From Home, tap your current stage number, then the step you are on. Each step page shows a stage guide, an introduction video by Dr Cayoun, readings, meditations in order, assessments, and the practice log.
-
-2. Q: How do I log my meditation practice?
-   A: After completing a session, tap Home → select your current stage → select your current step → tap Log my practice. Enter the date, duration, meditation type, and any notes, then tap Submit. Alternatively, go to Diary → tap Display Log (orange button) → tap the + icon to add an entry manually. Log each session as soon as possible after completing it. Consistent logging helps you track your progress over time and keeps you motivated. The Diary graph shows your practice in minutes per day across Week, Month, and Year views, colour-coded from green (more practice) to red (less).
-
-3. Q: How do I view my practice history?
-   A: Tap Diary in the bottom navigation bar, then tap Display Log (the orange button). This shows all your recorded sessions. Use the Week, Month, and Year tabs at the top to switch views. The colour-coded calendar gives you an at-a-glance picture of consistency — green days indicate more practice, red days indicate less. Tap any individual entry to view its details. To edit an entry, tap it and make changes. To delete, swipe left on the entry and tap the trash icon.
-
-4. Q: How do I set a meditation reminder?
-   A: Tap More in the bottom navigation bar, then tap My Reminders. Tap the + icon to add a new reminder. Select the time of day, choose which days of the week you want the reminder, select a bell sound, then tap Save Reminder. You can set multiple reminders — for example, one for a morning session and one for an evening session, which is the recommended twice-daily schedule. To edit an existing reminder, tap on it and select Modify Reminder. To delete, swipe left and tap the trash icon.
-
-5. Q: How do I create a meditation timer?
-   A: Go to More → My Timers → tap the + icon. Enter a name for the timer (e.g. "PMR 14 min"), use the slider to set the duration, choose a start and end bell, and optionally set interval bells during the session. Tap Save. To use it, tap the timer from the list — it will show a PLAY FROM START button and a MARK AS COMPLETE button. To edit, swipe right and tap the pen icon. To delete, swipe left and tap the trash icon. Timers are useful if you want to practise in silence without using the guided audio.
-
-6. Q: Can I look ahead to see what's in upcoming stages?
-   A: Yes. Tap More, then toggle the switch next to Unlock All Stages. This unlocks all content for previewing. However, for your actual practice we recommend keeping stages locked and working sequentially — the program is designed to build cumulatively, and skipping ahead before developing the foundational skills can reduce its effectiveness. Use the unlock feature to explore out of curiosity, but return to your current stage for practice.
-
-7. Q: How do I avoid being interrupted by phone calls or notifications during meditation?
-   A: Enable Do Not Disturb before each session. On iPhone: open Control Centre (swipe down from top-right), long-press the Focus or moon icon, and select Do Not Disturb. Or go to Settings → Focus → Do Not Disturb and schedule it. On Android: swipe down from the top of the screen to open Quick Settings, then tap Do Not Disturb. You can also go to Settings → Sound → Do Not Disturb → Turn on now. Both platforms allow calls from starred contacts or repeated callers even with DnD on, so emergency contacts can still reach you.
-
-8. Q: How do I rewind or fast-forward the meditation audio?
-   A: Tap the rewind or fast-forward button on the audio player — each tap moves the playback position by 5 seconds. Use multiple taps to skip further forward or back. Note: the progress bar (slider) shows your current position in the audio but does not support dragging to skip — use the buttons only. If you need to pause and resume later, the app will remember your position in the audio.
-
-
-=== MEDITATION PRACTICE (23 entries) ===
-1. Q: I'm struggling to make time for practice. What if I don't have time?
-   A: Starting small is better than not starting at all — even one session is more beneficial than none. That said, the twice-daily schedule is deliberate and clinically meaningful: the morning session refreshes skills from the night before, and the evening session consolidates what happened during the day. Most people find that 14–30 minutes twice daily is achievable once they protect the time as a genuine appointment. Practical suggestions: practise immediately after waking before the day starts; practise in your parked car before going inside after work; combine with something you already do (e.g., after morning coffee). Once you experience real benefits — which usually emerge within 1–2 weeks — protecting the time becomes much easier.
-
-2. Q: Why do I need to practise twice daily? Can I just do it once?
-   A: Once daily is better than nothing, but the research supporting MiCBT's outcomes is based on twice-daily practice. The reason is learning consolidation: mindfulness is a skill, and skills are embedded through repetition across multiple sessions per day, not just repetition across days. A single daily session builds the habit more slowly and the benefits accumulate more gradually. If twice daily is genuinely impossible right now, maintain once daily and return to twice daily as soon as circumstances allow — treat it as a temporary adaptation, not a permanent reduction.
-
-3. Q: I keep falling asleep during meditation. What should I do?
-   A: Drowsiness — known as torpor — is one of the most common early challenges, especially in evening sessions or if you are sleep-deprived. Several approaches help: sit upright with your spine self-supporting rather than leaning against a wall or chair back; keep your eyes slightly open and resting on a point about a metre in front of you; practise at a different time of day (morning usually produces better alertness); avoid practising immediately after meals. If drowsiness persists, try the transversal (part-by-part) scanning technique, which requires more active attention and tends to maintain wakefulness better than sweeping.
-
-4. Q: Can I lie down during meditation?
-   A: For maintenance practice once you have completed the program, yes. During the active 10-step program, upright seated practice is strongly recommended. There are two reasons: lying down significantly increases the likelihood of falling asleep, which prevents skill development; and practising seated trains your brain to associate that posture with alert, focused attention — a connection that carries into daily life. If you have a physical condition that makes sitting uncomfortable, use a chair with appropriate support and adapt rather than defaulting to lying down.
-
-5. Q: My mind keeps wandering — what should I do?
-   A: A wandering mind is not a problem — it is the practice. Mindfulness is not about keeping the mind still; it is about noticing when attention has wandered and returning it, without judgment or frustration. Every time you notice that your mind has drifted and bring it back, you are training the neural circuits responsible for self-awareness and attention regulation. Over weeks of consistent practice, the gap between drifting and noticing gets shorter. The number of times you get distracted in a session is not a measure of failure — it is a measure of how many times you practised returning.
-
-6. Q: I have intrusive thoughts during meditation. Does this mean my mind is too busy?
-   A: No — intrusive thoughts are universal. Every meditator experiences them, including experienced practitioners. The goal is not to stop thoughts but to change your relationship with them. When a thought arises, you notice it without engaging, following, or fighting it — like observing clouds passing through a sky you are not trying to control. Over time, as equanimity deepens, thoughts arise with the same frequency but have progressively less power to pull you away. Noticing that you have been pulled in and returning to sensations is the whole practice.
-
-7. Q: Should I try to make my mind blank during meditation?
-   A: No — a blank mind is not the goal and is not realistic for almost anyone. The goal is equanimity: observing thoughts and sensations as they arise and pass, without reacting to or identifying with them. If you expect blankness and judge yourself for thinking, you are adding suffering on top of the practice. The mind thinks — that is its nature. What changes with practice is your relationship to the thinking, not the thinking itself.
-
-8. Q: I get caught up in rumination during practice — memories and worries take over. How do I handle this?
-   A: Return attention to the current body sensation you were scanning. The sensation is always in the present moment — it anchors you. You may need to return dozens of times in a single session; that is not failure, that is the practice. In daily life, notice the difference between productive thinking (purposeful, moving toward a solution) and rumination (repetitive, emotionally charged, circling without resolution). For the latter, redirect to a body sensation or breath. Over weeks, the grip of rumination weakens as equanimity builds.
-
-9. Q: I experience physical pain during meditation. Should I stop?
-   A: It depends on the type of pain. Mild postural discomfort (aching from sitting) is normal and can be worked with equanimously — observing it rather than immediately moving. Genuine injury pain or sharp, worsening pain is a signal to adjust your posture or stop. Check your sitting position first: ensure feet are flat on the floor, spine is upright but not rigid. Old injury sites sometimes become more noticeable as awareness sharpens — the pain is often pre-existing, not caused by the practice. If pain is new, worsening, or concerning, consult a doctor before continuing.
-
-10. Q: I have a history of trauma and sometimes get flashbacks during meditation. How do I practise safely?
-    A: Practising alongside a trauma-informed therapist is strongly recommended if flashbacks are occurring. If they arise during practice and you can observe them with some stability, continue — they will pass. If they are distressing or destabilising, stop the formal practice and ground yourself: open your eyes, place your feet firmly on the floor, look around the room, take several slow breaths, and name five things you can see. Keep sessions short initially (10–15 minutes) and build gradually. Avoid deep body scanning until you have a foundation of stability — mindfulness of breath is a safer starting point for trauma survivors.
-
-11. Q: I experience strong emotions or emotional releases during body scanning — crying, grief, sudden sadness. Should I stop?
-    A: No — this is the practice working. The body holds emotional memories and stored patterns of tension. As you bring equanimous awareness to different body areas, emotions that were held there can surface. This is sometimes called the purification process. The instruction is the same as always: observe the emotion as body sensations (tightness, heat, heaviness) without identifying with it or acting on it. It will pass. These releases are part of healing, not signs of something going wrong. If overwhelmed, slow down and return to breath temporarily, then resume.
-
-12. Q: I feel nothing during body scanning. Is something wrong?
-    A: Nothing is wrong — this is very common, especially in the first 1–3 weeks. Blank areas (where you feel nothing) are as valid as areas of strong sensation. They indicate areas where interoceptive awareness has not yet developed, often places of long-held chronic tension or emotional numbness. Continue scanning those areas gently without forcing. Feeling often develops gradually — sometimes suddenly after a plateau. If you can feel at least something in any part of the body, you are doing the practice correctly.
-
-13. Q: I feel agitated or restless during meditation. Is this normal?
-    A: Yes — restlessness is one of the most common early experiences, particularly in the first few weeks. It reflects stored mental and physical tension becoming conscious as the body quietens. The instruction is to observe the agitation as body sensation — tightness, heat, restlessness — rather than acting on the urge to move or stop. Agitation is impermanent: it arises, peaks, and passes if you stay with it equanimously rather than escaping it. This direct experience of impermanence is one of the most valuable things early practice teaches.
-
-14. Q: During meditation, my eyes move toward the area I'm scanning. Is this a problem?
-    A: It is a natural neurological reflex — the brain coordinates visual and bodily attention. It is not harmful. Over time, try to decouple the two: keep your gaze soft and fixed (or closed, with eyes resting downward at about 45 degrees) while directing awareness internally. A fixed external gaze point about a metre in front of you, with eyes slightly open, tends to help maintain internal attention without the tracking reflex.
-
-15. Q: I practise PMR but I dislike the feeling of tightening my muscles. Is there an alternative?
-    A: Yes. MiCBT includes an alternative PMR method that does not require tensing. Instead of deliberately contracting each muscle group, you bring awareness to each area of the body in sequence and consciously release any tension that is already present — without adding any. Many people find this gentler approach equally effective. The audio instructions include guidance on this variation. If you have not found it yet, work through the PMR audio again or contact support.
-
-16. Q: I feel anxious during PMR. Am I doing something wrong?
-    A: No — this is common in the first few sessions. PMR does not create anxiety. What happens is that as you quieten down and reduce external distraction, you become more aware of background anxiety that was already present but masked by busyness. PMR does not yet train the skills to resolve that anxiety — that begins with body scanning in Stage 1.2 and beyond. Persist with PMR; the awareness it produces is useful information, and the anxiety typically settles after a few sessions.
-
-17. Q: I have back or health issues. How do I adapt the PMR practice?
-    A: Be gentle with any area that needs special care. When the audio instructs you to tense a muscle group that is injured or painful — for example, arching the back if you have bulging discs, or tensing a joint with an existing injury — skip the tensing phase for that area and move directly to the releasing phase. You can still bring awareness to the area and release any tension present without adding more. For other physical conditions, adapt the sitting position as needed — a supportive chair is always fine. If uncertain, check with your doctor before starting.
-
-18. Q: I experienced an out-of-body experience during meditation. Is that okay?
-    A: Yes — experiences such as feeling like you are floating, observing yourself from above, or a strong sense of body dissolution are occasionally reported by meditators reaching deeper states of concentration. They are safe and not dangerous. They arise because, with reduced sensory reactivity, the usual felt-sense boundaries of the body become less prominent. The instruction is to observe them with equanimity — like any other mental state — rather than pursuing or being alarmed by them. Chasing these experiences would create attachment and distract from the program's purpose.
-
-19. Q: Why do I have obsessive thoughts or strong cravings (e.g., for food, sex, or other things) during practice?
-    A: This is explained by the Co-Emergence Model: thoughts and body sensations arise together. When the mind quietens and habitual distractions fall away, cravings or obsessive thoughts often intensify initially because they now have the floor. The craving thought co-emerges with a body sensation — perhaps restlessness, warmth, or a pulling feeling. The instruction is to notice that sensation and observe it equanimously. The craving will pass. This is not a sign that something is wrong — it is the practice surfacing what was always there. With continued equanimity training, the power of cravings to capture attention gradually diminishes.
-
-20. Q: I have found that mindfulness of breath calms my mind. Why do I also need to do body scanning?
-    A: Mindfulness of breath is an excellent stabilising tool and you can always return to it. However, it primarily develops concentration and attentional stability. Body scanning does something additional: it develops equanimity toward the physical dimension of emotions. Because thoughts and body sensations co-emerge — they always arise together — training equanimity at the body level changes how emotional patterns are processed at their root. Breath awareness alone does not reach that physical layer. Both practices are needed for the full benefits of MiCBT.
-
-21. Q: What is loving-kindness (metta) meditation and how do I practise it?
-    A: Loving-kindness meditation is the deliberate cultivation of goodwill — a sincere wish for wellbeing — toward yourself and others. In MiCBT's Stage 4.1, it is practised in three parts of approximately 3 minutes each. Part 1 — Self-compassion: focus on the centre of your chest, feel whatever sensations are present, and silently hold kind intentions such as "May I be peaceful. May I be well." Part 2 — Compassion for loved ones: continue feeling the chest sensations while visualising one or two people you care about, and let those intentions extend outward toward them. Part 3 — Compassion for all beings: extend the intention without limits — to all people, including those you find difficult, and to all living beings. The key is grounding the intention in actual body sensation, not just thinking the words.
-
-22. Q: I notice involuntary movements or twitching during meditation — my fingers lift, my body sways. Is this normal?
-    A: Yes — involuntary movements during meditation are common and not dangerous. As interoceptive awareness deepens and the nervous system releases stored tension, many people notice subtle involuntary movements: fingers lifting, muscle twitches, a slight swaying, or the body wanting to shift position. These reflect neurological activity as the brain processes previously unnoticed sensations. Observe them with equanimity — note the movement and the sensation that preceded it — and continue. They typically settle as practice deepens.
-
-23. Q: I've been having unusual or vivid dreams since starting the program. Is this related to my practice?
-    A: Yes — this is very likely related. Body scanning increases sensitivity to subtle body sensations, and this heightened interoceptive awareness can influence the dream state, where sensations and emotions are processed. People commonly report more vivid or emotionally intense dreams during the early weeks of MiCBT. This usually settles within 1–2 weeks as the nervous system adjusts. Avoid scanning immediately before sleep — keep your practice space separate from your sleep space, and use mindfulness of breath (not full body scanning) if you want to wind down before bed.
-
-
-=== TROUBLESHOOTING (6 entries) ===
-1. Q: The audio isn't playing or keeps stopping.
-   A: Work through these steps in order: (1) Check volume — make sure your device is not on silent and the volume is turned up. (2) Check Do Not Disturb — if enabled, disable it temporarily to test. (3) Check your internet connection — the audio streams online, so you need Wi-Fi or mobile data. (4) Force-close the app and reopen it completely. (5) Check for app updates in the App Store or Google Play and install any available update. (6) Restart your device. (7) Uninstall and reinstall the app — your account data is stored on the server and will not be lost; simply log back in after reinstalling. (8) If none of these resolve the issue, email support@mindfulness.net.au with your device model and iOS/Android version.
-
-2. Q: The app keeps crashing or won't load.
-   A: Try these steps in order: (1) Force-close the app and reopen it. (2) Check for updates in the App Store or Google Play — install any available update. (3) Restart your device completely. (4) Check your internet connection — a poor connection can cause loading failures. (5) Uninstall and reinstall the app — your account data is stored on the server and will not be lost; log back in after reinstalling. (6) If the problem continues, email support@mindfulness.net.au with your device model, operating system version, and a description of when the crash occurs.
-
-3. Q: My data isn't saving.
-   A: If your practice logs, assessment results, or goals are not saving: (1) Check your internet connection — the app requires an active connection to save data to the server. (2) Make sure you are logged in — tap More to check your account. (3) Always tap Submit or Save at the end of each entry — data is not auto-saved. (4) Close the app fully and reopen it, then check whether the data is now showing. (5) If data has been lost, it may not be recoverable — going forward, log sessions immediately after completing them while connected. (6) Contact support@mindfulness.net.au if the problem persists.
-
-4. Q: I want to stop — the program doesn't seem to be working.
-   A: This feeling is very common, and it almost always passes. It tends to arise at two predictable points: around Stages 1.2–1.3, when the novelty has worn off and the benefits are not yet obvious, and around Stage 2.1, when exposure work stirs up difficult sensations. The question worth sitting with is: what exactly feels like it is not working — is practice feeling mechanical, is distress increasing, or has daily life not changed yet? Each of these has a different response. Increasing distress usually means skills are developing and conditioning is surfacing — this is often progress, not failure. Please don't stop without exploring what's underneath the urge to. The chat is here to help you work through it.
-
-5. Q: I missed some sessions / I'm behind in the program. What should I do?
-   A: Missing sessions is normal — do not restart from the beginning. If you have missed a few days, simply pick up where you left off. If you have missed a week or more, spend a few days reviewing your current stage before moving forward — reread the readings and do a few sessions with the current audio to rebuild the skill. The most important thing is to return without self-judgment. Skills accumulated in earlier stages do not disappear with a break — they may feel less sharp but return quickly.
-
-6. Q: I stopped practising for weeks or months. Have I lost all my progress?
-   A: No — the skills developed through MiCBT do not simply disappear. The neural patterns built through practice remain, even after a long break. Think of it like physical fitness: a break reduces conditioning, but a trained body regains fitness faster than an untrained one. When you return, start from your current stage or one stage back and practise for a few sessions before deciding whether to move forward or consolidate. Most people return to their previous level within 1–2 weeks.
-
-
-=== ACCOUNT & PRIVACY (7 entries) ===
-1. Q: How do I change my password?
-   A: Tap More in the bottom navigation bar. Tap Settings, then tap Change Password. Enter your current password, then your new password, and confirm it by entering it again. Tap Save. This option is only available if you originally registered with an email address and password. If you signed up with Google, Facebook, or Apple, you cannot change your password through the app — manage your password through that platform directly (Google Account settings, Facebook settings, or Apple ID settings).
-
-2. Q: How do I change my email address?
-   A: Changing your email address is not currently possible from within the app. The only option is to delete your existing account and create a new one — but this will permanently remove all your data including your practice diary, assessment results, and goals. If your email address has changed, the best option is to contact support@mindfulness.net.au and request assistance — they may be able to help without data loss.
-
-3. Q: How do I delete my account or all my data?
-   A: To delete local device data — On iPhone: Settings → General → iPhone Storage → MiCBT Guide → Delete App. On Android: Settings → Apps → MiCBT Guide → Storage → Clear Data. Note: this removes data stored locally on your device only. To permanently delete your account and all server-stored data (diary, assessments, goals), go to More → My Profile → Delete Account, and confirm. This action is irreversible. If you want to take a break without losing your data, you do not need to delete your account — simply stop using the app and return when ready.
-
-4. Q: What data does the app collect?
-   A: When you create an account, the MiCBT Guide collects only your first name, last name, and email address. Your practice data — diary entries, assessment results, and goals — is stored securely on the server. All data is handled in accordance with Australian privacy law. Your personal information is not disclosed to third parties without your written consent. If the app is used for research purposes, written approval from the MiCBT Institute is required first — contact admin@mindfulness.net.au. For privacy or data handling questions, email support@mindfulness.net.au.
-
-5. Q: How do I share my records with my therapist?
-   A: The current version of the app does not have a built-in share feature. You can share your progress by taking screenshots of your assessment graphs (DASS-21, ES-16, MSES-R, SWLS), practice diary, or goals and sending them via email or your preferred messaging platform. For assessment results, tap the relevant assessment in the Assessments tab, then tap View Progress and screenshot the graph. If your therapist would benefit from a summary, you can also describe your current stage, total practice time, and key assessment scores verbally in your next session.
-
-6. Q: My subscription isn't showing on my new device.
-   A: Your subscription is linked to your account, not your device, so it is still valid. To restore it: (1) Make sure you are logged in with the same account on your new device — the same email address used to subscribe. (2) If the subscription still does not appear, look for a Restore Purchases option in the app's Settings or subscription section. (3) On iPhone, you can also restore through Settings → your Apple ID → Subscriptions. On Android, check Google Play → Subscriptions. (4) If none of these work, contact support@mindfulness.net.au with your account email and purchase details.
-
-7. Q: I was charged but can't access the app / my subscription isn't working.
-   A: First, make sure you are logged in to the correct account — the one used to make the purchase. Tap More → Settings to confirm your account details. If the subscription was purchased through the App Store or Google Play, try the Restore Purchases option in the app. On iPhone, also check Settings → your Apple ID → Subscriptions to confirm the subscription is active. On Android, check Google Play → Subscriptions. If the subscription shows as active but the app is not responding to it, force-close and reopen the app. If the problem persists, email support@mindfulness.net.au with your account email, a screenshot of the purchase confirmation, and a description of what you see in the app.
-
-
-=== STAGE GUIDES (10 entries) ===
-
-1. Q: What do I practise in Stage 1.1? What is the homework?
-   A: Stage 1.1 — Committing to Self-Care — establishes the foundation for everything that follows. Your practice this week is Progressive Muscle Relaxation (PMR): 14 minutes twice daily, using the guided audio (Track 3 or 4 in the app). PMR teaches your nervous system to release physical tension and prepares you for meditation from Stage 1.2 onwards. Your complete homework checklist: (1) Watch Dr Cayoun's introduction video in the app. (2) Read the Stage 1.1 readings. (3) Sign the Commitment to Self-Care Agreement — a personal commitment to practise twice daily. (4) Complete the Equanimity Scale-16 (ES-16) in Assessments — this is your baseline measure. (5) Set your Goals: Home → Stage 1.1 → Start → describe what you want to work on → rate distress → add progress indicators → Submit. (6) Practise PMR twice daily and log each session in the Diary. (7) Set reminders: More → My Reminders. (8) Complete the Daily Record of PMR form after each session. Do not begin body scanning yet — that starts in Stage 1.2.
-
-2. Q: What do I practise in Stage 1.2? What is the homework?
-   A: Stage 1.2 — Regulating Attention — introduces mindfulness of breath: 30 minutes twice daily. Instead of PMR, you now sit quietly and rest attention on the physical sensations of breathing — the coolness at the nostrils, the rise and fall of the chest or belly. When the mind wanders (and it will), you notice, and gently return. This week you also learn about Right Effort — the balanced quality of attention that is alert but not strained. Your complete homework: (1) Read the Stage 1.2 readings before starting meditation. (2) Listen to the guided mindfulness of breath audio — complete meditations in order. (3) Practise twice daily for 30 minutes and log each session in the Diary. (4) Begin applying mindfulness to brief moments in daily life: one mindful minute between activities, noticing breath or body sensations. (5) Notice thought patterns that arise during practice — are they past-focused, future-focused, judgmental? No need to do anything with this — just observe.
-
-3. Q: What do I practise in Stage 1.3? What is the homework?
-   A: Stage 1.3 — Regulating Emotions — introduces body scanning: the central practice of MiCBT. You move attention systematically through the body, part by part, from the top of the head to the tips of the toes and back, noticing whatever sensations are present — tingling, warmth, pressure, tightness, or nothing at all. You aim for one full body cycle per 30-minute session, building toward two cycles per session by the end of the stage. Your complete homework: (1) Read the Stage 1.3 readings. (2) Listen to the body scanning audio in order. (3) Practise 30 minutes twice daily — log every session in the Diary. (4) Continue brief daily-life mindfulness moments. (5) Complete the Interoceptive Awareness Inventory (IAI) in Assessments — colour in where you feel sensations during scanning on the body map. (6) Notice blank areas and areas of strong sensation — both are useful information, not problems to fix.
-
-4. Q: What do I practise in Stage 1.4? What is the homework?
-   A: Stage 1.4 — Equanimity in Daily Life — introduces two key additions. First, the MISS (Mindfulness-based Interoceptive Signature Scale): a daily-life tracking form where you record emotional reactions as they happen — the situation, the emotion, its intensity, the body sensations that co-emerged, and how long it lasted. Second, the stillness practice: during formal sessions, you practise remaining still even when the urge to move arises — observing that urge equanimously. Your complete homework: (1) Read the Stage 1.4 readings. (2) Continue body scanning twice daily for 30 minutes — log each session. (3) Use the MISS in daily life: every time you have a significant emotional reaction, record it in the app (Assessments → MISS) or on the downloadable form from micbtforwellbeing.com/forms. Keep your phone with you so you can record reactions in the moment. (4) Practise the stillness component during formal sessions. (5) Complete the IAI again in Assessments to track changes.
-
-5. Q: What do I practise in Stage 2.1? What is the homework?
-   A: Stage 2.1 — Reducing Avoidance — introduces two major new elements. First, sweeping en masse: a fluid, wave-like movement of attention through the whole body in addition to part-by-part scanning. Second, Bipolar Exposure: you create an avoidance hierarchy — a ranked list of situations you avoid due to fear, shame, or anxiety (rated 0–100 using SUDS). During meditation, you deliberately generate the feared sensation by vividly imagining the worst-case scenario, observe it with equanimity for several minutes, then imagine a best-case scenario, then return to neutral. Your complete homework: (1) Read the Stage 2.1 readings. (2) Complete the SUDS assessment in Assessments: list 5 avoided situations and rate each. (3) Practise sweeping en masse alongside part-by-part scanning — 30 minutes twice daily, logged in Diary. (4) Do Bipolar Exposure for your lowest-rated SUDS situation during at least one session this week. (5) Attempt real-world contact with that situation if you feel ready. (6) Continue using the MISS in daily life. (7) Complete the IAI again.
-
-6. Q: What do I practise in Stage 2.2? What is the homework?
-   A: Stage 2.2 — Improving Self-Confidence — continues and deepens the exposure work from Stage 2.1. You work through your SUDS hierarchy, moving to higher-rated situations as equanimity builds. A key focus is non-attachment to pleasant states: blissful or flow-like experiences during sweeping should be observed equanimously, not chased. Confidence builds through accumulated evidence of facing feared situations successfully. Your complete homework: (1) Read the Stage 2.2 readings. (2) Continue sweeping en masse and part-by-part scanning twice daily — 30 minutes, logged. (3) Work through Bipolar Exposure for the remaining situations on your SUDS hierarchy — aim to complete all five by end of this stage. (4) After each successful exposure, consciously register: "I faced that and I was okay." (5) Update your SUDS ratings in Assessments → SUDS → select situation → re-rate → Update. (6) Continue MISS tracking in daily life.
-
-7. Q: What do I practise in Stage 3.1? What is the homework?
-   A: Stage 3.1 — Relational Mindfulness — extends equanimity into your relationships. You apply the same observational skill you have developed internally to interpersonal experiences: noticing body sensations that arise when others trigger you, and observing them equanimously rather than reacting. A new scanning technique is introduced: transversal scanning — attention moves through the body in a front-to-back direction, developing finer awareness of deep internal sensations often linked to interpersonal schemas. Your complete homework: (1) Read the Stage 3.1 readings. (2) Practise transversal scanning alongside sweeping en masse — 30 minutes twice daily, logged. (3) Begin noticing co-emergence in social interactions: when someone triggers a reaction, can you identify the body sensation that arose first? (4) Complete the IAI again. (5) Continue MISS tracking — now specifically log interpersonal triggers and the sensations they produce. (6) In at least one interaction this week, pause before responding and take a brief internal scan — notice what is present in the body before speaking.
-
-8. Q: What do I practise in Stage 3.2? What is the homework?
-   A: Stage 3.2 — Mindful Communication — introduces the Seven Steps of Experiential Ownership: a structured framework for assertive, mindful communication. The seven steps are: (1) State the facts without judgment. (2) Express your feelings using body sensation language. (3) Name the schema or core belief being activated. (4) State your possible error in judgment. (5) State what you need without demanding. (6) Express appreciation. (7) Negotiate a win-win outcome. Your complete homework: (1) Read the Stage 3.2 readings. (2) Continue transversal scanning and sweeping — 30 minutes twice daily, logged. (3) Practise the seven steps in 2–3 real conversations this week — start with lower-stakes situations. (4) Before any significant conversation, do a brief body scan to notice what sensations are present. (5) Complete the ECD (Ethical Challenges Diary) in Assessments for any communication challenges. (6) Continue MISS tracking.
-
-9. Q: What do I practise in Stage 4.1? What is the homework?
-   A: Stage 4.1 — Compassion and Connectedness — introduces loving-kindness (metta) meditation and the five ethical guidelines. Loving-kindness is practised in three parts of approximately 3 minutes each: (1) Self-compassion — focus on chest sensations, pair with kind intentions toward yourself. (2) Compassion for loved ones — extend those sensations outward toward people you care about. (3) Compassion for all beings — extend without limits, including difficult people. The five ethical guidelines are introduced as daily practices: refraining from taking life, taking only what is freely given, appropriate sexual action, helpful speech, and refraining from intoxicants. Your complete homework: (1) Read the Stage 4.1 readings. (2) Practise the combined sweeping in depth and loving-kindness meditation — 30 minutes twice daily, logged. (3) Practise sweeping in depth on its own in one session per day if possible. (4) Reflect on one ethical guideline each day — notice situations where it applies and what body sensations arise. (5) Complete the ECD in Assessments for ethical reflections. (6) Complete the IAI again. (7) Continue MISS tracking.
-
-10. Q: What do I practise in Stage 4.2? What is the homework?
-    A: Stage 4.2 — Maintenance and Wellbeing — is the culmination of the program. All practices integrate: breath awareness, full body scanning, sweeping en masse, sweeping in depth, and loving-kindness. The focus shifts to sustaining skills long-term and cultivating the ten maturing factors (paramis): generosity, virtue, renunciation, wisdom, effort, patience, truthfulness, determination, kindness, and equanimity. Your complete homework: (1) Read the Stage 4.2 readings. (2) Complete the full integrated practice twice daily — 30 minutes, logged. (3) Re-complete the ES-16 (Equanimity Scale) in Assessments — compare to your baseline from Stage 1.1. (4) Re-complete the SUDS for all situations — note changes. (5) Re-complete the IAI — compare to earlier body maps. (6) Reflect on each of the ten maturing factors: which are strongest, which need attention? (7) Plan your ongoing maintenance practice schedule. (8) Update your Goals — mark any achieved and reflect on progress indicators.
-
-When answering, use this knowledge base to give complete, accurate answers. For homework and checklist questions, provide the full list. For app navigation, give exact tap paths. For practice questions,</div>
-<script type="text/babel">
-const { useState, useRef, useEffect } = React;
-
-const WEEKS = [
-  { n:1,  title:"Establishing Self-Care and Commitment",     stage:1, practice:"Progressive Muscle Relaxation (PMR) - 14 min twice daily",   stageLabel:"Stage 1.1", shortLabel:"1.1" },
-  { n:2,  title:"Regulating Attention",                      stage:1, practice:"Mindfulness of breath - 30 min twice daily",                 stageLabel:"Stage 1.2", shortLabel:"1.2" },
-  { n:3,  title:"Understanding and Regulating Emotions",     stage:1, practice:"Body scanning - 30 min twice daily",                         stageLabel:"Stage 1.3", shortLabel:"1.3" },
-  { n:4,  title:"Applying Mindfulness in Daily Life",        stage:1, practice:"Body scanning + mindful activities",                         stageLabel:"Stage 1.4", shortLabel:"1.4" },
-  { n:5,  title:"Regulating Behavior and Overcoming Avoidance", stage:2, practice:"Bilateral body scanning - SUDS hierarchy work",           stageLabel:"Stage 2.1", shortLabel:"2.1" },
-  { n:6,  title:"Improving Self-Confidence",                 stage:2, practice:"Bilateral body scanning - Bipolar Exposure",                 stageLabel:"Stage 2.2", shortLabel:"2.2" },
-  { n:7,  title:"Interpersonal Mindfulness",                 stage:3, practice:"Bilateral scanning - Interpersonal awareness",               stageLabel:"Stage 3.1", shortLabel:"3.1" },
-  { n:8,  title:"Mindful Communication",                     stage:3, practice:"Bilateral scanning - Mindful speech practice",               stageLabel:"Stage 3.2", shortLabel:"3.2" },
-  { n:9,  title:"Cultivating Compassion",                    stage:4, practice:"Loving-kindness meditation - Bilateral scanning",            stageLabel:"Stage 4.1", shortLabel:"4.1" },
-  { n:10, title:"Maintaining Well-Being and Growth",         stage:4, practice:"Full practice integration - Relapse prevention",             stageLabel:"Stage 4.2", shortLabel:"4.2" },
+<div id="app">
+  <div class="header">
+    <img src="./lumi.png" alt="Lumi" class="header-logo" />
+    <div class="header-text">
+      <h1>MiCBT Guide</h1>
+      <p id="stage-label">Stage 1.1</p>
+    </div>
+  </div>
+
+  <div class="stage-selector" id="stageSelector"></div>
+
+  <div class="chat-container" id="chatContainer"></div>
+
+  <div class="input-area">
+    <div class="input-wrapper">
+      <textarea id="userInput" placeholder="Ask anything about your practice..." rows="2"></textarea>
+      <button class="send-btn" id="sendBtn">↑</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Configuration
+const STAGES = [
+  { number: 1, label: "1.1", title: "Establishing Self-Care" },
+  { number: 2, label: "1.2", title: "Regulating Attention" },
+  { number: 3, label: "1.3", title: "Understanding Emotions" },
+  { number: 4, label: "1.4", title: "Applying Mindfulness" },
+  { number: 5, label: "2.1", title: "Regulating Behavior" },
+  { number: 6, label: "2.2", title: "Self-Confidence" },
+  { number: 7, label: "3.1", title: "Interpersonal Mindfulness" },
+  { number: 8, label: "3.2", title: "Mindful Communication" },
+  { number: 9, label: "4.1", title: "Cultivating Compassion" },
+  { number: 10, label: "4.2", title: "Maintaining Well-Being" },
 ];
 
-const PRIMARY_BLUE   = "#203E49";  // headers, nav, dark panels
-const ORANGE         = "#B75A2A";  // CTA buttons, user bubbles (accessible)
-const ORANGE_ACCENT  = "#D9783D";  // highlights, active states, headings in chat
-const BG_WARM        = "#F6F2EC";  // main app background
-const CARD_WHITE     = "#FFFDF9";  // cards, inputs, elevated surfaces
-const TEXT_PRIMARY   = "#263238";  // main body text
-const TEXT_MUTED     = "#5E6B70";  // captions, helper text, secondary labels
-const DIVIDER        = "#E3DDD4";  // card borders and section dividers
-const DISABLED_BG    = "#EFEBE5";  // disabled fields and inactive controls
-const INACTIVE_ICON  = "#8D8A83";  // inactive icons and muted elements
+let currentStage = 1;
+let messages = [];
+let isLoading = false;
 
-const STAGE_PROMPTS = {
-  1: [ // Stage 1.1
-    { label:"How do I get started?" },
-    { label:"How do I set my goals?" },
-    { label:"How do I log my practice?" },
-    { label:"How does the app work?" },
-    { label:"I need help with..." },
-    { label:"What is equanimity?" },
-  ],
-  2: [ // Stage 1.2
-    { label:"What do I practise this stage?" },
-    { label:"How do I set a reminder?" },
-    { label:"How do I log my practice?" },
-    { label:"My mind won't stop wandering" },
-    { label:"I need help with..." },
-    { label:"How does the app work?" },
-  ],
-  3: [ // Stage 1.3
-    { label:"What do I practise this stage?" },
-    { label:"How do I use the IAI?" },
-    { label:"How do I log my practice?" },
-    { label:"How do I use the body scan?" },
-    { label:"I need help with..." },
-    { label:"What is the CMR?" },
-  ],
-  4: [ // Stage 1.4
-    { label:"What do I practise this stage?" },
-    { label:"How do I review my goals?" },
-    { label:"How do I use the MISS?" },
-    { label:"Tips for daily practice" },
-    { label:"I need help with..." },
-    { label:"How do I create a meditation timer?" },
-  ],
-  5: [ // Stage 2.1
-    { label:"What do I practise this stage?" },
-    { label:"How do I set up my SUDS list?" },
-    { label:"How do I use the MISS?" },
-    { label:"How does exposure work?" },
-    { label:"I need help with..." },
-    { label:"What is the SUDS scale?" },
-  ],
-  6: [ // Stage 2.2
-    { label:"What do I practise this stage?" },
-    { label:"How do I record my SUDS progress?" },
-    { label:"How do I use the MISS?" },
-    { label:"I'm struggling with exposure" },
-    { label:"I need help with..." },
-    { label:"How do I update my SUDS situations?" },
-  ],
-  7: [ // Stage 3.1
-    { label:"What do I practise this stage?" },
-    { label:"How do I use the MSES-R?" },
-    { label:"How do I use the MISS?" },
-    { label:"How do I work with relationships?" },
-    { label:"I need help with..." },
-    { label:"How do I log my practice?" },
-  ],
-  8: [ // Stage 3.2
-    { label:"What do I practise this stage?" },
-    { label:"How do I use the ES-16?" },
-    { label:"How do I use the MISS?" },
-    { label:"How do I communicate mindfully?" },
-    { label:"I need help with..." },
-    { label:"How do I review my goals?" },
-  ],
-  9: [ // Stage 4.1
-    { label:"What do I practise this stage?" },
-    { label:"How do I use the ECD?" },
-    { label:"How do I use the MISS?" },
-    { label:"How do I practise loving-kindness?" },
-    { label:"I need help with..." },
-    { label:"What is a situation of potential harm?" },
-  ],
-  10: [ // Stage 4.2
-    { label:"What do I practise this stage?" },
-    { label:"How do I use the ECD?" },
-    { label:"How do I review my goals?" },
-    { label:"How do I use the MSES-R?" },
-    { label:"I need help with..." },
-    { label:"How do I share results with my therapist?" },
-  ],
-};
+// DOM Elements
+const chatContainer = document.getElementById('chatContainer');
+const userInput = document.getElementById('userInput');
+const sendBtn = document.getElementById('sendBtn');
+const stageSelector = document.getElementById('stageSelector');
+const stageLabel = document.getElementById('stage-label');
 
-function buildSystemPrompt(week) {
-  var w = WEEKS[week - 1];
-  return 'You are Lumi, the help assistant for the MiCBT Guide app, developed by Dr Bruno Cayoun and the MiCBT Institute. Your role is to support users as they work through the program — helping them understand concepts, exercises, and app features, and gently encouraging them to return to practice.\n\nIDENTITY AND BOUNDARIES:\n- You are not a therapist, doctor, or counsellor, and you never act like one\n- You provide clear, calm, clinically steady explanations\n- You complement the therapeutic relationship — you never replace it\n- You explain MiCBT concepts, exercises, and app navigation\n- You help users understand what a step means or how to interpret instructions\n- You do not give personalised clinical advice, diagnoses, or treatment recommendations\n- You do not engage in reassurance loops — if someone seeks repeated reassurance, gently name this and redirect toward their practice\n- You do not encourage dependency on this chat; your goal is always to help the user return to the program with greater clarity\n- You never use emojis\n- You never reference toilets, bathrooms, or restrooms as places to practise — suggest quiet rooms, parked cars, or early morning instead\n\nAPP CONTEXT (background only):\n- The app suggests the user may be on ' + w.stageLabel + ': "' + w.title + '" -- treat as soft context, not fact\n- Follow what the user actually says about their stage; never open an answer by assuming it\n- Only reference stage when directly relevant\n- Program structure: Stage 1 (personal mindfulness, 1.1-1.4), Stage 2 (exposure/avoidance, 2.1-2.2), Stage 3 (interpersonal, 3.1-3.2), Stage 4 (compassion, 4.1-4.2)\n\nAPP NAVIGATION:\nBottom tab bar: Home (house) - Goals (target) - Diary (document) - Assessments (graph) - More (...)\n\nGETTING STARTED:\nTo start: Home > Stage 1 > tap 1 (Committing to Self-Care) > tap Start > set goals > watch Dr Cayoun\'s introduction video > read the Readings > listen to guided meditations in order > complete Assessments > log practice in Diary > set reminders via More > My Reminders. Each stage page shows a stage guide, introduction video, readings, and meditations. Complete readings before meditations. Work through meditations in order. To mark complete: tap MARK AS COMPLETE on the Timer Settings screen after the session.\n\nGOALS (tap Goals):\n- Add: Goals > + icon, OR Home > Stage 1.1 > tap Start. Enter problem, rate distress (Not very / A little / Moderately / Severely / Extremely), add progress indicators, tap Submit.\n- Edit: Goals > pen icon > tick achieved indicators > Update. Mark complete: tap Complete > confirm.\n- Delete: swipe left > trash can.\n\nDIARY (tap Diary):\n- Log practice: Home > current stage > Log my practice > enter details > Submit. OR Diary > Display Log > + icon.\n- View history: Diary > Display Log (orange button). Week/Month/Year tabs. Colour-coded green (more) to red (less).\n- Edit/delete: tap entry to edit, OR swipe left > trash can.\n\nASSESSMENTS (tap Assessments or access within each stage):\n1. DASS-21: Colour-coded results (Normal/Mild/Moderate/Severe/Extreme). Tap orange arrow for Anxiety and Stress subscales.\n2. ES-16 (Equanimity Scale): Percentile Score. Two subscales: Experiential Acceptance and Non-Reactivity. General population approximately 50th percentile.\n3. MSES-R: Total Score and Percentile vs community average (approx 59/88). Tap orange arrow for 6 subscale graphs.\n4. SWLS: Total Score with satisfaction label. Answer honestly.\n5. IAI: Colour body shape (front then back) to show where sensations are felt during scanning. Brush size slider on LEFT side.\n6. MISS: Orange dots = BEFORE ratings. Tap Start Timer > 30 seconds equanimous observation > Blue dots = AFTER. Tap Save. Troubleshooting: slider won\'t move > try different finger; cannot save > move ALL blue dots first.\n7. SUDS: Colour-coded avoidance hierarchy ratings. To update: Assessments > SUDS > select situation > re-rate > Update.\n8. ECD (Ethical Challenges Diary): 5 fields - situation, able to prevent harm (Yes/No), compassionate action taken, effort duration, reflection.\n\nSETTINGS (More):\n- My Timers: More > My Timers > + > name, duration, bell, optional interval bells.\n- My Reminders: More > My Reminders > + > time, days, bell > Save Reminder.\n- Unlock all stages: More > toggle Unlock All Stages. Sequential practice recommended.\n- Audio: fast-forward/rewind buttons move 5 seconds per tap.\n- Do Not Disturb: iOS > Control Center > long tap Focus > Do Not Disturb. Android > Settings > Sound > Do Not Disturb.\n\nACCOUNT AND DATA:\n- Login: email and password > Log in. Forgot password > Forgot Password > enter email > Reset Password > check email > tap link > new password. Social logins managed via Google/Facebook/Apple.\n- Change password: More > Settings > Change Password. Email accounts only.\n- Change email: not currently possible in app. Contact support@mindfulness.net.au.\n- Delete account: More > My Profile > Delete Account.\n- Share with therapist: no direct share feature. Screenshots can be sent via email.\n- Privacy: first name, last name, email only. Australian privacy law. No third-party disclosure.\n- Support: support@mindfulness.net.au\n\nWHAT YOU HELP WITH:\n1. CONCEPTS: Plain-language explanations of the co-emergence model, equanimity, body sensations, why we scan, what each stage involves. Always connect back to body sensation as the key mechanism.\n2. PRACTICE SUPPORT: Help with drowsiness, physical discomfort, mind wandering, frustration, feeling too much or nothing. Validate the experience, explain the mechanism, redirect to practice.\n3. MOTIVATION: When a user wants to quit, acknowledge what they are experiencing first. Gently explore what is underneath it. Remind them where they are in the journey and that difficulty often signals progress.\n4. STAGE GUIDANCE: If the user asks about their current stage, draw on the app context — but ask them to confirm if uncertain.\n5. APP GUIDANCE: Specific tap paths to the right feature. Be precise.\n6. CLINICAL CONCERNS: Redirect warmly but clearly to their therapist or a trusted person. Do not attempt to assess or manage symptoms.\n\nSAFETY - CRITICAL:\nIf the user expresses suicidal thoughts, self-harm, harm to others, significant symptom worsening, or asks about medication, diagnosis, or treatment: respond warmly and redirect immediately. Do not assess, manage, or reassure. Say: "What you are describing is important and deserves more support than I can offer here. Please reach out to your therapist or a trusted person directly. You do not have to navigate this alone."\n\nWHEN THE DAILY LIMIT IS REACHED:\nIf the user has used all their questions for today, do not say you cannot answer. Give a brief, warm response that redirects them honestly toward practice. Keep it genuine. Examples of the right tone: "You have explored a lot today. This is a good moment to take what you have learned into your next session and notice what comes up in practice." OR "That is a good place to pause for today. Let practice do the work now — I will be here again tomorrow." OR "You are doing well. Try the next step and see how it feels in the body. That is where the real learning happens."\n\nTONE AND STYLE:\n- Warm, calm, grounded, and clinically steady\n- Clear and simple — no jargon unless the user introduces it\n- Supportive but not sentimental\n- Encourages autonomy and self-efficacy — build confidence in the user\'s own practice, not reliance on this chat\n- Never preachy; explore rather than instruct\n- Match the user\'s energy — distressed needs slower and gentler; curious needs engaged and specific\n- May gently reference Bruno: "Bruno describes this in ' + w.stageLabel + '..."\n- Sound like a grounded, knowledgeable human — not a chatbot\n- No emojis\n\nRESPONSE LENGTH:\nGive what the user needs to take the next step — then stop. Ask: can they act on this? If yes, that is enough.\n- App navigation and facts: brief and direct\n- Concept explanations: 2-3 focused paragraphs; insight and clarity, not an essay\n- Checklists and homework: every item, complete — but keep each item concise\n- Emotional support: shorter, slower, more spacious\n- Never pad. A one-sentence answer is right when it is all that is needed.\n\nFORMATTING:\n- Use **bold** for key practices, app features, or action words\n- Use numbered or bulleted lists for steps and multi-part answers\n- Keep lines short and scannable on a phone screen\n\n'
-  + document.getElementById('kb').textContent;
+// Initialize
+function init() {
+  renderStageSelector();
+  renderWelcome();
+  userInput.addEventListener('keydown', handleKeyDown);
+  sendBtn.addEventListener('click', sendMessage);
 }
 
-function App() {
-  // Read step from URL param (?step=1.1) — set by native app when opening webview.
-  // Falls back to week 1 (Stage 1.1) if no param present.
-  const urlStep = new URLSearchParams(window.location.search).get('step') || '1.1';
-  const foundWeek = WEEKS.find(function(w) { return w.shortLabel === urlStep; });
-  const initialWeek = foundWeek ? foundWeek.n : 1;
+function renderStageSelector() {
+  stageSelector.innerHTML = '';
+  STAGES.forEach(stage => {
+    const btn = document.createElement('button');
+    btn.className = `stage-btn ${stage.number === currentStage ? 'active' : ''}`;
+    btn.textContent = stage.label;
+    btn.onclick = () => selectStage(stage.number);
+    stageSelector.appendChild(btn);
+  });
+}
 
-  const [week, setWeek]   = useState(initialWeek);
-  const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [questionsLeft, setQuestionsLeft] = useState(null); // null = not yet known
-  const chatRef  = useRef(null);
-  const inputRef = useRef(null);
+function selectStage(num) {
+  currentStage = num;
+  const stage = STAGES[num - 1];
+  stageLabel.textContent = `Stage ${stage.label}`;
+  renderStageSelector();
+  messages = [];
+  renderWelcome();
+}
 
-  const w = WEEKS[week - 1];
-
-  useEffect(function() {
-    setMessages([{
-      role: 'assistant',
-      text: "Hi, I'm Lumi \u2014 here to help with any questions about the MiCBT Guide app and your practice.\n\nWhat's on your mind?"
-    }]);
-    setTimeout(function() { if (inputRef.current) inputRef.current.focus(); }, 200);
-  }, []);
-
-  useEffect(function() {
-    if (chatRef.current) chatRef.current.scrollTop = chatRef.current.scrollHeight;
-  }, [messages, loading]);
-
-  async function send(text) {
-    const msg = (text || input).trim();
-    if (!msg || loading) return;
-    setInput('');
-    const newMessages = [...messages, { role: 'user', text: msg }];
-    setMessages(newMessages);
-    setLoading(true);
-    const apiMessages = newMessages.map(function(m) {
-      return { role: m.role === 'user' ? 'user' : 'assistant', content: m.text };
-    });
-    try {
-      const res = await fetch('/.netlify/functions/chat', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          messages:     apiMessages,
-          systemPrompt: buildSystemPrompt(week),
-          currentStep:  w.shortLabel
-        })
-      });
-      const data = await res.json();
-
-      if (data.questionsRemaining !== undefined) {
-        setQuestionsLeft(data.questionsRemaining);
-      }
-
-      if (data.error) {
-        var isLimitError = data.error.toLowerCase().indexOf('limit') !== -1;
-        if (isLimitError) {
-          setLimitReached(true);
-          setQuestionsLeft(0);
-          var limitMessages = [
-            "You have explored a lot today. That is a good place to pause — let your practice do the work now. I will be here again tomorrow.",
-            "That is today's questions used. Take what you have learned into your next session and notice what comes up. I will be here again tomorrow.",
-            "A good moment to pause. Let practice do the work now — I will be here again tomorrow."
-          ];
-          var limitMsg = limitMessages[Math.floor(Math.random() * limitMessages.length)];
-          setMessages(function(prev) { return [...prev, { role: 'assistant', text: limitMsg }]; });
-        } else {
-          setMessages(function(prev) { return [...prev, { role: 'assistant', text: data.error }]; });
-        }
-      } else {
-        const reply = (data.content && data.content[0] && data.content[0].text)
-          ? data.content[0].text
-          : "I'm here — could you say a little more?";
-        setMessages(function(prev) {
-          var updated = [...prev, { role: 'assistant', text: reply }];
-          if (data.questionsRemaining === 1) {
-            updated = [...updated, {
-              role: 'assistant',
-              text: 'That is your last question for today. I will be here again tomorrow.'
-            }];
-          }
-          return updated;
-        });
-      }
-    } catch (e) {
-      setMessages(function(prev) { return [...prev, { role: 'assistant', text: 'Connection issue — please try again.' }]; });
-    }
-    setLoading(false);
-    if (inputRef.current) inputRef.current.focus();
-  }
-
-  function handleKey(e) {
-    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); }
-  }
-
-  function renderText(text) {
-    const lines = text.split('\n').filter(Boolean);
-    const elements = [];
-    let listItems = [];
-    let inList = false;
-
-    lines.forEach(function(line, i) {
-      const listMatch    = line.match(/^[\s]*[-•*]\s+(.*)/);
-      const numberedMatch = line.match(/^[\s]*(\d+)\.\s+(.*)/);
-
-      if (listMatch || numberedMatch) {
-        inList = true;
-        const content = listMatch ? listMatch[1] : numberedMatch[2];
-        const num     = numberedMatch ? numberedMatch[1] : null;
-        listItems.push(
-          React.createElement('li', {
-            key: i,
-            style: {
-              marginBottom: 6,
-              paddingLeft: 4,
-              lineHeight: 1.65,
-              listStyleType: num ? 'decimal' : 'disc'
-            }
-          }, renderInline(content))
-        );
-      } else {
-        if (inList) {
-          elements.push(
-            React.createElement('ul', {
-              key: 'list-' + i,
-              style: { paddingLeft: 20, marginBottom: 8, marginTop: 4 }
-            }, listItems)
-          );
-          listItems = [];
-          inList = false;
-        }
-        const headMatch = line.match(/^#{1,3}\s+(.*)/);
-        if (headMatch) {
-          elements.push(
-            React.createElement('div', {
-              key: i,
-              style: { fontWeight: 700, fontSize: 15, marginBottom: 6, marginTop: 8, color: ORANGE_ACCENT }
-            }, headMatch[1])
-          );
-        } else {
-          elements.push(
-            React.createElement('p', { key: i, style: { marginBottom: 8, lineHeight: 1.65 } },
-              renderInline(line))
-          );
-        }
-      }
-    });
-
-    if (inList) {
-      elements.push(
-        React.createElement('ul', {
-          key: 'list-end',
-          style: { paddingLeft: 20, marginBottom: 8, marginTop: 4 }
-        }, listItems)
-      );
-    }
-
-    return elements;
-  }
-
-  function renderInline(text) {
-    var parts = text.split(/(\*\*[^*]+\*\*)/g);
-    return parts.map(function(part, i) {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        return React.createElement('strong', { key: i }, part.slice(2, -2));
-      }
-      if (part.startsWith('*') && part.endsWith('*')) {
-        return React.createElement('em', { key: i, style: { fontStyle: 'italic' } }, part.slice(1, -1));
-      }
-      return part;
-    });
-  }
-
-  const [limitReached, setLimitReached] = useState(false);
-
-  var counterLabel = questionsLeft !== null
-    ? (questionsLeft + '/6 questions left')
-    : null;
-
-  return (
-    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', background: BG_WARM }}>
-
-      <div style={{ background: PRIMARY_BLUE, padding: '12px 16px', display: 'flex', alignItems: 'center', gap: 12, flexShrink: 0, boxShadow: '0 2px 12px rgba(32,62,73,0.2)' }}>
-        <img src="./lumi.png" alt="Lumi" style={{ width: 40, height: 40, borderRadius: 8, flexShrink: 0, objectFit: 'contain' }} />
-        <div>
-          <div style={{ fontSize: 15, fontWeight: '700', color: 'white' }}>MiCBT Guide</div>
-          <div style={{ fontSize: 11, color: 'rgba(255,255,255,.55)' }}>Help &amp; Support</div>
-        </div>
-      </div>
-
-      <div ref={chatRef} style={{ flex: 1, overflowY: 'auto', padding: '16px 14px 8px', display: 'flex', flexDirection: 'column', gap: 12 }}>
-        {messages.map(function(m, i) {
-          return (
-            <div key={i} style={{ display: 'flex', gap: 8, flexDirection: m.role === 'user' ? 'row-reverse' : 'row', alignItems: 'flex-start' }} className="fade-up">
-              {m.role === 'assistant' && (
-                <img src="./lumi.png" alt="Lumi" style={{ width: 32, height: 32, borderRadius: 6, flexShrink: 0, marginTop: 2, objectFit: 'contain' }} />
-              )}
-              <div style={{
-                maxWidth: '82%',
-                padding:      m.role === 'user' ? '9px 14px' : '12px 15px',
-                borderRadius: m.role === 'user' ? '14px 3px 14px 14px' : '3px 14px 14px 14px',
-                background:   m.role === 'user' ? ORANGE : 'white',
-                border:       m.role === 'user' ? 'none' : ('1px solid ' + DIVIDER),
-                color:        m.role === 'user' ? 'white' : TEXT_PRIMARY,
-                fontSize:     15,
-                lineHeight:   1.65,
-                boxShadow:    m.role === 'user' ? '0 2px 8px rgba(32,62,73,.12)' : '0 2px 8px rgba(32,62,73,.08)'
-              }}>
-                {m.role === 'assistant' ? renderText(m.text) : m.text}
-              </div>
-            </div>
-          );
-        })}
-
-        {loading && (
-          <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
-            <img src="./lumi.png" alt="Lumi" style={{ width: 32, height: 32, borderRadius: 6, flexShrink: 0, objectFit: 'contain' }} />
-            <div style={{ padding: '12px 15px', background: CARD_WHITE, border: ('1px solid ' + DIVIDER), borderRadius: '3px 14px 14px 14px', display: 'flex', gap: 5, alignItems: 'center' }}>
-              {[0, 0.25, 0.5].map(function(d, i) {
-                return <div key={i} style={{ width: 7, height: 7, borderRadius: '50%', background: DISABLED_BG, animation: 'dot 1.3s infinite ' + d + 's' }} />;
-              })}
-            </div>
-          </div>
-        )}
-      </div>
-
-      <div style={{ background: CARD_WHITE, borderTop: ('1px solid ' + DIVIDER), padding: '10px 14px 14px', flexShrink: 0 }}>
-        {limitReached ? (
-          <div style={{ textAlign: 'center', padding: '10px 0 4px', color: TEXT_MUTED, fontSize: 13, lineHeight: 1.6 }}>
-            You have used today's questions. Come back tomorrow.
-          </div>
-        ) : (
-          <div style={{ position: 'relative' }}>
-            <textarea
-              ref={inputRef}
-              value={input}
-              onChange={function(e) { setInput(e.target.value); }}
-              onKeyDown={handleKey}
-              placeholder="Ask anything about your practice..."
-              rows={2}
-              style={{
-                width: '100%', padding: '10px 52px 10px 13px',
-                border: ('1.5px solid ' + DIVIDER), borderRadius: 10,
-                fontSize: 15, color: TEXT_PRIMARY, background: CARD_WHITE,
-                resize: 'none', lineHeight: 1.6
-              }}
-            />
-            <button
-              onClick={function() { send(); }}
-              disabled={loading || !input.trim()}
-              style={{
-                position: 'absolute', right: 8, bottom: 8,
-                width: 36, height: 36, borderRadius: 8, border: 'none',
-                background: (loading || !input.trim()) ? DISABLED_BG : ORANGE,
-                color:      (loading || !input.trim()) ? INACTIVE_ICON : 'white',
-                fontSize: 20, display: 'flex', alignItems: 'center', justifyContent: 'center'
-              }}
-            >&#8593;</button>
-          </div>
-        )}
-        {counterLabel && !limitReached && (
-          <div style={{ fontSize: 11, color: INACTIVE_ICON, marginTop: 5, textAlign: 'right' }}>
-            {counterLabel}
-          </div>
-        )}
-      </div>
-
+function renderWelcome() {
+  chatContainer.innerHTML = `
+    <div class="welcome-note">
+      <strong>Note:</strong> I'm here to help with questions about the app and program. For clinical concerns, please contact a healthcare professional.
     </div>
-  );
+  `;
+  chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+function handleKeyDown(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMessage();
+  }
+}
+
+async function sendMessage() {
+  const text = userInput.value.trim();
+  if (!text || isLoading) return;
+
+  // Add user message
+  messages.push({ role: 'user', content: text });
+  renderMessages();
+  userInput.value = '';
+
+  isLoading = true;
+  sendBtn.disabled = true;
+
+  try {
+    // Call backend function (uses CLAUDE_API_KEY from Netlify environment)
+    const response = await fetch('/.netlify/functions/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: text,
+        stage: currentStage,
+        conversationHistory: messages
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    messages.push({ role: 'assistant', content: data.reply });
+    renderMessages();
+
+  } catch (error) {
+    console.error('Error:', error);
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = `Error: ${error.message}. Please try again.`;
+    chatContainer.appendChild(errorDiv);
+  } finally {
+    isLoading = false;
+    sendBtn.disabled = false;
+    userInput.focus();
+  }
+}
+
+function renderMessages() {
+  chatContainer.innerHTML = `
+    <div class="welcome-note">
+      <strong>Note:</strong> I'm here to help with questions about the app and program.
+    </div>
+  `;
+
+  messages.forEach(msg => {
+    const div = document.createElement('div');
+    div.className = `message ${msg.role}`;
+    
+    if (msg.role === 'assistant') {
+      div.innerHTML = `
+        <img src="./lumi.png" alt="Lumi" class="message-avatar" />
+        <div class="message-bubble">${escapeHtml(msg.content)}</div>
+      `;
+    } else {
+      div.innerHTML = `
+        <div class="message-bubble">${escapeHtml(msg.content)}</div>
+      `;
+    }
+    
+    chatContainer.appendChild(div);
+  });
+
+  if (isLoading) {
+    const loadingDiv = document.createElement('div');
+    loadingDiv.className = 'message assistant';
+    loadingDiv.innerHTML = `
+      <img src="./lumi.png" alt="Lumi" class="message-avatar" />
+      <div class="typing-indicator">
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+      </div>
+    `;
+    chatContainer.appendChild(loadingDiv);
+  }
+
+  chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+// Start
+init();
 </script>
+
 </body>
 </html>
