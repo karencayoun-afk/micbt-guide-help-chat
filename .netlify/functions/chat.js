@@ -1,225 +1,186 @@
-const fs = require('fs');
+const fs   = require('fs');
 const path = require('path');
 
-// ─── FAQ Database ─────────────────────────────────────────────────────────────
-// Cache at module level — persists across warm Netlify function invocations.
-// Reloaded only on cold start (deploy or after ~10 min inactivity).
-let cachedFAQs = null;
+const MAX_QUESTIONS_PER_DAY = 6;
+
+// FAQ cache — loaded once per function instance
+let faqCache = null;
 
 function loadFAQDatabase() {
-  if (cachedFAQs) return cachedFAQs;
-
+  if (faqCache) return faqCache;
   try {
     const faqPath = path.join(process.cwd(), 'micbt_faq_database.xml');
-    const xmlContent = fs.readFileSync(faqPath, 'utf8');
-
-    const faqs = [];
-    const faqMatches = xmlContent.matchAll(/<faq[^>]*>[\s\S]*?<\/faq>/g);
-
-    for (const match of faqMatches) {
-      const block = match[0];
-      const question = block.match(/<question>([\s\S]*?)<\/question>/)?.[1] || '';
-      const answer   = block.match(/<answer>([\s\S]*?)<\/answer>/)?.[1]   || '';
-      const keywords = block.match(/<keywords>([\s\S]*?)<\/keywords>/)?.[1] || '';
-      // Step stored as child element <step>1.1</step>, not as XML attribute
-      const step     = block.match(/<step>([^<]+)<\/step>/)?.[1]?.trim()   || '';
-
+    const xml     = fs.readFileSync(faqPath, 'utf8');
+    const faqs    = [];
+    for (const match of xml.matchAll(/<faq[^>]*>([\s\S]*?)<\/faq>/g)) {
+      const block    = match[1];
+      const question = (block.match(/<question>([\s\S]*?)<\/question>/) || [])[1] || '';
+      const answer   = (block.match(/<answer>([\s\S]*?)<\/answer>/)     || [])[1] || '';
+      const keywords = (block.match(/<keywords>([\s\S]*?)<\/keywords>/) || [])[1] || '';
+      const step     = (block.match(/<step>([\s\S]*?)<\/step>/)         || [])[1] || '';
       if (question && answer) {
         faqs.push({
           question: question.trim(),
           answer:   answer.trim(),
           keywords: keywords.trim().split(',').map(k => k.trim()).filter(Boolean),
-          step,
+          step:     step.trim()
         });
       }
     }
-
-    cachedFAQs = faqs;
-    console.log(`FAQ database loaded: ${faqs.length} entries`);
+    faqCache = faqs;
+    console.log('FAQ database loaded: ' + faqs.length + ' entries');
     return faqs;
-  } catch (error) {
-    console.warn('Could not load FAQ database:', error.message);
+  } catch (err) {
+    console.warn('Could not load FAQ database:', err.message);
     return [];
   }
 }
 
-// ─── Search ───────────────────────────────────────────────────────────────────
-// Returns top 5 FAQs by relevance.
-// currentStep (e.g. "1.1") gives a score bonus to FAQs from the same step.
-function searchFAQ(userQuestion, faqs, currentStep = '') {
+function searchFAQ(userQuestion, faqs, currentStep) {
   if (!faqs.length) return [];
+  const q     = userQuestion.toLowerCase();
+  const words = q.split(/\W+/).filter(function(w) { return w.length > 3; });
 
-  const qLower = userQuestion.toLowerCase();
-  const words  = qLower.split(/\W+/).filter(w => w.length > 3);
-
-  const scored = faqs.map(faq => {
+  const scored = faqs.map(function(faq) {
     let score = 0;
-
-    // Keyword match — highest signal (3 pts each)
-    faq.keywords.forEach(kw => {
-      if (qLower.includes(kw.toLowerCase())) score += 3;
+    faq.keywords.forEach(function(kw) {
+      if (q.includes(kw.toLowerCase())) score += 3;
     });
-
-    // Word match against question and answer
-    words.forEach(word => {
-      if (faq.question.toLowerCase().includes(word)) score += 1;
+    words.forEach(function(word) {
+      if (faq.question.toLowerCase().includes(word)) score += 2;
       if (faq.answer.toLowerCase().includes(word))   score += 0.5;
     });
-
-    // Step relevance boost — FAQs from the user's current step score higher
-    if (currentStep && faq.step === currentStep) score += 2;
-
-    return { ...faq, score };
+    if (currentStep && faq.step && faq.step === currentStep) score += 2;
+    return Object.assign({}, faq, { score: score });
   });
 
   return scored
-    .filter(faq => faq.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 5);
+    .filter(function(f) { return f.score > 0; })
+    .sort(function(a, b) { return b.score - a.score; })
+    .slice(0, 8);
 }
 
-// ─── Format FAQ context ───────────────────────────────────────────────────────
-function formatFAQContext(relevantFAQs) {
-  if (!relevantFAQs.length) return '';
-
-  return `Relevant Q&As from the MiCBT knowledge base:\n\n${
-    relevantFAQs
-      .map(faq => `Q: ${faq.question}\nA: ${faq.answer}`)
-      .join('\n\n')
-  }\n\n`;
+function formatFAQContext(faqs) {
+  if (!faqs.length) return '';
+  return 'RELEVANT KNOWLEDGE BASE ENTRIES:\n\n' +
+    faqs.map(function(f) { return 'Q: ' + f.question + '\nA: ' + f.answer; }).join('\n\n') +
+    '\n\n---\n\n';
 }
 
-// ─── Rate limiting ────────────────────────────────────────────────────────────
-// NOTE: global.questionCounts is in-memory and resets on cold starts (~10 min
-// inactivity) and across concurrent function instances. This means the limit
-// is soft — users can exceed it by waiting or through concurrent requests.
-// For a hard limit, replace with Netlify Blobs, Upstash Redis, or similar KV.
-const MAX_QUESTIONS_PER_DAY = 6;
-
-function getUserIdentifier(event) {
-  return (
-    event.headers['client-ip'] ||
-    event.headers['x-forwarded-for']?.split(',')[0]?.trim() ||
-    'anonymous'
-  );
+function getUserId(event) {
+  return event.headers['client-ip'] ||
+    (event.headers['x-forwarded-for'] || '').split(',')[0].trim() ||
+    'anonymous';
 }
 
-function checkRateLimit(userId) {
+async function checkRateLimit(userId) {
   const today = new Date().toISOString().split('T')[0];
-  const key   = `${userId}:${today}`;
-
+  const key   = userId + ':' + today;
   if (!global.questionCounts) global.questionCounts = {};
-
-  const count    = (global.questionCounts[key] || 0) + 1;
+  const count = (global.questionCounts[key] || 0) + 1;
   global.questionCounts[key] = count;
-
-  const allowed   = count <= MAX_QUESTIONS_PER_DAY;
-  const remaining = Math.max(0, MAX_QUESTIONS_PER_DAY - count);
-
-  return { allowed, used: count - 1, remaining, limit: MAX_QUESTIONS_PER_DAY };
+  return {
+    allowed:   count <= MAX_QUESTIONS_PER_DAY,
+    remaining: Math.max(0, MAX_QUESTIONS_PER_DAY - count),
+    limit:     MAX_QUESTIONS_PER_DAY
+  };
 }
 
-// ─── Main handler ─────────────────────────────────────────────────────────────
-exports.handler = async function (event) {
+function friendlyError(type) {
+  const map = {
+    overloaded_error:     "I'm a little busy right now — please try again in a moment.",
+    rate_limit_error:     "I'm a little busy right now — please try again in a moment.",
+    context_length_error: "That conversation has grown quite long. Try starting a fresh session.",
+    authentication_error: "There's a configuration issue. Please contact support@mindfulness.net.au.",
+    api_error:            "Something went wrong on my end. Please try again shortly."
+  };
+  return map[type] || "Something went wrong. Please try again in a moment.";
+}
+
+function respond(status, body) {
+  return {
+    statusCode: status,
+    headers:    { 'Content-Type': 'application/json' },
+    body:       JSON.stringify(body)
+  };
+}
+
+exports.handler = async function(event) {
   const API_KEY = process.env.CLAUDE_API_KEY;
-
-  if (!API_KEY) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: 'API key not configured' }),
-    };
-  }
-
-  if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
-  }
+  if (!API_KEY)                      return respond(500, { error: 'API key not configured' });
+  if (event.httpMethod !== 'POST')   return respond(405, { error: 'Method Not Allowed' });
 
   let body;
-  try {
-    body = JSON.parse(event.body);
-  } catch {
-    return { statusCode: 400, body: JSON.stringify({ error: 'Invalid JSON' }) };
+  try { body = JSON.parse(event.body); }
+  catch { return respond(400, { error: 'Invalid JSON' }); }
+
+  const userId   = getUserId(event);
+  const rateInfo = await checkRateLimit(userId);
+
+  if (!rateInfo.allowed) {
+    return respond(429, {
+      error:              'limit',
+      questionsRemaining: 0,
+      dailyLimit:         rateInfo.limit
+    });
   }
 
-  // Rate limit check
-  const userId       = getUserIdentifier(event);
-  const rateLimitInfo = checkRateLimit(userId);
+  const messages     = body.messages     || [];
+  const systemPrompt = body.systemPrompt || '';
+  const currentStep  = body.currentStep  || '';
 
-  if (!rateLimitInfo.allowed) {
-    return {
-      statusCode: 429,
-      body: JSON.stringify({
-        error:              'Daily question limit reached. Please try again tomorrow.',
-        questionsUsed:      rateLimitInfo.used,
-        questionsRemaining: 0,
-        dailyLimit:         rateLimitInfo.limit,
-      }),
-    };
-  }
+  // Server-side FAQ retrieval — only inject what's relevant
+  const faqs       = loadFAQDatabase();
+  const lastUser   = messages.slice().reverse().find(function(m) { return m.role === 'user'; });
+  const latestQ    = lastUser ? lastUser.content : '';
+  const relevant   = searchFAQ(latestQ, faqs, currentStep);
+  const faqContext = formatFAQContext(relevant);
 
-  const { messages, systemPrompt, currentStep = '' } = body;
-
-  // Load (cached) FAQ database
-  const faqs = loadFAQDatabase();
-
-  // Find the user's latest message
-  const userMessages   = (messages || []).filter(m => m.role === 'user');
-  const latestQuestion = userMessages.length > 0
-    ? userMessages[userMessages.length - 1].content
-    : '';
-
-  // Search for relevant FAQs, weighted toward the user's current step
-  const relevantFAQs = searchFAQ(latestQuestion, faqs, currentStep);
-  const faqContext   = formatFAQContext(relevantFAQs);
-
-  // Inject FAQ context into system prompt
-  const enhancedSystemPrompt = faqContext
-    ? `${systemPrompt}\n\n${faqContext}\nUse the Q&As above to inform your answer, but respond naturally. For checklists and homework, give the complete list.`
+  const fullSystem = faqContext
+    ? systemPrompt + '\n\n' + faqContext +
+      'Use the knowledge base entries above to inform your answer when relevant. Respond naturally and directly.'
     : systemPrompt;
 
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const apiRes = await fetch('https://api.anthropic.com/v1/messages', {
       method:  'POST',
       headers: {
         'x-api-key':         API_KEY,
         'anthropic-version': '2023-06-01',
-        'content-type':      'application/json',
+        'content-type':      'application/json'
       },
       body: JSON.stringify({
         model:      'claude-haiku-4-5-20251001',
-        max_tokens: 2048,  // increased from 1024 — supports thorough complete answers
-        system:     enhancedSystemPrompt,
-        messages:   messages || [],
-      }),
+        max_tokens: 2048,
+        system:     fullSystem,
+        messages:   messages
+      })
     });
 
-    if (!response.ok) {
-      const err = await response.text();
-      return { statusCode: response.status, body: JSON.stringify({ error: err }) };
+    if (!apiRes.ok) {
+      let errType = 'api_error';
+      try {
+        const errData = await apiRes.json();
+        errType = (errData.error && errData.error.type) ? errData.error.type : 'api_error';
+      } catch {}
+      return respond(apiRes.status, {
+        error:              friendlyError(errType),
+        questionsRemaining: rateInfo.remaining,
+        dailyLimit:         rateInfo.limit
+      });
     }
 
-    const data = await response.json();
+    const data = await apiRes.json();
+    return respond(200, Object.assign({}, data, {
+      questionsRemaining: rateInfo.remaining,
+      dailyLimit:         rateInfo.limit
+    }));
 
-    const responseBody = {
-      ...data,
-      questionsUsed:      rateLimitInfo.used,
-      questionsRemaining: rateLimitInfo.remaining,
-      dailyLimit:         rateLimitInfo.limit,
-    };
-
-    if (rateLimitInfo.remaining <= 3 && rateLimitInfo.remaining > 0) {
-      responseBody.warning = `You have ${rateLimitInfo.remaining} question${rateLimitInfo.remaining === 1 ? '' : 's'} remaining today.`;
-    }
-
-    return {
-      statusCode: 200,
-      headers:    { 'Content-Type': 'application/json' },
-      body:       JSON.stringify(responseBody),
-    };
-  } catch (error) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: error.message }),
-    };
+  } catch (err) {
+    return respond(500, {
+      error:              friendlyError('api_error'),
+      questionsRemaining: rateInfo.remaining,
+      dailyLimit:         rateInfo.limit
+    });
   }
 };
