@@ -35,7 +35,7 @@ function loadFAQDatabase() {
 }
 
 // Search FAQ by relevance
-function searchFAQ(userQuestion, faqs, stage) {
+function searchFAQ(userQuestion, faqs) {
   if (!faqs.length) return [];
   
   const questionLower = userQuestion.toLowerCase();
@@ -57,11 +57,6 @@ function searchFAQ(userQuestion, faqs, stage) {
         if (faq.answer.toLowerCase().includes(word)) score += 0.5;
       }
     });
-    
-    // Stage relevance
-    if (faq.stage && faq.stage === stage.toString()) {
-      score += 2;
-    }
     
     return { ...faq, score };
   });
@@ -159,7 +154,7 @@ exports.handler = async function(event) {
     };
   }
 
-  const { messages, systemPrompt, stage = 1 } = body;
+  const { messages, systemPrompt } = body;
 
   // Load FAQ database
   const faqs = loadFAQDatabase();
@@ -171,7 +166,7 @@ exports.handler = async function(event) {
     : '';
 
   // Search for relevant FAQs
-  const relevantFAQs = searchFAQ(latestQuestion, faqs, stage);
+  const relevantFAQs = searchFAQ(latestQuestion, faqs);
   const faqContext = formatFAQContext(relevantFAQs);
 
   // Build enhanced system prompt with FAQ context
