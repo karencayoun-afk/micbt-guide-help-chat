@@ -7,7 +7,7 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 html, body, #root { height:100%; }
-body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:#f5f3f1; }
+body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:#F6F2EC; }
 @keyframes dot {
   0%,100% { opacity:.25; transform:scale(.75); }
   50% { opacity:1; transform:scale(1); }
@@ -44,11 +44,16 @@ const WEEKS = [
   { n:10, title:"Maintaining Well-Being and Growth",         stage:4, practice:"Full practice integration - Relapse prevention",             stageLabel:"Stage 4.2", shortLabel:"4.2" },
 ];
 
-const ORANGE = "#f9945F";
-const TEAL   = "#3d5e70";
-const TEAL_SECONDARY = "#5a7a96";
-const TEXT_DARK = "#344f5c";
-const BG_WARM = "#f5f3f1";
+const PRIMARY_BLUE   = "#203E49";  // headers, nav, dark panels
+const ORANGE         = "#B75A2A";  // CTA buttons, user bubbles (accessible)
+const ORANGE_ACCENT  = "#D9783D";  // highlights, active states, headings in chat
+const BG_WARM        = "#F6F2EC";  // main app background
+const CARD_WHITE     = "#FFFDF9";  // cards, inputs, elevated surfaces
+const TEXT_PRIMARY   = "#263238";  // main body text
+const TEXT_MUTED     = "#5E6B70";  // captions, helper text, secondary labels
+const DIVIDER        = "#E3DDD4";  // card borders and section dividers
+const DISABLED_BG    = "#EFEBE5";  // disabled fields and inactive controls
+const INACTIVE_ICON  = "#8D8A83";  // inactive icons and muted elements
 
 const STAGE_PROMPTS = {
   1: [ // Stage 1.1
@@ -573,7 +578,7 @@ function App() {
           elements.push(
             React.createElement('div', {
               key: i,
-              style: { fontWeight: 700, fontSize: 15, marginBottom: 6, marginTop: 8, color: TEAL }
+              style: { fontWeight: 700, fontSize: 15, marginBottom: 6, marginTop: 8, color: ORANGE_ACCENT }
             }, headMatch[1])
           );
         } else {
@@ -617,7 +622,7 @@ function App() {
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', background: BG_WARM }}>
 
-      <div style={{ background: TEAL, padding: '12px 16px', display: 'flex', alignItems: 'center', gap: 12, flexShrink: 0, boxShadow: '0 2px 12px rgba(52,79,92,0.2)' }}>
+      <div style={{ background: PRIMARY_BLUE, padding: '12px 16px', display: 'flex', alignItems: 'center', gap: 12, flexShrink: 0, boxShadow: '0 2px 12px rgba(32,62,73,0.2)' }}>
         <img src="./lumi.png" alt="Lumi" style={{ width: 40, height: 40, borderRadius: 8, flexShrink: 0, objectFit: 'contain' }} />
         <div>
           <div style={{ fontSize: 15, fontWeight: '700', color: 'white' }}>MiCBT Guide</div>
@@ -637,11 +642,11 @@ function App() {
                 padding:      m.role === 'user' ? '9px 14px' : '12px 15px',
                 borderRadius: m.role === 'user' ? '14px 3px 14px 14px' : '3px 14px 14px 14px',
                 background:   m.role === 'user' ? ORANGE : 'white',
-                border:       m.role === 'user' ? 'none' : '1px solid #e8e8e8',
-                color:        m.role === 'user' ? 'white' : TEXT_DARK,
+                border:       m.role === 'user' ? 'none' : ('1px solid ' + DIVIDER),
+                color:        m.role === 'user' ? 'white' : TEXT_PRIMARY,
                 fontSize:     15,
                 lineHeight:   1.65,
-                boxShadow:    m.role === 'user' ? '0 2px 8px rgba(52,79,92,.15)' : '0 2px 8px rgba(52,79,92,.1)'
+                boxShadow:    m.role === 'user' ? '0 2px 8px rgba(32,62,73,.12)' : '0 2px 8px rgba(32,62,73,.08)'
               }}>
                 {m.role === 'assistant' ? renderText(m.text) : m.text}
               </div>
@@ -652,16 +657,16 @@ function App() {
         {loading && (
           <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
             <img src="./lumi.png" alt="Lumi" style={{ width: 32, height: 32, borderRadius: 6, flexShrink: 0, objectFit: 'contain' }} />
-            <div style={{ padding: '12px 15px', background: 'white', border: '1px solid #e8e8e8', borderRadius: '3px 14px 14px 14px', display: 'flex', gap: 5, alignItems: 'center' }}>
+            <div style={{ padding: '12px 15px', background: CARD_WHITE, border: ('1px solid ' + DIVIDER), borderRadius: '3px 14px 14px 14px', display: 'flex', gap: 5, alignItems: 'center' }}>
               {[0, 0.25, 0.5].map(function(d, i) {
-                return <div key={i} style={{ width: 7, height: 7, borderRadius: '50%', background: '#ccc', animation: 'dot 1.3s infinite ' + d + 's' }} />;
+                return <div key={i} style={{ width: 7, height: 7, borderRadius: '50%', background: DISABLED_BG, animation: 'dot 1.3s infinite ' + d + 's' }} />;
               })}
             </div>
           </div>
         )}
       </div>
 
-      <div style={{ background: 'white', borderTop: '1px solid #e8e8e8', padding: '10px 14px 14px', flexShrink: 0 }}>
+      <div style={{ background: CARD_WHITE, borderTop: ('1px solid ' + DIVIDER), padding: '10px 14px 14px', flexShrink: 0 }}>
         <div style={{ position: 'relative' }}>
           <textarea
             ref={inputRef}
@@ -672,8 +677,8 @@ function App() {
             rows={2}
             style={{
               width: '100%', padding: '10px 52px 10px 13px',
-              border: '1.5px solid #ddd', borderRadius: 10,
-              fontSize: 15, color: TEXT_DARK, background: '#f9f9f9',
+              border: ('1.5px solid ' + DIVIDER), borderRadius: 10,
+              fontSize: 15, color: TEXT_PRIMARY, background: CARD_WHITE,
               resize: 'none', lineHeight: 1.6
             }}
           />
@@ -683,14 +688,14 @@ function App() {
             style={{
               position: 'absolute', right: 8, bottom: 8,
               width: 36, height: 36, borderRadius: 8, border: 'none',
-              background: (loading || !input.trim()) ? '#ddd' : ORANGE,
-              color:      (loading || !input.trim()) ? '#aaa' : 'white',
+              background: (loading || !input.trim()) ? DISABLED_BG : ORANGE,
+              color:      (loading || !input.trim()) ? INACTIVE_ICON : 'white',
               fontSize: 20, display: 'flex', alignItems: 'center', justifyContent: 'center'
             }}
           >&#8593;</button>
         </div>
         {counterLabel && (
-          <div style={{ fontSize: 11, color: '#bbb', marginTop: 5, textAlign: 'right' }}>
+          <div style={{ fontSize: 11, color: INACTIVE_ICON, marginTop: 5, textAlign: 'right' }}>
             {counterLabel}
           </div>
         )}
