@@ -1,6 +1,0 @@
-[build]
-  functions = ".netlify/functions"
-
-[functions]
-  node_version = "18.x"
-  included_files = ["micbt_faq_database.xml"]
