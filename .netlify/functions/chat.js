@@ -1,7 +1,7 @@
 const fs   = require('fs');
 const path = require('path');
 
-const MAX_QUESTIONS_PER_DAY = 6;
+const MAX_QUESTIONS_PER_DAY = 200;
 
 // FAQ cache — loaded once per function instance
 let faqCache = null;
