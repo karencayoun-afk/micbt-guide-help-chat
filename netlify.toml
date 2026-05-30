@@ -1,0 +1,11 @@
+[build]
+  functions = ".netlify/functions"
+  publish = "."
+  node_bundler = "esbuild"
+
+[functions]
+  node_version = "18"
+  # Ensure the data files are bundled alongside the function so it can read them at runtime.
+  # (Without this, the FAQ database / vectors are not present in the deployed function — the
+  # most common cause of "the bot answers but ignores the knowledge base".)
+  included_files = ["micbt_faq_database.xml", "faq_vectors.json"]
