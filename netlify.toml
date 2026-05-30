@@ -3,6 +3,8 @@
   publish = "."
   node_bundler = "esbuild"
 
+[build.environment]
+  NODE_VERSION = "18"
+
 [functions]
-  node_version = "18"
   included_files = ["micbt_faq_database.xml", "faq_vectors.json"]
