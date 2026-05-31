@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <micbt_faq_database>
   <metadata>
-    <version>6.5</version>
+    <version>6.6</version>
     <last_updated>2026-05-31</last_updated>
     <source>Verbatim book FAQs + book-derived concept/technique FAQs (Cayoun &amp; Grabovac 2nd Ed.) + verbatim app/assessment help docs from app.mindfulness.net.au + curated special-population FAQs</source>
     <total_faqs>202</total_faqs>
@@ -120,11 +120,11 @@
 
   <!-- Understanding MiCBT -->
   <faq id="concept_coemergence" source="book">
-    <question><![CDATA[What is the co-emergence model of reinforcement?]]></question>
-    <answer><![CDATA[The co-emergence model of reinforcement is the central framework MiCBT uses to explain how we process experience and how habits form. It describes four functions of the mind that depend on each other: (1) Sensory perception — becoming aware of a situation through the senses, including noticing thoughts and internal body states; (2) Evaluation — the mind judging the situation, consciously or subconsciously, as good, bad, or neutral; (3) Co-emerging body sensations — sensations that arise together with that evaluation; and (4) Reaction — the response we make. The key insight is that we don't react to situations directly; we react to the body sensations that co-emerge with our evaluation of them. Under stress this system falls into 'disequilibrium' — attention is pulled away from sensory perception and body sensations toward evaluation and reaction, so we rely more on stored assumptions and lose touch with early emotional signals in the body. Mindfulness training restores the balance, which is why developing equanimity toward body sensations is so central to the whole program.]]></answer>
+    <question><![CDATA[What is the co-emergence model of reinforcement (CMR)?]]></question>
+    <answer><![CDATA[The co-emergence model of reinforcement (often abbreviated CMR) is the central framework MiCBT uses to explain how we process experience and how habits form. It describes four functions of the mind that depend on each other: (1) Sensory perception — becoming aware of a situation through the senses, including noticing thoughts and internal body states; (2) Evaluation — the mind judging the situation, consciously or subconsciously, as good, bad, or neutral; (3) Co-emerging body sensations — sensations that arise together with that evaluation; and (4) Reaction — the response we make. The key insight is that we don't react to situations directly; we react to the body sensations that co-emerge with our evaluation of them. Under stress this system falls into 'disequilibrium' — attention is pulled away from sensory perception and body sensations toward evaluation and reaction, so we rely more on stored assumptions and lose touch with early emotional signals in the body. Mindfulness training restores the balance, which is why developing equanimity toward body sensations is so central to the whole program.]]></answer>
     <category><![CDATA[Understanding MiCBT]]></category>
     <stage>1</stage><step>1.3</step><week>3</week>
-    <keywords><![CDATA[co-emergence, coemergence, model, reinforcement, four functions, evaluation, sensations, reaction, theory]]></keywords>
+    <keywords><![CDATA[co-emergence, coemergence, model, reinforcement, four functions, evaluation, sensations, reaction, theory, CMR, c.m.r]]></keywords>
   </faq>
 
   <!-- Week 1 Practice (from the book) -->
@@ -699,7 +699,7 @@
     <answer><![CDATA[The app includes seven validated assessment tools: DASS-21 (Depression, Anxiety and Stress Scale) -- measures symptom levels of depression, anxiety, and stress. ES-16 (Equanimity Scale) -- measures your ability to observe experience without reacting. This is the core skill developed in MiCBT. MSES-R (Mindfulness-based Self-Efficacy Scale) -- measures confidence in applying mindfulness skills across six life domains. SWLS (Satisfaction with Life Scale) -- measures overall life satisfaction. IAI (Interoceptive Awareness Indicator) -- a body map that tracks which areas you can feel during body scanning. MISS (Mindfulness-based Interoceptive Signature Scale) -- assesses the quality and intensity of body sensations during distressing experiences. SUDS (Subjective Units of Distress Scale) -- tracks your distress levels across the five avoidance situations you are working through. ECD (Ethical Conduct Diary) -- tracks your effort to apply the five ethical challenges in daily life.]]></answer>
     <category><![CDATA[Assessments: DASS-21]]></category>
     <stage>all</stage><step>all</step><week>all</week>
-    <keywords><![CDATA[depression, anxiety, assessments, assessment, available, validated, includes]]></keywords>
+    <keywords><![CDATA[depression, anxiety, assessments, assessment, available, validated, includes, DASS, DASS-21]]></keywords>
   </faq>
   <faq id="app_dass_21_02" source="app-help">
     <question><![CDATA[How do I use the DASS-21?]]></question>
@@ -743,35 +743,35 @@
     <answer><![CDATA[The ES-16 measures equanimity -- your ability to accept your experience and not react automatically to it. It has two subscales: Experiential Acceptance -- allowing your experience to be present without fighting or suppressing it. Non-Reactivity -- not being driven to act on the experience automatically. These are related but distinct. The total ES-16 score is the most accurate measure of equanimity as a combined quality, and is the primary metric to track across the program.]]></answer>
     <category><![CDATA[Assessments: ES-16]]></category>
     <stage>all</stage><step>all</step><week>all</week>
-    <keywords><![CDATA[equanimity, automatically, experiential, experience, subscales, measures, acceptan]]></keywords>
+    <keywords><![CDATA[equanimity, automatically, experiential, experience, subscales, measures, acceptan, ES-16]]></keywords>
   </faq>
   <faq id="app_es_16_02" source="app-help">
     <question><![CDATA[What is the difference between Experiential Acceptance and Non-Reactivity on the ES-16?]]></question>
     <answer><![CDATA[Acceptance and non-reactivity are related but distinct: Acceptance means not fighting or trying to suppress your experience -- you allow it to be there. Example: you feel an itch and don't try to push the sensation away. Non-reactivity means not being driven to act on the experience automatically. Example: you feel the itch but don't scratch it. You can accept a sensation without reacting to it (feel the itch, don't scratch), or not react without fully accepting (resist scratching but still wish it would go away). Full equanimity involves both -- allowing the experience to be present and not being driven to react to it.]]></answer>
     <category><![CDATA[Assessments: ES-16]]></category>
     <stage>all</stage><step>all</step><week>all</week>
-    <keywords><![CDATA[acceptance, non-reactivity, experiential, difference, experience, distinct, fighting]]></keywords>
+    <keywords><![CDATA[acceptance, non-reactivity, experiential, difference, experience, distinct, fighting, ES-16]]></keywords>
   </faq>
   <faq id="app_es_16_03" source="app-help">
     <question><![CDATA[How do I use the ES-16?]]></question>
     <answer><![CDATA[Tap Assessments and select ES-16 . Read each statement and select a response indicating how much it applied to you over the past week . Answer with your first instinct -- don't spend too long on any item. Tap Submit . There are no right or wrong answers. Complete it honestly -- it is a tool for your own tracking and insight.]]></answer>
     <category><![CDATA[Assessments: ES-16]]></category>
     <stage>all</stage><step>all</step><week>all</week>
-    <keywords><![CDATA[select, assessments, indicating, statement, response, applied, answer]]></keywords>
+    <keywords><![CDATA[select, assessments, indicating, statement, response, applied, answer, ES-16]]></keywords>
   </faq>
   <faq id="app_es_16_04" source="app-help">
     <question><![CDATA[Should I focus on the Experiential Acceptance or Non-Reactivity subscale of the ES-16, or the total score?]]></question>
     <answer><![CDATA[Focus on the total ES-16 score . Research by Dr Alice Shires, Dr Bruno Cayoun, and the MiCBT research team shows that equanimity is a combination of both acceptance and non-reactivity, so the total score is the most accurate measure. The percentile score is also useful -- it shows how your result compares with the general population. Individual subscale scores can give useful clues -- for example, if non-reactivity is significantly lower than acceptance, it may indicate you are allowing sensations to be present but still acting on them -- but treat these as supplementary rather than primary measures.]]></answer>
     <category><![CDATA[Assessments: ES-16]]></category>
     <stage>all</stage><step>all</step><week>all</week>
-    <keywords><![CDATA[research, focus, total, score, non-reactivity, experiential, combination]]></keywords>
+    <keywords><![CDATA[research, focus, total, score, non-reactivity, experiential, combination, ES-16]]></keywords>
   </faq>
   <faq id="app_es_16_05" source="app-help">
     <question><![CDATA[My equanimity score (ES-16) went down. Does this mean I'm getting worse?]]></question>
     <answer><![CDATA[Not necessarily. A lower ES-16 score at one point can reflect several things: Increased self-awareness: As your practice deepens, you become more honest and precise in noticing how you actually react -- which can temporarily lower your reported equanimity. A challenging period: Significant life stressors can reduce equanimity temporarily without undoing your overall progress. Natural fluctuation: Scores vary from week to week and a single data point is not meaningful on its own. What matters is the trend over the whole program . Compare your current score to your Stage 1.1 baseline -- that is the meaningful comparison.]]></answer>
     <category><![CDATA[Assessments: ES-16]]></category>
     <stage>all</stage><step>all</step><week>all</week>
-    <keywords><![CDATA[score, self-awareness, necessarily, equanimity, increased, practice, getting]]></keywords>
+    <keywords><![CDATA[score, self-awareness, necessarily, equanimity, increased, practice, getting, ES-16]]></keywords>
   </faq>
 
   <!-- Assessments: Ethical Conduct Diary -->
@@ -780,7 +780,7 @@
     <answer><![CDATA[The ECD tracks your effort to apply the five ethical challenges in daily life: Refraining from harm to living beings Refraining from taking what is not given Refraining from sexual misconduct Refraining from false speech Refraining from intoxicants For each entry, you record the situation, how long you managed to apply effort, and reflect on the experience. The ECD is not a tool of self-judgment -- it is a tool of awareness.]]></answer>
     <category><![CDATA[Assessments: Ethical Conduct Diary]]></category>
     <stage>4</stage><step>4.1</step><week>all</week>
-    <keywords><![CDATA[refraining, ethical, challenges, conduct, tracks, effort, living]]></keywords>
+    <keywords><![CDATA[refraining, ethical, challenges, conduct, tracks, effort, living, ECD]]></keywords>
   </faq>
   <faq id="app_ecd_02" source="app-help">
     <question><![CDATA[What is a 'situation of potential harm' in the ECD?]]></question>
@@ -810,7 +810,7 @@
     <answer><![CDATA[Interoceptive awareness is the ability to feel sensations within the body -- just as vision is the ability to see. The IAI is a body map tool where you colour in all areas of the body where you can feel sensations during body scanning. The percentage of the body you colour is calculated and tracked over time, giving you a direct measure of how your interoceptive awareness is developing across the program.]]></answer>
     <category><![CDATA[Assessments: IAI]]></category>
     <stage>all</stage><step>all</step><week>all</week>
-    <keywords><![CDATA[interoceptive, awareness, ability, body, sensations, indicator, within]]></keywords>
+    <keywords><![CDATA[interoceptive, awareness, ability, body, sensations, indicator, within, IAI]]></keywords>
   </faq>
   <faq id="app_iai_02" source="app-help">
     <question><![CDATA[How do I use the IAI?]]></question>
@@ -942,7 +942,7 @@
     <answer><![CDATA[Make a list of 10-12 situations you typically avoid. Choose five that represent an incremental range of distress -- from least to most challenging. Example hierarchy: Going out after dark -- 20% Speaking with the cashier -- 40% Attending a social event -- 60% Presenting at work -- 80% Confronting a difficult family member -- 95% Having a range of difficulty levels means you can start with less challenging situations and work toward harder ones as your equanimity grows.]]></answer>
     <category><![CDATA[Assessments: SUDS (Stage 2 tool)]]></category>
     <stage>2</stage><step>2.1</step><week>all</week>
-    <keywords><![CDATA[situations, choose, five, incremental, challenging, hierarchy, typically]]></keywords>
+    <keywords><![CDATA[situations, choose, five, incremental, challenging, hierarchy, typically, SUDS]]></keywords>
   </faq>
   <faq id="app_suds_03" source="app-help">
     <question><![CDATA[How do I record my avoidance progress using the SUDS?]]></question>
