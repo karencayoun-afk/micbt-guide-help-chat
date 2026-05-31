@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <micbt_faq_database>
   <metadata>
-    <version>6.2</version>
+    <version>6.5</version>
     <last_updated>2026-05-31</last_updated>
     <source>Verbatim book FAQs + book-derived concept/technique FAQs (Cayoun &amp; Grabovac 2nd Ed.) + verbatim app/assessment help docs from app.mindfulness.net.au + curated special-population FAQs</source>
     <total_faqs>202</total_faqs>
@@ -84,10 +84,10 @@
   <!-- The MIET (Step 4 technique) -->
   <faq id="miet_01" source="book">
     <question><![CDATA[What is the MIET?]]></question>
-    <answer><![CDATA[MIET stands for the Mindfulness-based Interoceptive Exposure Task. It's a brief, structured technique you learn in Step 4 (Stage 1.4) for using equanimity in real-life stressful or painful moments. It takes about 30 seconds: when distress arises, you locate the strongest sensation in your body and observe it through four characteristics — mass, motion, temperature, and density — rating it before and after observing it with equanimity. In short, it extends the body-scanning skills you've been practising into everyday situations, so you can feel, accept, and let go of difficult sensations as they happen rather than reacting habitually.]]></answer>
+    <answer><![CDATA[MIET stands for the Mindfulness-based Interoceptive Exposure Task. It's a brief, structured technique you learn in Step 4 (Stage 1.4) for using equanimity in real-life stressful or painful moments. It takes about 30 seconds: when distress arises, you locate the strongest sensation in your body and observe it through four characteristics — mass, motion, temperature, and density — rating it before and after observing it with equanimity. In short, it extends the body-scanning skills you've been practising into everyday situations, so you can feel, accept, and let go of difficult sensations as they happen rather than reacting habitually. In the app, you record your MIET practice using the MISS assessment (there is no separate MIET screen).]]></answer>
     <category><![CDATA[The MIET (Step 4 technique)]]></category>
     <stage>1</stage><step>1.4</step><week>4</week>
-    <keywords><![CDATA[miet, mindfulness-based interoceptive exposure task, technique, step 4, equanimity, sensations, distress]]></keywords>
+    <keywords><![CDATA[miet, mindfulness-based interoceptive exposure task, technique, step 4, equanimity, sensations, distress, miss, record]]></keywords>
   </faq>
   <faq id="miet_02" source="book">
     <question><![CDATA[When do I learn the MIET, and where do I find it in the app?]]></question>
@@ -98,17 +98,17 @@
   </faq>
   <faq id="miet_03" source="book">
     <question><![CDATA[What are the steps of the MIET?]]></question>
-    <answer><![CDATA[The technique has six quick steps: (1) Identify the area of strongest sensation — scan your body during the distressing moment to find where the sensation feels strongest. (2) Rate how intense it is, from least to most intense. (3) Observe the four characteristics in that area — how warm or cool, tight or loose, still or moving, and light or heavy it feels (temperature, density, motion, mass). (4) Apply equanimity — with unconditional acceptance, observe the predominant characteristics for about 30 seconds (roughly seven to nine breaths), without judgment or reactivity. (5) Observe the four characteristics again — notice whether anything has changed. (6) Rate the intensity again, from least to most. Comparing before and after shows how the sensation shifted through equanimity.]]></answer>
+    <answer><![CDATA[The technique has six quick steps: (1) Identify the area of strongest sensation — scan your body during the distressing moment to find where the sensation feels strongest. (2) Rate how intense it is, from least to most intense. (3) Observe the four characteristics in that area — how warm or cool, tight or loose, still or moving, and light or heavy it feels (temperature, density, motion, mass). (4) Apply equanimity — with unconditional acceptance, observe the predominant characteristics for about 30 seconds (roughly seven to nine breaths), without judgment or reactivity. (5) Observe the four characteristics again — notice whether anything has changed. (6) Rate the intensity again, from least to most. Comparing before and after shows how the sensation shifted through equanimity. You record these before/after observations in the app using the MISS assessment.]]></answer>
     <category><![CDATA[The MIET (Step 4 technique)]]></category>
     <stage>1</stage><step>1.4</step><week>4</week>
-    <keywords><![CDATA[miet, steps, how to, mass, motion, temperature, density, equanimity, 30 seconds]]></keywords>
+    <keywords><![CDATA[miet, steps, how to, mass, motion, temperature, density, equanimity, 30 seconds, miss]]></keywords>
   </faq>
   <faq id="miet_04" source="book">
-    <question><![CDATA[How do I record the MIET in the app?]]></question>
-    <answer><![CDATA[As soon as possible after a distressing event, record it like this: (1) Mark the intensity of the strongest sensation on the 'Intensity Before' scale. (2) Place a dot on each of the four scales — mass, motion, temperature, and density — to show how each quality feels initially. (3) Connect those four dots with a solid line (your 'before equanimity' line). (4) After 30 seconds of equanimity practice, mark how each characteristic feels now. (5) Connect the new dots with a dotted line (your 'after equanimity' line). (6) Mark the 'Intensity After' scale. The difference between the solid 'before' line and the dotted 'after' line shows how the sensations shifted, giving you tangible evidence of your growing ability to work with challenging sensations.]]></answer>
+    <question><![CDATA[How do I record my MIET practice in the app?]]></question>
+    <answer><![CDATA[In the app, you record your MIET practice using the MISS (Mindfulness-based Interoceptive Signature Scale) — there is no separate MIET screen. The MISS captures exactly what the technique asks you to notice. After or during an intense experience, tap Assessments and select MISS, then: rate the qualities of the body sensations using the four sliding scales (Mass, Temperature, Motion, Fluidity) at their most intense — this is your pre-equanimity rating; apply equanimity to those sensations for about 30 seconds; then record your post-equanimity rating on the same four scales. Make sure all four dots are moved so the line is drawn, then save. The change between your before and after ratings is the record of your MIET practice, and the MISS graph tracks it over time.]]></answer>
     <category><![CDATA[The MIET (Step 4 technique)]]></category>
     <stage>1</stage><step>1.4</step><week>4</week>
-    <keywords><![CDATA[miet, record, document, before, after, intensity, line, scales, graph]]></keywords>
+    <keywords><![CDATA[miet, record, miss, where, assessments, mass, temperature, motion, fluidity, before, after, app]]></keywords>
   </faq>
   <faq id="miet_05" source="book">
     <question><![CDATA[Is the MIET about suppressing emotions or stopping myself from acting?]]></question>
@@ -367,17 +367,17 @@
   </faq>
   <faq id="bk_w4_07" source="book">
     <question><![CDATA[With the “Mindfulness based Interoceptive Signature Scale” (Figure 4.1) that I’m using this week to record those four characteristics, how do I fill it in if there is an issue during my work meeting tomorrow? I can’t exactly tell my boss, “Wait a minute, I have to record my sensations on this form!” How can I fill it out in a timely way?]]></question>
-    <answer><![CDATA[Yes, this can be a little tricky sometimes, especially in situations like work meetings or driving, when it is not practical. Whether you’re using the pen-and-paper format or the MiCBT Guide app, you may not always be able to record your sensations on the spot. In these cases, do your best to make a mental note of how the sensations feel in the body in terms of the four characteristics. Then, as soon as you have the opportunity, record your experience on the form or in the app.]]></answer>
+    <answer><![CDATA[Yes, this can be a little tricky sometimes, especially in situations like work meetings or driving, when it is not practical to stop and record straight away. In these cases, do your best to make a mental note of how the sensations feel in the body in terms of the four characteristics. Then, as soon as you have the opportunity, open the app and record your experience in the MISS.]]></answer>
     <category><![CDATA[Week 4 Practice (from the book)]]></category>
     <stage>1</stage><step>1.4</step><week>4</week>
-    <keywords><![CDATA[record, using, fill, work, characteristics, interoceptive, pen-and-paper]]></keywords>
+    <keywords><![CDATA[record, using, fill, work, characteristics, interoceptive, miss, app, record]]></keywords>
   </faq>
   <faq id="bk_w4_08" source="book">
     <question><![CDATA[Do I have to record all my emotions with the MISS this week? My God … you have no idea … I will need 50 sheets like this one!]]></question>
-    <answer><![CDATA[Ha ha! This won’t be necessary with every emotion you feel. You just need to monitor the stronger emotions because they are the ones with which you can best develop equanimity. Whether you’re using the MiCBT app or using pen and paper, fill in the MISS as often as possible when you feel distressed.]]></answer>
+    <answer><![CDATA[Ha ha! This won't be necessary with every emotion you feel. You just need to monitor the stronger emotions, because they are the ones with which you can best develop equanimity. Open the MISS in the app and fill it in as often as you can when you feel distressed.]]></answer>
     <category><![CDATA[Week 4 Practice (from the book)]]></category>
     <stage>1</stage><step>1.4</step><week>4</week>
-    <keywords><![CDATA[emotions, need, equanimity, necessary, stronger, emotion, monitor]]></keywords>
+    <keywords><![CDATA[emotions, need, equanimity, necessary, stronger, emotion, monitor, miss, app, record]]></keywords>
   </faq>
 
   <!-- Week 5 Practice (from the book) -->
@@ -1033,11 +1033,11 @@
     <keywords><![CDATA[stage, program, foundational, mindfulness, structure, delivers, personal]]></keywords>
   </faq>
   <faq id="app_get_started_08" source="app-help">
-    <question><![CDATA[Does the app cost money? Is there a free trial?]]></question>
-    <answer><![CDATA[The MiCBT Guide app offers a free trial period so you can explore the program before committing. After the trial, a subscription is required to continue access to the full program. For current pricing, subscription options, and trial details, check the App Store (iPhone) or Google Play Store (Android) listing for the MiCBT Guide, or visit mindfulness.net.au. If you have a question about your subscription, billing, or a charge, contact support@mindfulness.net.au.]]></answer>
+    <question><![CDATA[Does the app cost money? Is it free?]]></question>
+    <answer><![CDATA[Stage 1.1 (Week 1) is completely free, so you can start the program and experience the foundational practices before deciding to continue. To unlock the rest of the program beyond Stage 1.1, a subscription is required. For current pricing and subscription options, check the MiCBT Guide listing on the App Store (iPhone) or Google Play (Android), or visit mindfulness.net.au. For any question about your subscription, billing, or a charge, contact support@mindfulness.net.au.]]></answer>
     <category><![CDATA[Getting Started]]></category>
     <stage>all</stage><step>all</step><week>all</week>
-    <keywords><![CDATA[trial, free, subscription, committing, required, explore, program]]></keywords>
+    <keywords><![CDATA[cost, free, money, subscription, stage 1.1, pay, price, unlock]]></keywords>
   </faq>
   <faq id="app_get_started_09" source="app-help">
     <question><![CDATA[Is there a book that goes with the app?]]></question>
