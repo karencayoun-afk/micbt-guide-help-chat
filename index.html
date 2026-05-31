@@ -131,14 +131,14 @@ function App() {
   }
 
   function renderInlineMarkdown(text) {
-    const parts = text.split(/(\*\*.*?\*\*|__.*?__)/);
+    const parts = text.split(/(\*\*[^*]+\*\*|__[^_]+__|\*[^*]+\*|_[^_]+_)/);
     return parts.map(function(part, i) {
-      if (part.match(/^(\*\*|__).*(\*\*|__)$/)) {
-        const content = part.replace(/(\*\*|__)/g, '');
+      if (part.match(/^(\*\*|__)[\s\S]+(\*\*|__)$/)) {
+        const content = part.replace(/^(\*\*|__)|(\*\*|__)$/g, '');
         return React.createElement('strong', { key:i, style:{ fontWeight:'600', color:TEAL_SECONDARY } }, content);
       }
       if (part.match(/^\*[^*]+\*$|^_[^_]+_$/)) {
-        const content = part.replace(/(\*|_)/g, '');
+        const content = part.replace(/^[*_]|[*_]$/g, '');
         return React.createElement('em', { key:i, style:{ fontStyle:'italic' } }, content);
       }
       return part;
