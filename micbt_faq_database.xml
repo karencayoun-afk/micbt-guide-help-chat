@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <micbt_faq_database>
   <metadata>
-    <version>6.6</version>
-    <last_updated>2026-05-31</last_updated>
+    <version>6.9</version>
+    <last_updated>2026-06-03</last_updated>
     <source>Verbatim book FAQs + book-derived concept/technique FAQs (Cayoun &amp; Grabovac 2nd Ed.) + verbatim app/assessment help docs from app.mindfulness.net.au + curated special-population FAQs</source>
-    <total_faqs>202</total_faqs>
+    <total_faqs>208</total_faqs>
     <retrieval>embedding-based semantic search</retrieval>
   </metadata>
 
@@ -82,6 +82,13 @@
   </faq>
 
   <!-- The MIET (Step 4 technique) -->
+  <faq id="concept_two_factors_equanimity" source="book">
+    <question><![CDATA[What are the two factors of equanimity in MiCBT?]]></question>
+    <answer><![CDATA[In MiCBT, equanimity has two components. The first is non-reactivity — observing an experience objectively, without automatically reacting to it. The second is experiential acceptance — allowing the experience to be present with unconditional acceptance, rather than resisting it or wanting it to go away. When you first learn the MIET these two are practised separately, in two exposures, to make each one easier to grasp. With practice they combine into a single, natural response to difficult sensations and emotions. Developing both is what allows a strong sensation to lose its grip without you having to push it away.]]></answer>
+    <category><![CDATA[The MIET (Step 4 technique)]]></category>
+    <stage>1</stage><step>4</step><week>4</week>
+    <keywords><![CDATA[two factors, equanimity, non-reactivity, experiential acceptance, components, what is equanimity]]></keywords>
+  </faq>
   <faq id="miet_01" source="book">
     <question><![CDATA[What is the MIET?]]></question>
     <answer><![CDATA[MIET stands for the Mindfulness-based Interoceptive Exposure Task. It's a brief, structured technique you learn in Step 4 (Stage 1.4) for using equanimity in real-life stressful or painful moments. It takes about 30 seconds: when distress arises, you locate the strongest sensation in your body and observe it through four characteristics — mass, motion, temperature, and density — rating it before and after observing it with equanimity. In short, it extends the body-scanning skills you've been practising into everyday situations, so you can feel, accept, and let go of difficult sensations as they happen rather than reacting habitually. In the app, you record your MIET practice using the MISS assessment (there is no separate MIET screen).]]></answer>
@@ -116,6 +123,19 @@
     <category><![CDATA[The MIET (Step 4 technique)]]></category>
     <stage>1</stage><step>1.4</step><week>4</week>
     <keywords><![CDATA[miet, suppress, emotion, prevent, action, reactivity, acceptance, misconception]]></keywords>
+  </faq>
+  <faq id="miet_06" source="book">
+    <question><![CDATA[The MIET instructions show a two-stage process, but the app records a single before-and-after. Should I do one exposure or two?]]></question>
+    <answer><![CDATA[Both belong to the MIET — they're used at different points in your learning.
+
+The two-exposure version is the teaching form, usually done just once when you first learn the MIET (in the Stage 1.4 instruction track). It separates equanimity into its two parts to make the observation easier. In the first exposure you observe the four characteristics of the sensation (mass, motion, temperature and density) objectively, without reacting — this is non-reactivity. In the second exposure you observe them again, this time with unconditional acceptance — this is experiential acceptance. Because you rate intensity after each step, you see two separate drops. This scaffolding is especially helpful if you're in intense pain or strong distress, or new to meditation.
+
+The single-exposure version is what you practise from then on. Once you've seen that the method works, you combine non-reactivity and acceptance into one brief (about 30-second) exposure. This is more practical day to day, keeps you from being pulled away by distraction or overthinking, and is the form that later integrates into the exposure work in Stages 2 and 3.
+
+So: use the two-exposure version while you're learning the method, then use the single combined exposure for ongoing practice. The app's MISS records a single before-and-after rating, which matches the single-exposure practice you'll use most of the time.]]></answer>
+    <category><![CDATA[The MIET (Step 4 technique)]]></category>
+    <stage>1</stage><step>4</step><week>4</week>
+    <keywords><![CDATA[one exposure, two exposure, two-stage, one stage, single, teaching, which, difference, three ratings, two drops, miet process]]></keywords>
   </faq>
 
   <!-- Understanding MiCBT -->
@@ -640,6 +660,36 @@
     <category><![CDATA[Week 9 Practice (from the book)]]></category>
     <stage>4</stage><step>4.1</step><week>9</week>
     <keywords><![CDATA[egolessness, buddhist, concept, individuality, philosophy, background, reconcile]]></keywords>
+  </faq>
+
+  <!-- About MiCBT -->
+  <faq id="app_about_bruno_01" source="app-help">
+    <question><![CDATA[Who is Dr Bruno Cayoun?]]></question>
+    <answer><![CDATA[Dr Bruno Cayoun is a clinical and research psychologist, author and principal developer of Mindfulness-integrated Cognitive Behaviour Therapy (MiCBT) — the approach the MiCBT Guide programme is built on. He is Director of the MiCBT Institute and has run a private psychology practice in Hobart, Australia, applying MiCBT with individuals and groups for many years, as well as training mental health professionals internationally. He is the author of the foundational MiCBT texts (with Dr Andrea Grabovac as co-author of the programme's core book), which integrate mindfulness training with cognitive and behavioural therapy, grounded in how thoughts, emotions and body sensations co-emerge. The practices and structure in this app come directly from his work.]]></answer>
+    <category><![CDATA[About MiCBT]]></category>
+    <stage>all</stage><step>all</step><week>all</week>
+    <keywords><![CDATA[bruno, cayoun, who, founder, developer, creator, author, clinical psychologist, researcher, micbt institute, director, dr]]></keywords>
+  </faq>
+  <faq id="app_about_grabovac_01" source="app-help">
+    <question><![CDATA[Who is Dr Andrea Grabovac?]]></question>
+    <answer><![CDATA[Dr Andrea Grabovac is a clinical psychiatrist based in Vancouver, Canada, and Clinical Professor of Psychiatry at the University of British Columbia. She is Co-Director of the North American chapter of the MiCBT Institute and co-author, with Dr Bruno Cayoun, of the core book this programme is based on — 'Mindfulness-integrated CBT for Well-being and Personal Growth' (2nd edition). Her work focuses on mindfulness-based interventions in clinical settings and on training clinicians, helping ground MiCBT in both clinical and scientific understanding.]]></answer>
+    <category><![CDATA[About MiCBT]]></category>
+    <stage>all</stage><step>all</step><week>all</week>
+    <keywords><![CDATA[andrea grabovac, who, co-author, author, psychiatrist, book, dr]]></keywords>
+  </faq>
+  <faq id="app_about_institute_01" source="app-help">
+    <question><![CDATA[What is the MiCBT Institute?]]></question>
+    <answer><![CDATA[The MiCBT Institute is the organisation founded and directed by Dr Bruno Cayoun that develops Mindfulness-integrated Cognitive Behaviour Therapy, trains and accredits therapists in it worldwide, and produces the programmes and resources MiCBT is delivered through — including this app. It is the authoritative source for MiCBT training, materials and practitioner standards. You can find out more at mindfulness.net.au.]]></answer>
+    <category><![CDATA[About MiCBT]]></category>
+    <stage>all</stage><step>all</step><week>all</week>
+    <keywords><![CDATA[micbt institute, organisation, who makes, company, training, accreditation, mindfulness.net.au, behind the app]]></keywords>
+  </faq>
+  <faq id="app_about_micbt_01" source="app-help">
+    <question><![CDATA[What does MiCBT stand for? What is it?]]></question>
+    <answer><![CDATA[MiCBT stands for Mindfulness-integrated Cognitive Behaviour Therapy. It is an evidence-based approach that blends mindfulness training with cognitive and behavioural therapy. Rather than only working with thoughts, MiCBT teaches you to notice how thoughts, emotions and body sensations arise together, and to meet difficult experiences with equanimity — acceptance without reacting. It was developed by Dr Bruno Cayoun and is delivered as a structured programme (in this app, across 10 stages) that builds skills step by step, from personal stability through to compassion and lasting change.]]></answer>
+    <category><![CDATA[About MiCBT]]></category>
+    <stage>all</stage><step>all</step><week>all</week>
+    <keywords><![CDATA[micbt, what is, stand for, meaning, mindfulness-integrated cognitive behaviour therapy, approach, definition]]></keywords>
   </faq>
 
   <!-- Account & Privacy -->
