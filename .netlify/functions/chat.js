@@ -13,6 +13,8 @@
  *
  * If EMBEDDING_API_KEY is missing OR faq_vectors.json is absent, the function
  * automatically falls back to keyword matching so the bot still works.
+ *
+ * There is no per-user question limit.
  */
 
 const fs = require('fs');
@@ -21,7 +23,6 @@ const path = require('path');
 const EMBED_MODEL = 'voyage-4';                 // MUST match embed.js
 const EMBED_DIM   = 512;                        // MUST match embed.js
 const TOP_K       = 6;
-const DAILY_LIMIT = 6;
 
 // ---------- locate + load data files (resilient to Netlify cwd) ----------
 function findFile(name) {
@@ -136,16 +137,6 @@ function formatContext(faqs) {
   return `Here are the most relevant Q&As from the MiCBT knowledge base:\n\n${body}\n\n`;
 }
 
-// ---------- rate limit (in-memory; resets on cold start — see README) ----------
-function rateLimit(userId, max) {
-  const today = new Date().toISOString().split('T')[0];
-  const key = `${userId}:${today}`;
-  if (!global.qc) global.qc = {};
-  const count = (global.qc[key] || 0) + 1;
-  global.qc[key] = count;
-  return { allowed: count <= max, used: count - 1, remaining: Math.max(0, max - count), limit: max };
-}
-
 const DEFAULT_PERSONA =
   `You are Lumi, a warm, calm guide for people using the MiCBT Guide app (a 10-week ` +
   `mindfulness-integrated CBT program for well-being). Answer using the knowledge base ` +
@@ -161,17 +152,19 @@ exports.handler = async function (event) {
   try { body = JSON.parse(event.body); }
   catch { return { statusCode: 400, body: JSON.stringify({ error: 'Invalid JSON' }) }; }
 
-  const userId = event.headers['x-forwarded-for']?.split(',')[0] || event.headers['client-ip'] || 'anon';
-  const rl = rateLimit(userId, DAILY_LIMIT);
-  if (!rl.allowed) {
-    return { statusCode: 429, body: JSON.stringify({
-      error: 'Daily question limit reached. Please try again tomorrow.',
-      questionsUsed: rl.used, questionsRemaining: 0, dailyLimit: rl.limit }) };
-  }
-
   const { messages = [], systemPrompt } = body;
   const userMsgs = messages.filter(m => m.role === 'user');
   const latest = userMsgs.length ? userMsgs[userMsgs.length - 1].content : '';
+
+  // --- Question logging (privacy-conscious) ---
+  // Logs ONLY the question text + timestamp, with NO user identifier (no IP, no name).
+  // Goes to Netlify's function logs, which have limited retention by default.
+  // Purpose: spot questions Lumi answers poorly so the FAQ database can be improved.
+  // To turn logging off, set the comment flag below to false.
+  const LOG_QUESTIONS = true;
+  if (LOG_QUESTIONS && latest) {
+    console.log(`[Q ${new Date().toISOString()}] ${String(latest).slice(0, 300)}`);
+  }
 
   let relevant = [];
   try { relevant = await retrieve(latest); }
@@ -190,9 +183,7 @@ exports.handler = async function (event) {
     if (!response.ok) return { statusCode: response.status, body: JSON.stringify({ error: await response.text() }) };
 
     const data = await response.json();
-    const out = { ...data, questionsUsed: rl.used, questionsRemaining: rl.remaining, dailyLimit: rl.limit };
-    if (rl.remaining <= 2 && rl.remaining > 0) out.warning = `You have ${rl.remaining} question${rl.remaining === 1 ? '' : 's'} remaining today.`;
-    return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(out) };
+    return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) };
   } catch (error) {
     return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
   }
