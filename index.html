@@ -109,6 +109,8 @@ function App() {
   const [loading, setLoading]   = useState(false);
   const chatRef  = useRef(null);
   const inputRef = useRef(null);
+  // Context about the user, sent in by the MiCBT app when Lumi is embedded.
+  const userCtxRef = useRef({ stage:"", stageTitle:"", name:"" });
 
   useEffect(() => {
     if (chatRef.current) chatRef.current.scrollTop = chatRef.current.scrollHeight;
@@ -117,6 +119,42 @@ function App() {
   useEffect(() => {
     if (inputRef.current) inputRef.current.focus();
   }, []);
+
+  // Receive the user's current stage/name from the MiCBT app — via the iframe URL
+  // (?stage=&stageTitle=&name=) on load, and via postMessage for live updates.
+  useEffect(() => {
+    try {
+      const q = new URLSearchParams(window.location.search);
+      userCtxRef.current = {
+        stage:      q.get("stage")      || "",
+        stageTitle: q.get("stageTitle") || "",
+        name:       q.get("name")       || ""
+      };
+    } catch (e) {}
+    function onMsg(e) {
+      const o = e.origin || "";
+      const trusted = o.endsWith(".netlify.app") || o.indexOf("http://localhost") === 0;
+      if (!trusted) return;
+      if (e.data && e.data.type === "micbt-context") {
+        userCtxRef.current = {
+          stage:      e.data.stage      || "",
+          stageTitle: e.data.stageTitle || "",
+          name:       e.data.name       || ""
+        };
+      }
+    }
+    window.addEventListener("message", onMsg);
+    return function(){ window.removeEventListener("message", onMsg); };
+  }, []);
+
+  function buildUserContext() {
+    const c = userCtxRef.current || {};
+    const parts = [];
+    if (c.name)  parts.push("The person's name is " + c.name + ".");
+    if (c.stage) parts.push("They are currently on MiCBT Stage " + c.stage +
+      (c.stageTitle ? " (" + c.stageTitle + ")" : "") + ".");
+    return parts.join(" ");
+  }
 
   async function send(text) {
     const msg = (text || input).trim();
@@ -132,11 +170,18 @@ function App() {
         return { role: m.role === "user" ? "user" : "assistant", content: m.text };
       });
 
+    const ctx = buildUserContext();
+    const sys = ctx
+      ? SYSTEM_PROMPT + "\n\nABOUT THE PERSON YOU ARE HELPING (live context from the MiCBT app — " +
+        "use it to tailor your guidance to where they are in the programme; don't recite it back " +
+        "unless it's relevant):\n" + ctx
+      : SYSTEM_PROMPT;
+
     try {
       const res = await fetch("/.netlify/functions/chat", {
         method:"POST",
         headers:{ "Content-Type":"application/json" },
-        body: JSON.stringify({ messages: apiMessages, systemPrompt: SYSTEM_PROMPT })
+        body: JSON.stringify({ messages: apiMessages, systemPrompt: sys })
       });
 
       const data = await res.json();
