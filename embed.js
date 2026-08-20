@@ -26,6 +26,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { parseFaqs, buildInput, hashInput } = require('./faq-source');
 
 const EMBED_MODEL = 'voyage-4';
 const EMBED_DIM   = 512;            // voyage-4 supports 256/512/1024/2048; 512 keeps JSON small
@@ -36,23 +37,6 @@ const API_KEY     = process.env.EMBEDDING_API_KEY;
 if (!API_KEY) {
   console.error('ERROR: set EMBEDDING_API_KEY first  ->  export EMBEDDING_API_KEY="pa-..."');
   process.exit(1);
-}
-
-// --- tolerant XML parse (handles CDATA) ---
-function parseFaqs(xml) {
-  const faqs = [];
-  const blocks = xml.match(/<faq\b[^>]*>[\s\S]*?<\/faq>/g) || [];
-  for (const b of blocks) {
-    const id  = (b.match(/<faq[^>]*\bid="([^"]+)"/) || [])[1] || '';
-    const get = (tag) => {
-      const m = b.match(new RegExp(`<${tag}>([\\s\\S]*?)</${tag}>`));
-      if (!m) return '';
-      return m[1].replace(/^\s*<!\[CDATA\[/, '').replace(/\]\]>\s*$/, '').trim();
-    };
-    const q = get('question'), a = get('answer');
-    if (id && q && a) faqs.push({ id, question: q, answer: a, keywords: get('keywords') });
-  }
-  return faqs;
 }
 
 // --- embedding call (Voyage AI). Returns array of vectors in input order. ---
@@ -78,23 +62,23 @@ async function embedBatch(texts) {
   const faqs = parseFaqs(xml);
   console.log(`Parsed ${faqs.length} FAQs from ${path.basename(XML_PATH)}`);
 
-  // What we embed: question + keywords + answer (truncated) — captures intent + content
-  const inputs = faqs.map(f =>
-    `${f.question}\nKeywords: ${f.keywords}\n${f.answer}`.slice(0, 2000)
-  );
+  // What we embed: question + keywords + answer (truncated) — captures intent + content.
+  // Defined in faq-source.js so verify-vectors.js hashes exactly what was embedded.
+  const inputs = faqs.map(buildInput);
 
   const vectors = [];
   const BATCH = 50;
   for (let i = 0; i < inputs.length; i += BATCH) {
     const slice = inputs.slice(i, i + BATCH);
     const embs = await embedBatch(slice);
-    embs.forEach((v, j) => vectors.push({ id: faqs[i + j].id, v }));
+    embs.forEach((v, j) => vectors.push({ id: faqs[i + j].id, v, h: hashInput(slice[j]) }));
     console.log(`  embedded ${Math.min(i + BATCH, inputs.length)}/${inputs.length}`);
   }
 
   fs.writeFileSync(OUT_PATH, JSON.stringify({
-    model: EMBED_MODEL, dimensions: EMBED_DIM, count: vectors.length, vectors  // "dimensions" here is just a label in the output file
+    model: EMBED_MODEL, dimensions: EMBED_DIM, hashAlgo: 'sha256-16', count: vectors.length, vectors  // "dimensions" here is just a label in the output file
   }));
   const kb = (fs.statSync(OUT_PATH).size / 1024).toFixed(0);
   console.log(`Wrote ${path.basename(OUT_PATH)}  (${vectors.length} vectors, ${kb} KB)`);
+  console.log('Run `node verify-vectors.js` to confirm the file matches the XML (the Netlify build does this too).');
 })().catch(e => { console.error(e); process.exit(1); });

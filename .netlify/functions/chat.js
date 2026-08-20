@@ -19,6 +19,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const EMBED_MODEL = 'voyage-4';                 // MUST match embed.js
 const EMBED_DIM   = 512;                        // MUST match embed.js
@@ -75,12 +76,54 @@ function loadVectors() {
   try {
     const data = JSON.parse(fs.readFileSync(p, 'utf8'));
     // pre-compute norms for fast cosine
-    VECTORS = data.vectors.map(({ id, v }) => {
+    VECTORS = data.vectors.map(({ id, v, h }) => {
       let n = 0; for (let i = 0; i < v.length; i++) n += v[i] * v[i];
-      return { id, v, norm: Math.sqrt(n) || 1 };
+      return { id, v, h, norm: Math.sqrt(n) || 1 };   // keep h: the freshness check needs it
     });
   } catch (e) { console.warn('vector load failed', e.message); VECTORS = false; }
   return VECTORS;
+}
+
+// ---------- vector freshness check (diagnostic) ----------
+// The Netlify build runs verify-vectors.js and refuses to deploy a faq_vectors.json
+// that no longer matches the XML. This is the belt-and-braces version: if a stale
+// file reaches production anyway (build check bypassed, file edited in place), say so
+// loudly in the function logs rather than quietly retrieving against outdated text.
+// Purely diagnostic — it never changes what the bot answers.
+let HEALTH_LOGGED = false;
+
+function logVectorHealth(faqs, vectors) {
+  if (HEALTH_LOGGED) return;
+  HEALTH_LOGGED = true;
+  try {
+    if (!vectors || !vectors.length) return;
+    // Must match buildInput() in faq-source.js, or every hash looks stale.
+    const hashOf = (f) => crypto.createHash('sha256')
+      .update(`${f.question}\nKeywords: ${f.keywords}\n${f.answer}`.slice(0, 2000), 'utf8')
+      .digest('hex').slice(0, 16);
+
+    const byId = new Map(vectors.map(v => [v.id, v]));
+    const embeddable = Object.values(faqs).filter(f => f.question && f.answer);
+    if (!embeddable.length) return;
+
+    const missing = embeddable.filter(f => !byId.has(f.id)).map(f => f.id);
+    const hashed = embeddable.filter(f => byId.get(f.id) && byId.get(f.id).h);
+    const stale = hashed.filter(f => byId.get(f.id).h !== hashOf(f)).map(f => f.id);
+    const orphans = vectors.map(v => v.id).filter(id => !faqs[id]);
+
+    if (!hashed.length) {
+      console.warn('[vectors] no content hashes present — freshness cannot be checked; re-run embed.js');
+    } else if (missing.length || stale.length || orphans.length) {
+      const show = (l) => l.slice(0, 8).join(', ') + (l.length > 8 ? ` +${l.length - 8} more` : '');
+      console.warn(
+        `[vectors] STALE faq_vectors.json — retrieval is matching outdated text. ` +
+        `missing=${missing.length}${missing.length ? ` (${show(missing)})` : ''} ` +
+        `stale=${stale.length}${stale.length ? ` (${show(stale)})` : ''} ` +
+        `orphans=${orphans.length}${orphans.length ? ` (${show(orphans)})` : ''} ` +
+        `-- run \`node embed.js\` and commit faq_vectors.json`
+      );
+    }
+  } catch (e) { /* diagnostics must never break a reply */ }
 }
 
 // ---------- query embedding ----------
@@ -129,6 +172,7 @@ function keywordTopK(question, faqs, k) {
 async function retrieve(question) {
   const faqs = loadFaqs();
   const vectors = loadVectors();
+  logVectorHealth(faqs, vectors);
   let top, method;
   if (vectors && vectors.length) {
     const qVec = await embedQuery(question);
