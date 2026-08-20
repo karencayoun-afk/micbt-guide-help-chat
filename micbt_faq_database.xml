@@ -1130,6 +1130,34 @@ So: use the two-exposure version while you're learning the method, then use the 
   </faq>
 
   <!-- Stage Guides -->
+  <faq id="app_stage_overview_01" source="app-help">
+    <question><![CDATA[What is Stage 1 about? What happens across Weeks 1-4?]]></question>
+    <answer><![CDATA[Stage 1 is the Personal Stage, and it runs across Weeks 1-4. It builds the foundational skills the rest of the program depends on, and the practice changes each week. Week 1 (Stage 1.1) is Progressive Muscle Relaxation (PMR), about 14 minutes twice daily -- not meditation yet; your first session also includes three short introduction tracks, making it about 28-30 minutes that one time. Week 2 (Stage 1.2) moves to mindfulness of breath, 30 minutes twice daily, training you to notice when attention has wandered and to return without frustration. Week 3 (Stage 1.3) introduces body scanning, 30 minutes twice daily -- moving attention systematically through the body and observing whatever sensations are there with equanimity, which is where MiCBT becomes distinctive. Week 4 (Stage 1.4) keeps the body scanning and begins transferring the skill into daily life through mindful activities, including staying still when there is an urge to move. Each week has its own Stage Guide in the app with the exact track and duration.]]></answer>
+    <category><![CDATA[Stage Guides]]></category>
+    <stage>1</stage><step>all</step><week>1-4</week>
+    <keywords><![CDATA[stage 1, stage one, personal stage, weeks 1-4, week 1 to 4, overview, what is stage 1, what happens in stage 1, summary, foundation, PMR, breath, body scanning]]></keywords>
+  </faq>
+  <faq id="app_stage_overview_02" source="app-help">
+    <question><![CDATA[What is Stage 2 about? What happens across Weeks 5-6?]]></question>
+    <answer><![CDATA[Stage 2 is the Interpersonal Awareness Stage, covering Weeks 5-6, where you start applying your mindfulness skills to avoidance and self-confidence. Week 5 (Stage 2.1) introduces bilateral (symmetrical) body scanning -- attention moves down both sides of the body simultaneously -- alongside building a SUDS hierarchy of situations you avoid. Week 6 (Stage 2.2) introduces partial sweeping, where attention moves through the body in larger sections rather than part by part, together with Bipolar Exposure: imagining a worst-case scenario and then a best-case one, observing the body with equanimity through both. Each week has its own Stage Guide in the app with the exact track and duration.]]></answer>
+    <category><![CDATA[Stage Guides]]></category>
+    <stage>2</stage><step>all</step><week>5-6</week>
+    <keywords><![CDATA[stage 2, stage two, interpersonal awareness stage, weeks 5-6, overview, what is stage 2, what happens in stage 2, summary, bilateral scanning, partial sweeping, SUDS, bipolar exposure]]></keywords>
+  </faq>
+  <faq id="app_stage_overview_03" source="app-help">
+    <question><![CDATA[What is Stage 3 about? What happens across Weeks 7-8?]]></question>
+    <answer><![CDATA[Stage 3 is the Interpersonal Stage, covering Weeks 7-8, where mindfulness extends into your relationships. Week 7 (Stage 3.1) introduces sweeping en masse -- attention flowing through the whole body in one continuous wave -- alongside interpersonal awareness and Experiential Ownership, a seven-statement assertiveness framework for expressing needs and boundaries. Week 8 (Stage 3.2) introduces transversal scanning, where attention moves through the body front-to-back, together with mindful speech: noticing body sensations before and during difficult conversations. Each week has its own Stage Guide in the app with the exact track and duration.]]></answer>
+    <category><![CDATA[Stage Guides]]></category>
+    <stage>3</stage><step>all</step><week>7-8</week>
+    <keywords><![CDATA[stage 3, stage three, interpersonal stage, weeks 7-8, overview, what is stage 3, what happens in stage 3, summary, sweeping en masse, transversal scanning, experiential ownership, mindful speech]]></keywords>
+  </faq>
+  <faq id="app_stage_overview_04" source="app-help">
+    <question><![CDATA[What is Stage 4 about? What happens across Weeks 9-10?]]></question>
+    <answer><![CDATA[Stage 4 is the Compassion Stage, covering Weeks 9-10, and it turns the practice outward before consolidating everything. Week 9 (Stage 4.1) introduces loving-kindness (metta) meditation -- cultivating goodwill starting with yourself and extending outward to loved ones, neutral people, difficult people and all beings -- along with the Ethical Challenges Diary (ECD). Week 10 (Stage 4.2) moves to the Maintenance Practice: a flexible combined session of roughly 10 minutes of mindfulness of breath, about 25 minutes of body scanning using whichever method suits you, and around 10 minutes of loving-kindness, recorded with minimal guidance. The focus is sustainability and relapse prevention -- reviewing your goals and comparing your assessment scores against your Stage 1.1 baselines. Each week has its own Stage Guide in the app with the exact track and duration.]]></answer>
+    <category><![CDATA[Stage Guides]]></category>
+    <stage>4</stage><step>all</step><week>9-10</week>
+    <keywords><![CDATA[stage 4, stage four, compassion stage, weeks 9-10, overview, what is stage 4, what happens in stage 4, summary, loving-kindness, metta, ECD, maintenance practice, relapse prevention]]></keywords>
+  </faq>
   <faq id="app_stage_guides_01" source="app-help">
     <question><![CDATA[What do I practise in Stage 1.1 (Week 1)?]]></question>
     <answer><![CDATA[Practice: Progressive Muscle Relaxation (PMR) -- about 14 minutes, twice daily. Week 1 is where you establish a twice-daily routine and a clear commitment to your own self-care. The practice this week is PMR, not meditation yet: sitting comfortably with your eyes closed, you follow the audio to gently tense and then fully release each major muscle group in turn. The aim isn't total relaxation -- it's to notice the contrast between tension and release, so you can recognise and let go of tension in everyday life. On your first day, listen to the first four tracks in order -- General Introduction, Rationale for Training, Introduction to PMR, and then Progressive Muscle Relaxation -- which together take about 28-30 minutes. You only need those introductions once; from day 2 onward you practise Track 4 (Progressive Muscle Relaxation, about 14 minutes) on its own, twice daily, for the rest of the week. The longer 30-minute meditation sessions begin next week, in Stage 1.2, with mindfulness of breath. In the app, you'll find these tracks by tapping Home, then your current stage and step; the stage guide and the Log my practice button are on that same screen. Set your goals at the start of this stage so you have a clear sense of what you're working toward.]]></answer>
