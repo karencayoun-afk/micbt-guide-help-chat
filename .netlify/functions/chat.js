@@ -24,6 +24,14 @@ const EMBED_MODEL = 'voyage-4';                 // MUST match embed.js
 const EMBED_DIM   = 512;                        // MUST match embed.js
 const TOP_K       = 6;
 
+// Retrieval-confidence thresholds (cosine similarity of the BEST match).
+// These are starting values -- tune them against real traffic. Every question is
+// logged below with its top score, so after a few days of logs you can pick
+// thresholds that match how your corpus actually scores. Raising CONF_LOW makes
+// Lumi hedge more often; lowering it makes Lumi answer more confidently.
+const CONF_HIGH = 0.55;   // >= this: strong match, answer normally
+const CONF_LOW  = 0.42;   // <  this: weak match, tell Lumi to be candid / point onward
+
 // ---------- locate + load data files (resilient to Netlify cwd) ----------
 function findFile(name) {
   const candidates = [
@@ -121,14 +129,28 @@ function keywordTopK(question, faqs, k) {
 async function retrieve(question) {
   const faqs = loadFaqs();
   const vectors = loadVectors();
-  let top;
+  let top, method;
   if (vectors && vectors.length) {
     const qVec = await embedQuery(question);
-    top = qVec ? cosineTopK(qVec, vectors, TOP_K) : keywordTopK(question, faqs, TOP_K);
+    if (qVec) { top = cosineTopK(qVec, vectors, TOP_K); method = 'semantic'; }
+    else      { top = keywordTopK(question, faqs, TOP_K); method = 'keyword'; }
   } else {
-    top = keywordTopK(question, faqs, TOP_K);
+    top = keywordTopK(question, faqs, TOP_K); method = 'keyword';
   }
-  return top.map(t => faqs[t.id]).filter(Boolean);
+  // topScore is a cosine similarity (0..1) ONLY for the semantic path; the keyword
+  // path uses an unbounded ad-hoc score, so we don't treat it as a confidence signal.
+  const topScore = (method === 'semantic' && top.length) ? top[0].score : null;
+  const results = top.map(t => faqs[t.id]).filter(Boolean);
+  return { faqs: results, topScore, method };
+}
+
+// Turn the best-match score into a confidence band. Keyword fallback can't be
+// scored on the same scale, so it's treated as 'medium' (be honest, don't overreach).
+function confidenceBand(topScore, method) {
+  if (method !== 'semantic' || topScore == null) return 'medium';
+  if (topScore >= CONF_HIGH) return 'high';
+  if (topScore <  CONF_LOW)  return 'low';
+  return 'medium';
 }
 
 function formatContext(faqs) {
@@ -162,17 +184,44 @@ exports.handler = async function (event) {
   // Purpose: spot questions Lumi answers poorly so the FAQ database can be improved.
   // To turn logging off, set the comment flag below to false.
   const LOG_QUESTIONS = true;
+
+  let relevant = [], topScore = null, method = 'none';
+  try {
+    const r = await retrieve(latest);
+    relevant = r.faqs; topScore = r.topScore; method = r.method;
+  } catch (e) { console.warn('retrieve error', e.message); }
+
+  const band = confidenceBand(topScore, method);
+
+  // Logs the question, retrieval method, top score, and confidence band -- no user
+  // identifier. The score is what you use to tune CONF_HIGH / CONF_LOW over time.
   if (LOG_QUESTIONS && latest) {
-    console.log(`[Q ${new Date().toISOString()}] ${String(latest).slice(0, 300)}`);
+    const s = topScore == null ? 'n/a' : topScore.toFixed(3);
+    console.log(`[Q ${new Date().toISOString()}] band=${band} score=${s} method=${method} :: ${String(latest).slice(0, 300)}`);
   }
 
-  let relevant = [];
-  try { relevant = await retrieve(latest); }
-  catch (e) { console.warn('retrieve error', e.message); }
+  // When the knowledge base doesn't clearly cover the question, tell Lumi to be
+  // candid and point onward rather than stretch weak matches into a confident answer.
+  // This deliberately tempers the "be complete, don't defer" instruction in the
+  // persona -- but only when retrieval is actually weak.
+  let confidenceNote = '';
+  if (band === 'low') {
+    confidenceNote =
+      `\n\nRETRIEVAL NOTE: The knowledge base did not return a strong match for this question. ` +
+      `If the Q&As above don't actually address what the user asked, do not guess or stretch them to fit. ` +
+      `Answer only what you can confidently support from the material, say plainly if you're not certain ` +
+      `this is covered, and point the person to the Stage Guide for their current stage in the app, or to ` +
+      `support@mindfulness.net.au for account or app issues.`;
+  } else if (band === 'medium') {
+    confidenceNote =
+      `\n\nRETRIEVAL NOTE: The match is only partial. Rely on the Q&As above where they clearly apply, ` +
+      `and be honest about any part of the question they don't cover rather than filling the gap with guesses.`;
+  }
 
   const persona = systemPrompt || DEFAULT_PERSONA;
   const system = `${persona}\n\n${formatContext(relevant)}` +
-    `Use the Q&As above to inform your answer, but respond naturally to the user's specific question.`;
+    `Use the Q&As above to inform your answer, but respond naturally to the user's specific question.` +
+    confidenceNote;
 
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
