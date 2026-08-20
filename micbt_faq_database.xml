@@ -112,7 +112,7 @@
   </faq>
   <faq id="miet_04" source="book">
     <question><![CDATA[How do I record my MIET practice in the app?]]></question>
-    <answer><![CDATA[In the app, you record your MIET practice using the MISS (Mindfulness-based Interoceptive Signature Scale) — there is no separate MIET screen. The MISS captures exactly what the technique asks you to notice. After or during an intense experience, tap Assessments and select MISS, then: rate the qualities of the body sensations using the four sliding scales (Mass, Temperature, Motion, Fluidity) at their most intense — this is your pre-equanimity rating; apply equanimity to those sensations for about 30 seconds; then record your post-equanimity rating on the same four scales. Make sure all four dots are moved so the line is drawn, then save. The change between your before and after ratings is the record of your MIET practice, and the MISS graph tracks it over time.]]></answer>
+    <answer><![CDATA[In the app, you record your MIET practice using the MISS (Mindfulness-based Interoceptive Signature Scale) — there is no separate MIET screen. The MISS captures exactly what the technique asks you to notice. After or during an intense experience, tap Assessments in the bottom navigation bar, tap the + button, and select MISS, then: rate the qualities of the body sensations using the four sliding scales (Mass, Temperature, Motion, Fluidity) at their most intense — this is your pre-equanimity rating; apply equanimity to those sensations for about 30 seconds; then record your post-equanimity rating on the same four scales. Make sure all four dots are moved so the line is drawn; the entry then saves automatically -- there is no save step. The change between your before and after ratings is the record of your MIET practice, and the MISS graph tracks it over time.]]></answer>
     <category><![CDATA[The MIET (Step 4 technique)]]></category>
     <stage>1</stage><step>1.4</step><week>4</week>
     <keywords><![CDATA[miet, record, miss, where, assessments, mass, temperature, motion, fluidity, before, after, app]]></keywords>
@@ -753,7 +753,7 @@ So: use the two-exposure version while you're learning the method, then use the 
   </faq>
   <faq id="app_dass_21_02" source="app-help">
     <question><![CDATA[How do I use the DASS-21?]]></question>
-    <answer><![CDATA[Tap Assessments and select DASS-21 . Read each statement and select how much it applied to you over the past week . Answer honestly -- there are no right or wrong answers. Tap Submit . Your scores are tracked over time. To view all three graphs (depression, anxiety, stress), tap the orange arrow above the graph.]]></answer>
+    <answer><![CDATA[Tap Assessments in the bottom navigation bar, tap the + button, and select DASS-21 . Read each statement and select how much it applied to you over the past week . Answer honestly -- there are no right or wrong answers. Your entry saves automatically -- there is no Submit or Save button to tap. Your scores are tracked over time. To view all three graphs (depression, anxiety, stress), tap the orange arrow above the graph.]]></answer>
     <category><![CDATA[Assessments: DASS-21]]></category>
     <stage>all</stage><step>all</step><week>all</week>
     <keywords><![CDATA[select, dass-, assessments, statement, honestly, applied, answer]]></keywords>
@@ -804,7 +804,7 @@ So: use the two-exposure version while you're learning the method, then use the 
   </faq>
   <faq id="app_es_16_03" source="app-help">
     <question><![CDATA[How do I use the ES-16?]]></question>
-    <answer><![CDATA[Tap Assessments and select ES-16 . Read each statement and select a response indicating how much it applied to you over the past week . Answer with your first instinct -- don't spend too long on any item. Tap Submit . There are no right or wrong answers. Complete it honestly -- it is a tool for your own tracking and insight.]]></answer>
+    <answer><![CDATA[Tap Assessments in the bottom navigation bar, tap the + button, and select ES-16 . Read each statement and select a response indicating how much it applied to you over the past week . Answer with your first instinct -- don't spend too long on any item. Your entry saves automatically -- there is no Submit or Save button to tap. There are no right or wrong answers. Complete it honestly -- it is a tool for your own tracking and insight.]]></answer>
     <category><![CDATA[Assessments: ES-16]]></category>
     <stage>all</stage><step>all</step><week>all</week>
     <keywords><![CDATA[select, assessments, indicating, statement, response, applied, answer, ES-16]]></keywords>
@@ -864,7 +864,7 @@ So: use the two-exposure version while you're learning the method, then use the 
   </faq>
   <faq id="app_iai_02" source="app-help">
     <question><![CDATA[How do I use the IAI?]]></question>
-    <answer><![CDATA[After completing a body scanning session, tap Assessments and select IAI . Colour in all areas of the body shape where you felt any sensations during your practice -- even very subtle sensations count. To make colouring faster, increase the brush size by sliding the brush tool (left side of the screen) to the right. When finished, tap Save . Be as accurate as possible. The app calculates the percentage of the body coloured and tracks this over time.]]></answer>
+    <answer><![CDATA[After completing a body scanning session, tap Assessments in the bottom navigation bar, tap the + button, and select IAI . Colour in all areas of the body shape where you felt any sensations during your practice -- even very subtle sensations count. To make colouring faster, increase the brush size by sliding the brush tool (left side of the screen) to the right. When you have finished colouring, your entry saves automatically -- there is no Save button to tap. Be as accurate as possible. The app calculates the percentage of the body coloured and tracks this over time.]]></answer>
     <category><![CDATA[Assessments: IAI]]></category>
     <stage>all</stage><step>all</step><week>all</week>
     <keywords><![CDATA[body, assessments, completing, sensations, scanning, session, select]]></keywords>
@@ -908,7 +908,7 @@ So: use the two-exposure version while you're learning the method, then use the 
   </faq>
   <faq id="app_miss_03" source="app-help">
     <question><![CDATA[How do I use the MISS?]]></question>
-    <answer><![CDATA[After or during an intense experience, tap Assessments and select MISS . Using the four sliding scales (Mass, Temperature, Motion, Fluidity), rate the qualities of the body sensations you felt. Record your pre-equanimity rating -- how the sensation was at its most intense. Apply equanimity to those sensations for about 30 seconds. Record your post-equanimity rating. Make sure all four blue dots have been moved before tapping Save . The MISS will not save if any scale remains at its default position.]]></answer>
+    <answer><![CDATA[After or during an intense experience, tap Assessments in the bottom navigation bar, tap the + button, and select MISS . Using the four sliding scales (Mass, Temperature, Motion, Fluidity), rate the qualities of the body sensations you felt. Record your pre-equanimity rating -- how the sensation was at its most intense. Apply equanimity to those sensations for about 30 seconds. Record your post-equanimity rating. Make sure all four blue dots have been moved -- a scale left at its default position does not record a rating, so the MISS needs all four set. Your entry saves automatically once complete; there is no Save button to tap.]]></answer>
     <category><![CDATA[Assessments: MISS]]></category>
     <stage>all</stage><step>all</step><week>all</week>
     <keywords><![CDATA[miss, assessments, temperature, experience, fluidity, intense, sliding]]></keywords>
@@ -945,7 +945,7 @@ So: use the two-exposure version while you're learning the method, then use the 
   </faq>
   <faq id="app_mses_r_02" source="app-help">
     <question><![CDATA[How do I use the MSES-R?]]></question>
-    <answer><![CDATA[Tap Assessments and select MSES-R . Read each statement and select a response indicating how much you agree with it today . Answer based on how confident you feel right now -- not how you think you should feel. Tap Submit . There are no right or wrong answers. Do not spend too much time on any statement.]]></answer>
+    <answer><![CDATA[Tap Assessments in the bottom navigation bar, tap the + button, and select MSES-R . Read each statement and select a response indicating how much you agree with it today . Answer based on how confident you feel right now -- not how you think you should feel. Your entry saves automatically -- there is no Submit or Save button to tap. There are no right or wrong answers. Do not spend too much time on any statement.]]></answer>
     <category><![CDATA[Assessments: MSES-R]]></category>
     <stage>all</stage><step>all</step><week>all</week>
     <keywords><![CDATA[mses-r, select, assessments, indicating, statement, response, answer]]></keywords>
@@ -996,7 +996,7 @@ So: use the two-exposure version while you're learning the method, then use the 
   </faq>
   <faq id="app_suds_03" source="app-help">
     <question><![CDATA[How do I record my avoidance progress using the SUDS?]]></question>
-    <answer><![CDATA[Tap Assessments from the main menu and select SUDS . Select the specific situation you want to review from your list. Rate your current expected level of distress for that situation using the slider (0-100). Tap Save . Repeat for each situation as often as you like -- the more frequently you re-rate, the clearer your progress trend. The graph automatically tracks your average distress across all five situations over time.]]></answer>
+    <answer><![CDATA[Tap Assessments in the bottom navigation bar, tap the + button, and select SUDS . Select the specific situation you want to review from your list. Rate your current expected level of distress for that situation using the slider (0-100). Your entry saves automatically -- there is no Submit or Save button to tap. Repeat for each situation as often as you like -- the more frequently you re-rate, the clearer your progress trend. The graph automatically tracks your average distress across all five situations over time.]]></answer>
     <category><![CDATA[Assessments: SUDS (Stage 2 tool)]]></category>
     <stage>2</stage><step>2.1</step><week>all</week>
     <keywords><![CDATA[select, suds, assessments, avoidance, situation, progress, specific]]></keywords>
@@ -1012,7 +1012,7 @@ So: use the two-exposure version while you're learning the method, then use the 
   <!-- Assessments: SWLS -->
   <faq id="app_swls_01" source="app-help">
     <question><![CDATA[How do I use the SWLS?]]></question>
-    <answer><![CDATA[Tap Assessments and select SWLS . Read each statement and select a response indicating how much you agree with it today. Avoid comparing your life to others -- base your answers on your own internal experience. Tap Submit . There are no right or wrong answers. Answer honestly from your genuine felt sense rather than how you think you should feel.]]></answer>
+    <answer><![CDATA[Tap Assessments in the bottom navigation bar, tap the + button, and select SWLS . Read each statement and select a response indicating how much you agree with it today. Avoid comparing your life to others -- base your answers on your own internal experience. Your entry saves automatically -- there is no Submit or Save button to tap. There are no right or wrong answers. Answer honestly from your genuine felt sense rather than how you think you should feel.]]></answer>
     <category><![CDATA[Assessments: SWLS]]></category>
     <stage>all</stage><step>all</step><week>all</week>
     <keywords><![CDATA[select, swls, assessments, indicating, statement, comparing, response]]></keywords>
@@ -1099,11 +1099,11 @@ So: use the two-exposure version while you're learning the method, then use the 
 
   <!-- My Assessments -->
   <faq id="app_my_assessments_01" source="app-help">
-    <question><![CDATA[How do I access the assessments?]]></question>
-    <answer><![CDATA[Option 1 -- from your current stage: Tap Home and select your current stage and step. Scroll to the bottom of the page and tap Assessments . Tap the assessment you would like to complete. Option 2 -- directly: Tap Assessments in the bottom navigation bar. Select the relevant tool from the list.]]></answer>
+    <question><![CDATA[How do I do an assessment? How do I access, start and save the assessments?]]></question>
+    <answer><![CDATA[Option 1 -- from your current stage: Tap Home and select your current stage and step. Scroll to the bottom of the page and tap Assessments . Tap the assessment you would like to complete. Option 2 -- directly: Tap Assessments in the bottom navigation bar. Tap the + button to start a new assessment, then select the relevant tool from the list. Whichever route you take, your answers save automatically as you go -- there is no Submit or Save button to tap at the end.]]></answer>
     <category><![CDATA[My Assessments]]></category>
     <stage>all</stage><step>all</step><week>all</week>
-    <keywords><![CDATA[assessments, current, stage, access, option, select, scroll]]></keywords>
+    <keywords><![CDATA[assessment, assessments, do an assessment, complete an assessment, start an assessment, take an assessment, how do i do, access, plus button, + button, add, new entry, save, saving, do i need to save, submit, automatic, automatically, bottom navigation]]></keywords>
   </faq>
   <faq id="app_my_assessments_02" source="app-help">
     <question><![CDATA[How do I delete an assessment entry?]]></question>
@@ -1260,7 +1260,7 @@ So: use the two-exposure version while you're learning the method, then use the 
   </faq>
   <faq id="app_troubleshooting_03" source="app-help">
     <question><![CDATA[My data isn't saving.]]></question>
-    <answer><![CDATA[If your practice logs, assessment results, or goals are not saving: Check your internet connection -- the app requires an active connection to save data. Check you are logged in -- tap More to confirm your account details. Make sure you tap Submit or Save at the end of each entry -- data is not auto-saved. Close and reopen the app and check whether the data now appears. If the problem persists, contact support@mindfulness.net.au.]]></answer>
+    <answer><![CDATA[If your practice logs, assessment results, or goals are not saving: Check your internet connection -- the app requires an active connection to save data. Check you are logged in -- tap More to confirm your account details. Note that assessments save automatically -- there is no Submit or Save button on them, so a missing assessment is not a forgotten save. For practice logs, goals and timers, make sure you tap Submit or Save at the end of the entry. Close and reopen the app and check whether the data now appears. If the problem persists, contact support@mindfulness.net.au.]]></answer>
     <category><![CDATA[Troubleshooting]]></category>
     <stage>all</stage><step>all</step><week>all</week>
     <keywords><![CDATA[connection, saving, assessment, practice, internet, requires, results]]></keywords>
