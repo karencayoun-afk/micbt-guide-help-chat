@@ -1,4 +1,9 @@
 [build]
+  # Fails the deploy if faq_vectors.json no longer matches micbt_faq_database.xml.
+  # Editing the XML without re-running embed.js is otherwise silent: the bot keeps
+  # answering, but retrieves against text that no longer exists.
+  # To ship anyway, set ALLOW_STALE_VECTORS=1 in the Netlify environment.
+  command = "node verify-vectors.js"
   functions = ".netlify/functions"
   publish = "."
   node_bundler = "esbuild"
