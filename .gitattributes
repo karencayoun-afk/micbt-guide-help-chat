@@ -1,0 +1,6 @@
+# The FAQ database and the generated vectors are hashed for the build-time
+# freshness check. A CRLF checkout on Windows would change those hashes, so pin
+# these to LF everywhere rather than relying on each contributor's core.autocrlf.
+micbt_faq_database.xml text eol=lf
+faq_vectors.json       text eol=lf
+*.js                   text eol=lf

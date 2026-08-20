@@ -98,8 +98,11 @@ function logVectorHealth(faqs, vectors) {
   try {
     if (!vectors || !vectors.length) return;
     // Must match buildInput() in faq-source.js, or every hash looks stale.
+    // \r stripped to match normalizeEol() in faq-source.js — otherwise a CRLF
+    // checkout makes every multi-line FAQ look stale.
+    const nl = (t) => String(t == null ? '' : t).replace(/\r\n/g, '\n').replace(/\r/g, '\n');
     const hashOf = (f) => crypto.createHash('sha256')
-      .update(`${f.question}\nKeywords: ${f.keywords}\n${f.answer}`.slice(0, 2000), 'utf8')
+      .update(`${nl(f.question)}\nKeywords: ${nl(f.keywords)}\n${nl(f.answer)}`.slice(0, 2000), 'utf8')
       .digest('hex').slice(0, 16);
 
     const byId = new Map(vectors.map(v => [v.id, v]));

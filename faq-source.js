@@ -12,8 +12,17 @@ const crypto = require('crypto');
 const MAX_INPUT_CHARS = 2000;
 
 // Tolerant XML parse (handles CDATA) — same shape embed.js has always used.
+// Line endings must never affect the embedded text or its hash: git checks this
+// file out with CRLF on Windows and LF elsewhere, so without this a FAQ containing
+// a newline hashes differently per platform and verify-vectors.js reports it stale
+// forever, whoever last ran embed.js.
+function normalizeEol(s) {
+  return s.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+}
+
 function parseFaqs(xml) {
   const faqs = [];
+  xml = normalizeEol(xml);
   const blocks = xml.match(/<faq\b[^>]*>[\s\S]*?<\/faq>/g) || [];
   for (const b of blocks) {
     const id  = (b.match(/<faq[^>]*\bid="([^"]+)"/) || [])[1] || '';
@@ -43,4 +52,4 @@ function hashFaq(f) {
   return hashInput(buildInput(f));
 }
 
-module.exports = { parseFaqs, buildInput, hashInput, hashFaq, MAX_INPUT_CHARS };
+module.exports = { parseFaqs, buildInput, hashInput, hashFaq, normalizeEol, MAX_INPUT_CHARS };
