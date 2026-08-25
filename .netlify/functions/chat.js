@@ -26,12 +26,29 @@ const EMBED_DIM   = 512;                        // MUST match embed.js
 const TOP_K       = 6;
 
 // Retrieval-confidence thresholds (cosine similarity of the BEST match).
-// These are starting values -- tune them against real traffic. Every question is
-// logged below with its top score, so after a few days of logs you can pick
-// thresholds that match how your corpus actually scores. Raising CONF_LOW makes
-// Lumi hedge more often; lowering it makes Lumi answer more confidently.
-const CONF_HIGH = 0.55;   // >= this: strong match, answer normally
-const CONF_LOW  = 0.42;   // <  this: weak match, tell Lumi to be candid / point onward
+// Calibrated 2026-08-25 against the first real semantic traffic (voyage-4/512d).
+// Deliberately off-topic questions and known-covered ones separated cleanly:
+//
+//   off-topic:  0.185 python script | 0.212 lasagne | 0.295 weather
+//   -- gap --
+//   covered:    0.388 "how do I do PMR"        | 0.421 "what do I do in Stage 1"
+//               0.426 body sensations 1.3/1.4  | 0.472 anxiety vs fear vs anger
+//               0.488 logged practice early    | 0.671 week 1 schedule question
+//
+// CONF_LOW sits in that gap. The previous 0.42 was a pre-launch guess and landed
+// ABOVE the on-topic floor, so genuinely covered questions ("how do I do PMR")
+// were told to hedge and point at support. CONF_HIGH was lowered for the same
+// reason: at 0.55 only one question in nine cleared it, so nearly every real
+// question carried the "match is only partial" caveat.
+//
+// The bands are still asymmetric on purpose. Over-hedging costs a little
+// crispness; under-hedging is how the knowledge base gets stretched to fit a
+// question it does not answer. When in doubt, hedge.
+//
+// n=9, so treat these as a first calibration rather than settled. Every question
+// is logged with its score; revisit once there are a few hundred.
+const CONF_HIGH = 0.47;   // >= this: strong match, answer normally
+const CONF_LOW  = 0.33;   // <  this: weak match, tell Lumi to be candid / point onward
 
 // ---------- locate + load data files (resilient to Netlify cwd) ----------
 function findFile(name) {
