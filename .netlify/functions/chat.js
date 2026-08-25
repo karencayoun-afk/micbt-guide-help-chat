@@ -201,6 +201,46 @@ function cosineTopK(qVec, vectors, k) {
   return scored.sort((a, b) => b.score - a.score).slice(0, k);
 }
 
+// ---------- what we actually search on ----------
+// Retrieval used to embed the latest user message alone, which works for a
+// standalone question and fails for a follow-up: "And for how many days" was
+// matched on those five words with no idea what "for how many days" referred to.
+// Real examples from the logs: "Yes pmr", "And for how many days",
+// "This is not what the book says".
+//
+// Only SHORT messages get prior context folded in. A long question already
+// carries its own topic, and padding it with earlier turns pulls the embedding
+// toward whatever was discussed before, which is how retrieval starts drifting
+// off the question actually asked.
+//
+// Prior USER turns only -- Lumi's own replies are long and would dominate the
+// embedding with its wording rather than the person's.
+const FOLLOWUP_MAX_CHARS = 120;   // at or below this, treat as a follow-up needing context
+const CONTEXT_TURNS      = 2;     // how many earlier user turns to fold in
+const QUERY_MAX_CHARS    = 1000;  // hard cap on what we send to the embedder
+
+// Message content may be a plain string or Anthropic-style content blocks.
+function messageText(m) {
+  const c = m && m.content;
+  if (typeof c === 'string') return c.trim();
+  if (Array.isArray(c)) return c.map(p => (p && typeof p.text === 'string') ? p.text : '').join(' ').trim();
+  return '';
+}
+
+function buildRetrievalQuery(messages) {
+  const turns = (messages || []).filter(m => m && m.role === 'user').map(messageText).filter(Boolean);
+  if (!turns.length) return { query: '', latest: '', withContext: false };
+  const latest = turns[turns.length - 1];
+  if (turns.length === 1 || latest.length > FOLLOWUP_MAX_CHARS) {
+    return { query: latest, latest, withContext: false };
+  }
+  const prior = turns.slice(Math.max(0, turns.length - 1 - CONTEXT_TURNS), turns.length - 1);
+  if (!prior.length) return { query: latest, latest, withContext: false };
+  // slice from the end so the latest message always survives the cap
+  const query = [...prior, latest].join('\n').slice(-QUERY_MAX_CHARS);
+  return { query, latest, withContext: true };
+}
+
 // ---------- keyword fallback (used if embeddings unavailable) ----------
 function keywordTopK(question, faqs, k) {
   const ql = question.toLowerCase();
@@ -270,8 +310,10 @@ exports.handler = async function (event) {
   catch { return { statusCode: 400, body: JSON.stringify({ error: 'Invalid JSON' }) }; }
 
   const { messages = [], systemPrompt } = body;
-  const userMsgs = messages.filter(m => m.role === 'user');
-  const latest = userMsgs.length ? userMsgs[userMsgs.length - 1].content : '';
+  // `latest` is what the person just asked (logged, and what Claude answers);
+  // `query` is what we search the knowledge base with -- the same thing, unless
+  // the message is a short follow-up, in which case earlier turns are folded in.
+  const { query, latest, withContext } = buildRetrievalQuery(messages);
 
   // --- Question logging (privacy-conscious) ---
   // Logs ONLY the question text + timestamp, with NO user identifier (no IP, no name).
@@ -282,7 +324,7 @@ exports.handler = async function (event) {
 
   let relevant = [], topScore = null, method = 'none', reason = '';
   try {
-    const r = await retrieve(latest);
+    const r = await retrieve(query);
     relevant = r.faqs; topScore = r.topScore; method = r.method; reason = r.reason;
   } catch (e) { console.warn('retrieve error', e.message); }
 
@@ -294,7 +336,8 @@ exports.handler = async function (event) {
     const s = topScore == null ? 'n/a' : topScore.toFixed(3);
     // method carries its reason, so a keyword line explains itself without cross-referencing
     const m = method === 'keyword' && reason ? `keyword(${reason})` : method;
-    console.log(`[Q ${new Date().toISOString()}] band=${band} score=${s} method=${m} :: ${String(latest).slice(0, 300)}`);
+    const ctx = withContext ? ' ctx=prior-turns' : '';
+    console.log(`[Q ${new Date().toISOString()}] band=${band} score=${s} method=${m}${ctx} :: ${String(latest).slice(0, 300)}`);
   }
 
   // When the knowledge base doesn't clearly cover the question, tell Lumi to be
