@@ -130,9 +130,11 @@ function logVectorHealth(faqs, vectors) {
 }
 
 // ---------- query embedding ----------
+// Returns { vec } on success, or { reason } explaining the fallback. A bare null
+// made a missing key indistinguishable from a broken one in the logs.
 async function embedQuery(text) {
   const key = process.env.EMBEDDING_API_KEY;
-  if (!key) return null;
+  if (!key) return { reason: 'EMBEDDING_API_KEY is not set' };
   const res = await fetch('https://api.voyageai.com/v1/embeddings', {
     method: 'POST',
     headers: { 'Authorization': `Bearer ${key}`, 'Content-Type': 'application/json' },
@@ -143,9 +145,33 @@ async function embedQuery(text) {
       output_dimension: EMBED_DIM
     })
   });
-  if (!res.ok) { console.warn('query embed failed', res.status); return null; }
+  if (!res.ok) {
+    const body = await res.text().catch(() => '');
+    return { reason: `Voyage API returned ${res.status}${body ? ` (${body.slice(0, 120)})` : ''}` };
+  }
   const data = await res.json();
-  return data.data[0].embedding;
+  const vec = data && data.data && data.data[0] && data.data[0].embedding;
+  if (!vec) return { reason: 'Voyage API returned no embedding' };
+  return { vec };
+}
+
+// Semantic retrieval degrades to keyword matching silently: the bot keeps answering,
+// just far less accurately. That is worth one prominent line per cold start, because
+// a missing EMBEDDING_API_KEY otherwise looks identical to a healthy deployment.
+let MODE_LOGGED = false;
+
+function logRetrievalMode(method, vectors, reason) {
+  if (MODE_LOGGED) return;
+  MODE_LOGGED = true;
+  if (method === 'semantic') {
+    console.log(`[retrieval] semantic active — ${EMBED_MODEL}/${EMBED_DIM}d over ${vectors.length} vectors`);
+  } else {
+    console.warn(
+      `[retrieval] KEYWORD FALLBACK — semantic search is OFF. Reason: ${reason}. ` +
+      `Answers still come from the FAQ database, but matching is by literal word overlap ` +
+      `rather than meaning, and every reply is treated as a partial match.`
+    );
+  }
 }
 
 function cosineTopK(qVec, vectors, k) {
@@ -176,19 +202,24 @@ async function retrieve(question) {
   const faqs = loadFaqs();
   const vectors = loadVectors();
   logVectorHealth(faqs, vectors);
-  let top, method;
+  let top, method, reason = '';
   if (vectors && vectors.length) {
-    const qVec = await embedQuery(question);
-    if (qVec) { top = cosineTopK(qVec, vectors, TOP_K); method = 'semantic'; }
-    else      { top = keywordTopK(question, faqs, TOP_K); method = 'keyword'; }
+    const q = await embedQuery(question);
+    if (q && q.vec) { top = cosineTopK(q.vec, vectors, TOP_K); method = 'semantic'; }
+    else {
+      reason = (q && q.reason) || 'query embedding unavailable';
+      top = keywordTopK(question, faqs, TOP_K); method = 'keyword';
+    }
   } else {
+    reason = 'faq_vectors.json missing or empty';
     top = keywordTopK(question, faqs, TOP_K); method = 'keyword';
   }
+  logRetrievalMode(method, vectors, reason);
   // topScore is a cosine similarity (0..1) ONLY for the semantic path; the keyword
   // path uses an unbounded ad-hoc score, so we don't treat it as a confidence signal.
   const topScore = (method === 'semantic' && top.length) ? top[0].score : null;
   const results = top.map(t => faqs[t.id]).filter(Boolean);
-  return { faqs: results, topScore, method };
+  return { faqs: results, topScore, method, reason };
 }
 
 // Turn the best-match score into a confidence band. Keyword fallback can't be
@@ -232,10 +263,10 @@ exports.handler = async function (event) {
   // To turn logging off, set the comment flag below to false.
   const LOG_QUESTIONS = true;
 
-  let relevant = [], topScore = null, method = 'none';
+  let relevant = [], topScore = null, method = 'none', reason = '';
   try {
     const r = await retrieve(latest);
-    relevant = r.faqs; topScore = r.topScore; method = r.method;
+    relevant = r.faqs; topScore = r.topScore; method = r.method; reason = r.reason;
   } catch (e) { console.warn('retrieve error', e.message); }
 
   const band = confidenceBand(topScore, method);
@@ -244,7 +275,9 @@ exports.handler = async function (event) {
   // identifier. The score is what you use to tune CONF_HIGH / CONF_LOW over time.
   if (LOG_QUESTIONS && latest) {
     const s = topScore == null ? 'n/a' : topScore.toFixed(3);
-    console.log(`[Q ${new Date().toISOString()}] band=${band} score=${s} method=${method} :: ${String(latest).slice(0, 300)}`);
+    // method carries its reason, so a keyword line explains itself without cross-referencing
+    const m = method === 'keyword' && reason ? `keyword(${reason})` : method;
+    console.log(`[Q ${new Date().toISOString()}] band=${band} score=${s} method=${m} :: ${String(latest).slice(0, 300)}`);
   }
 
   // When the knowledge base doesn't clearly cover the question, tell Lumi to be
